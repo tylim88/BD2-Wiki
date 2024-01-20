@@ -37,14 +37,15 @@ export const Header = () => {
 					<Flex w="100%" align="center">
 						{routes.map(({ path, label }, index) => {
 							if (path === '/') return null
+							const isActive = index === active
 							return (
 								<NavLink
-									className={classes.nav}
-									color="white"
+									className={isActive ? '' : classes.nav}
 									component={Link}
+									color="white"
 									to={path}
 									key={path}
-									active={index === active}
+									active={isActive}
 									label={
 										<Text fz="xl" c="dark" mr="xs">
 											{label}
