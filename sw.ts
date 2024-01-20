@@ -2,8 +2,7 @@ const cacheName = 'my-site-cache-v1'
 const urlsToCache = [
 	'/',
 	'/index.html',
-	'/styles.css',
-	'/script.js',
+	'/assets',
 	// Add more URLs of your assets to cache as needed
 ]
 

@@ -4,20 +4,16 @@ import svgr from 'vite-plugin-svgr'
 import { qrcode } from 'vite-plugin-qrcode'
 import mkcert from 'vite-plugin-mkcert'
 import removeConsole from 'vite-plugin-remove-console'
-import { resolve } from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-export const resolve_ = {
-	alias: [
-		{ find: '@', replacement: resolve(__dirname, 'src') },
-		{ find: '%', replacement: resolve(__dirname, 'functions/src') },
-	],
-}
+import tsconfigPaths from 'vite-tsconfig-paths'
+
 // https://vitejs.dev/config/
 export default defineConfig({
 	build: {
 		emptyOutDir: false,
 	},
 	plugins: [
+		tsconfigPaths(),
 		qrcode(),
 		react(),
 		(svgr as () => PluginOption)(),
@@ -36,5 +32,4 @@ export default defineConfig({
 			],
 		}),
 	],
-	resolve: resolve_,
 })

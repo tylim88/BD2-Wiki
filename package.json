@@ -46,6 +46,9 @@
 	"dependencies": {
 		"@mantine/core": "^7.4.2",
 		"@mantine/hooks": "^7.4.2",
+		"@tabler/icons-react": "^2.46.0",
+		"@tanstack/react-router": "^1.8.3",
+		"@tanstack/router-devtools": "^1.8.3",
 		"@types/node": "^20.11.5",
 		"idb-keyval": "^6.2.1",
 		"immer": "^10.0.3",
@@ -87,6 +90,7 @@
 		"vite-plugin-qrcode": "^0.2.3",
 		"vite-plugin-remove-console": "^2.2.0",
 		"vite-plugin-static-copy": "^1.0.0",
-		"vite-plugin-svgr": "^4.2.0"
+		"vite-plugin-svgr": "^4.2.0",
+		"vite-tsconfig-paths": "^4.3.1"
 	}
 }
