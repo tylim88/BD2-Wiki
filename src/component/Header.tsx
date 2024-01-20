@@ -39,7 +39,7 @@ export const Header = () => {
 							if (path === '/') return null
 							return (
 								<NavLink
-									className={classes.nav || ''}
+									className={classes.nav}
 									color="white"
 									component={Link}
 									to={path}
