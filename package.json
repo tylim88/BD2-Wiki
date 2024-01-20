@@ -1,0 +1,92 @@
+{
+	"name": "bd2-wiki",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"description": "Wiki for mobile game Brown Dust 2",
+	"scripts": {
+		"utility-scripts": "====================utilities========================",
+		"un": "rm -rf node_modules && rm -rf package-lock.json",
+		"i": " npm run un && npm i && npx husky install",
+		"pretty": "prettier --write .",
+		"lint": "eslint . --ext .ts,.tsx --fix",
+		"building-block-scripts": "=============building-blocks===================",
+		"tsc": "tsc",
+		"use_regular_html": "cp -fr index.regular.html index.html",
+		"build-sw": "vite build --config vite.sw.config.ts",
+		"eruda": "=============================eruda(dev, but client side is hosted)=========================",
+		"use_eruda_html": "cp -fr index.eruda.html index.html",
+		"use_eruda_manifest": "cp -fr manifest.eruda.json manifest.json",
+		"dev-eruda": "npm run use_eruda_html && npm run use_eruda_manifest && vite --host",
+		"build-eruda": "tsc && npm run use_eruda_html && npm run use_eruda_manifest && npm run build-sw && vite build ",
+		"dev-scripts": "======================dev(local client side)===========================",
+		"use_dev_manifest": "cp -fr manifest.dev.json manifest.json",
+		"dev": "vite --host",
+		"preview": "vite preview --host",
+		"prod-scripts": "======================prod===========================",
+		"use_prod_manifest": "cp -fr manifest.prod.json manifest.json",
+		"build": "tsc && npm run use_regular_html && npm run use_prod_manifest && npm run build-sw && vite build "
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tylim88/BD2-Wiki.git"
+	},
+	"author": "tylim",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/tylim88/BD2-Wiki/issues"
+	},
+	"homepage": "https://github.com/tylim88/BD2-Wiki#readme",
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,md,json,yml}": [
+			"eslint --fix",
+			"prettier --write"
+		]
+	},
+	"dependencies": {
+		"@mantine/core": "^7.4.2",
+		"@mantine/hooks": "^7.4.2",
+		"@types/node": "^20.11.5",
+		"idb-keyval": "^6.2.1",
+		"immer": "^10.0.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-helmet-async": "^2.0.4",
+		"react-router-dom": "^6.21.3",
+		"react-use": "^17.4.3",
+		"zustand": "^4.5.0"
+	},
+	"devDependencies": {
+		"@types/glob": "^8.1.0",
+		"@types/react": "^18.2.48",
+		"@types/react-dom": "^18.2.18",
+		"@typescript-eslint/eslint-plugin": "^6.19.0",
+		"@typescript-eslint/parser": "^6.19.0",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"eruda": "^3.0.1",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-json": "^3.1.0",
+		"eslint-plugin-markdown": "^3.0.1",
+		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"eslint-plugin-unused-imports": "^3.0.0",
+		"eslint-plugin-yml": "^1.12.2",
+		"lint-staged": "^15.2.0",
+		"postcss": "^8.4.33",
+		"postcss-preset-mantine": "^1.12.3",
+		"postcss-simple-vars": "^7.0.1",
+		"prettier": "^3.2.4",
+		"type-fest": "^4.9.0",
+		"typescript": "^5.3.3",
+		"vite": "^5.0.12",
+		"vite-plugin-mkcert": "^1.17.3",
+		"vite-plugin-qrcode": "^0.2.3",
+		"vite-plugin-remove-console": "^2.2.0",
+		"vite-plugin-static-copy": "^1.0.0",
+		"vite-plugin-svgr": "^4.2.0"
+	}
+}
