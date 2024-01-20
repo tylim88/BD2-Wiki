@@ -9,12 +9,7 @@ module.exports = {
 		sourceType: 'module',
 		tsconfigRootDir: __dirname,
 		allowImportExportEverywhere: true,
-		project: [
-			'tsconfig.json',
-			'tsconfig.node.json',
-			'functions/tsconfig.json',
-			'cloudRun/tsconfig.json',
-		],
+		project: ['tsconfig.json', 'tsconfig.node.json'],
 	},
 	env: { browser: true, es2020: true },
 	settings: {
