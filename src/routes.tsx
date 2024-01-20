@@ -5,10 +5,10 @@ export const routes = [
 	{ path: '/', label: 'Home', component: () => null },
 	{ path: '/chars', label: 'Characters', component: () => null },
 	{ path: '/tier', label: 'Tier List', component: () => null },
+	{ path: '/banners', label: 'Banners', component: () => null },
+	{ path: '/events', label: 'Events', component: () => null },
 	{ path: '/packs', label: 'Packs', component: () => null },
 	{ path: '/items', label: 'Items', component: () => null },
-	{ path: '/events', label: 'Events', component: () => null },
-	{ path: '/banners', label: 'Banners', component: () => null },
 ] as const
 
 const rootRoute = new RootRoute({

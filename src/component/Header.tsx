@@ -6,11 +6,12 @@ import {
 	Image,
 	NavLink,
 	TextInput,
+	ActionIcon,
 } from '@mantine/core'
 import { Link } from '@tanstack/react-router'
 import brand from '@/assets/brand.svg'
 import { useState } from 'react'
-import { IconSearch } from '@tabler/icons-react'
+import { IconSearch, IconBrandGithubFilled } from '@tabler/icons-react'
 import { routes } from '@/routes'
 import classes from './Header.module.css'
 
@@ -58,7 +59,20 @@ export const Header = () => {
 					</Flex>
 				</Grid.Col>
 				<Grid.Col span="content">
-					<TextInput leftSection={<IconSearch />} placeholder="Search" />
+					<Flex gap="xs" align="center">
+						<TextInput leftSection={<IconSearch />} placeholder="Search" />
+						<ActionIcon
+							component="a"
+							href="https://github.com/tylim88/BD2-Wiki"
+							target="_blank"
+							variant="subtle"
+							size="xl"
+							aria-label="Gradient action icon"
+							color="dark"
+						>
+							<IconBrandGithubFilled />
+						</ActionIcon>
+					</Flex>
 				</Grid.Col>
 			</Grid>
 		</Center>
