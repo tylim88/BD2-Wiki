@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import removeConsole from 'vite-plugin-remove-console'
 import { resolve } from 'path'
 import glob from 'glob'
-import { resolve_ } from './vite.config'
+
 export default defineConfig({
 	plugins: [removeConsole({ includes: ['log'] })],
 	root: __dirname,
@@ -16,5 +16,4 @@ export default defineConfig({
 			},
 		},
 	},
-	resolve: resolve_,
 })
