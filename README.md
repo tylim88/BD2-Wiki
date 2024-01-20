@@ -1,3 +1,4 @@
 # BD2 Wiki
 
-to start dev: `npm run dev`
+setup: `npm run setup`
+dev: `npm run dev`
