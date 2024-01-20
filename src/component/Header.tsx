@@ -35,18 +35,15 @@ export const Header = () => {
 				<Grid.Col span="auto">
 					<Flex w="100%" align="center">
 						{routes.map(({ path, label }, index) => {
+							if (path === '/') return null
 							return (
 								<NavLink
+									className={classes.nav || ''}
 									color="white"
 									component={Link}
 									to={path}
 									key={path}
 									active={index === active}
-									styles={
-										{
-											// '&:hover': 'red',
-										}
-									}
 									label={
 										<Text fz="xl" c="dark" mr="xs">
 											{label}

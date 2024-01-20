@@ -1,0 +1,5 @@
+.nav {
+	&:hover {
+		background: transparent;
+	}
+}
