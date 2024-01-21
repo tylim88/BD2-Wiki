@@ -22,6 +22,10 @@ export default defineConfig({
 		viteStaticCopy({
 			targets: [
 				{
+					src: '_redirect',
+					dest: '',
+				},
+				{
 					src: 'manifest.json',
 					dest: '',
 				},
