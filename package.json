@@ -19,7 +19,7 @@
 		"use_eruda_html": "cp -fr index.eruda.html index.html",
 		"use_eruda_manifest": "cp -fr manifest.eruda.json manifest.json",
 		"dev-eruda": "npm run use_dev_config && npm run tcm && npm run use_eruda_html && npm run use_eruda_manifest && vite --host",
-		"build-eruda": "npm run use_dev_config && tsc && npm run tcm && npm run use_eruda_html && npm run use_eruda_manifest && npm run build-sw && vite build ",
+		"build-eruda": "npm run use_dev_config && npm run tcm && tsc && npm run use_eruda_html && npm run use_eruda_manifest && npm run build-sw && vite build ",
 		"dev-scripts": "======================dev(local client side)===========================",
 		"use_dev_config": "cp -fr src/config.dev.ts src/config.ts",
 		"use_dev_manifest": "cp -fr manifest.dev.json manifest.json",
@@ -28,7 +28,7 @@
 		"prod-scripts": "======================prod===========================",
 		"use_prod_config": "cp -fr src/config.prod.ts src/config.ts",
 		"use_prod_manifest": "cp -fr manifest.prod.json manifest.json",
-		"build": "tsc && npm run use_prod_config && npm run tcm && npm run use_regular_html && npm run use_prod_manifest && npm run build-sw && vite build "
+		"build": "npm run use_prod_config && npm run tcm && tsc && npm run use_regular_html && npm run use_prod_manifest && npm run build-sw && vite build "
 	},
 	"repository": {
 		"type": "git",
