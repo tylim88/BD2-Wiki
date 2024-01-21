@@ -1,7 +1,8 @@
-import { Stack, BackgroundImage, Center } from '@mantine/core'
+import { Stack, BackgroundImage, Center, Loader } from '@mantine/core'
 import { Outlet } from '@tanstack/react-router'
 import { Header, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
+import { Suspense } from 'react'
 
 export const App = () => {
 	return (
@@ -23,7 +24,9 @@ export const App = () => {
 			>
 				<Outlet />
 			</Center>
-			<TanStackRouterDevtools />
+			<Suspense fallback={<Loader />}>
+				<TanStackRouterDevtools />
+			</Suspense>
 		</Stack>
 	)
 }

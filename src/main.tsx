@@ -7,11 +7,11 @@ import { router } from './routes'
 import './index.css'
 import '@mantine/core/styles.css'
 
-if ('serviceWorker' in navigator) {
-	navigator.serviceWorker.register('./sw.js').catch(error => {
-		console.error('Service Worker registration failed:', error)
-	})
-}
+// if ('serviceWorker' in navigator) {
+// 	navigator.serviceWorker.register('./sw.js').catch(error => {
+// 		console.error('Service Worker registration failed:', error)
+// 	})
+// }
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
