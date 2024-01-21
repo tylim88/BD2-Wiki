@@ -22,7 +22,7 @@ export default defineConfig({
 		viteStaticCopy({
 			targets: [
 				{
-					src: '_redirect',
+					src: '_redirects',
 					dest: '',
 				},
 				{
