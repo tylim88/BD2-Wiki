@@ -8,26 +8,21 @@ import {
 	TextInput,
 	ActionIcon,
 } from '@mantine/core'
-import { Link } from '@tanstack/react-router'
+import { useMantineTheme } from '@mantine/core'
+import { Link, useMatchRoute } from '@tanstack/react-router'
 import brand from '@/assets/brand.svg'
-import { useState } from 'react'
 import { IconSearch, IconBrandGithubFilled } from '@tabler/icons-react'
 import { routes } from '@/routes'
 import classes from './Header.module.css'
+import { glass } from '@/styles'
 
 export const Header = () => {
-	const [active, setActive] = useState(0)
+	const theme = useMantineTheme()
+	const matchRoute = useMatchRoute()
+
 	return (
-		<Center
-			py="sm"
-			style={{
-				background: 'rgba(197,170,106, 0.5)',
-				boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
-				backdropFilter: 'blur(20px)',
-				border: '1px solid rgba(197,170,106, 0.3)',
-			}}
-		>
-			<Grid maw="1336px" w="100%" align="center">
+		<Center py="sm" style={glass}>
+			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
 						<Image src={brand} h="2rem" />
@@ -35,12 +30,12 @@ export const Header = () => {
 				</Grid.Col>
 				<Grid.Col span="auto">
 					<Flex w="100%" align="center">
-						{routes.map(({ path, label }, index) => {
+						{routes.map(({ path, label }) => {
 							if (path === '/') return null
-							const isActive = index === active
+							const isActive = matchRoute({ to: path })
 							return (
 								<NavLink
-									className={isActive ? '' : classes.nav}
+									className={isActive ? '' : classes.header}
 									component={Link}
 									color="white"
 									to={path}
@@ -51,9 +46,6 @@ export const Header = () => {
 											{label}
 										</Text>
 									}
-									onClick={() => {
-										setActive(index)
-									}}
 								/>
 							)
 						})}

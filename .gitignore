@@ -13,6 +13,7 @@ dist
 dist-ssr
 *.local
 **/lib
+*.css.d.ts
 
 # vessel
 index.html
