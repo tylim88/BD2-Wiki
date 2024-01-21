@@ -21,7 +21,7 @@ export const Header = () => {
 	const matchRoute = useMatchRoute()
 
 	return (
-		<Center py="sm" style={glass}>
+		<Center py="sm" style={glass} w="100%">
 			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
