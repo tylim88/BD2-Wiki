@@ -3,8 +3,6 @@ import { content } from '@/styles'
 import { useState } from 'react'
 import classes from '@/component/Header.module.css'
 
-const left = 6
-
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
 	{ value: 'profile', color: 'blue' },
@@ -23,7 +21,6 @@ export const Characters = () => {
 	const [activeVertical, setActiveVertical] = useState<null | string>(
 		verticalTabs[0]
 	)
-	const [offsetWidth, setOffsetWidth] = useState<number | null>(null)
 
 	return (
 		<Grid
@@ -33,9 +30,55 @@ export const Characters = () => {
 				inner: { height: '100%' },
 			}}
 		>
-			<Grid.Col span={left}></Grid.Col>
+			<Grid.Col span={6} mb="xl" pos="relative">
+				<Image
+					src="https://source.unsplash.com/user/c_v_r/720x1080"
+					alt="Panda"
+					h="80vh"
+					style={{
+						objectFit: 'contain',
+					}}
+				/>
+			</Grid.Col>
+			<Grid.Col span={1} mb="xl">
+				<Tabs
+					value={activeVertical}
+					onChange={setActiveVertical}
+					orientation="vertical"
+					variant="pills"
+					style={{
+						justifyContent: 'end',
+					}}
+				>
+					<Tabs.List grow>
+						{verticalTabs.map(value => {
+							return (
+								<Tabs.Tab
+									className={classes.header}
+									value={value}
+									fz="lg"
+									key={value}
+									style={{
+										...(activeVertical === value
+											? {
+													backgroundColor: 'rgba(59,91,219, 0.5)',
+												}
+											: {}),
+									}}
+								>
+									<Image
+										radius="xl"
+										h="48px"
+										src="https://source.unsplash.com/user/c_v_r/100x100"
+									/>
+								</Tabs.Tab>
+							)
+						})}
+					</Tabs.List>
+				</Tabs>
+			</Grid.Col>
 			<Grid.Col
-				span={12 - left}
+				span={'auto'}
 				style={{
 					...content,
 					flexDirection: 'column',
@@ -46,7 +89,7 @@ export const Characters = () => {
 				mih={theme.breakpoints.sm}
 				display="flex"
 				p="md"
-				my="xl"
+				mb="xl"
 			>
 				<Text ta="start" size="2rem">
 					Justia
@@ -72,44 +115,6 @@ export const Characters = () => {
 									}}
 								>
 									{value}
-								</Tabs.Tab>
-							)
-						})}
-					</Tabs.List>
-				</Tabs>
-				<Tabs
-					value={activeVertical}
-					onChange={setActiveVertical}
-					orientation="vertical"
-					variant="pills"
-					pos="absolute"
-					top={0}
-					left={(offsetWidth || 0) * -1}
-					ref={r => {
-						r !== null && setOffsetWidth(r.offsetWidth)
-					}}
-				>
-					<Tabs.List grow>
-						{verticalTabs.map(value => {
-							return (
-								<Tabs.Tab
-									className={classes.header}
-									value={value}
-									fz="lg"
-									key={value}
-									style={{
-										...(activeVertical === value
-											? {
-													backgroundColor: 'rgba(59,91,219, 0.5)',
-												}
-											: {}),
-									}}
-								>
-									<Image
-										radius="xl"
-										h="48px"
-										src="https://source.unsplash.com/user/c_v_r/100x100"
-									/>
 								</Tabs.Tab>
 							)
 						})}

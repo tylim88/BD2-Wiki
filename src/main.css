@@ -6,10 +6,3 @@
 	height: 100svh;
 	width: 100%;
 }
-
-body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-}
