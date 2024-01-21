@@ -1,12 +1,11 @@
-import { Container, BackgroundImage } from '@mantine/core'
+import { Stack, BackgroundImage, Center } from '@mantine/core'
 import { Outlet } from '@tanstack/react-router'
-import { Header } from './component'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { Header, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
 
 export const App = () => {
 	return (
-		<Container w="100%" maw={9999} h="100%" p="0" m="0">
+		<Stack w="100%" maw={9999} h="100%" gap={0}>
 			<BackgroundImage
 				src={BG1}
 				h="100%"
@@ -16,8 +15,15 @@ export const App = () => {
 				}}
 			/>
 			<Header />
-			<Outlet />
+			<Center
+				p="xl"
+				style={{
+					flex: '1 1 auto',
+				}}
+			>
+				<Outlet />
+			</Center>
 			<TanStackRouterDevtools />
-		</Container>
+		</Stack>
 	)
 }

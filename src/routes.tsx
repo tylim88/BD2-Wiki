@@ -1,9 +1,10 @@
 import { Router, Route, RootRoute } from '@tanstack/react-router'
 import { App } from './App'
+import { Characters } from './screens'
 
 export const routes = [
 	{ path: '/', label: 'Home', component: () => null },
-	{ path: '/chars', label: 'Characters', component: () => null },
+	{ path: '/chars', label: 'Characters', component: Characters },
 	{ path: '/tier', label: 'Tier List', component: () => null },
 	{ path: '/banners', label: 'Banners', component: () => null },
 	{ path: '/events', label: 'Events', component: () => null },
