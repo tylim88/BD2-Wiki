@@ -18,6 +18,7 @@ dist-ssr
 # vessel
 index.html
 manifest.json
+config.ts
 
 
 # Editor directories and files
