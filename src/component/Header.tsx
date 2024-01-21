@@ -16,12 +16,22 @@ import { routes } from '@/routes'
 import classes from './Header.module.css'
 import { glass } from '@/styles'
 
-export const Header = () => {
+export const Header = ({ invisible }: { invisible?: boolean }) => {
 	const theme = useMantineTheme()
 	const matchRoute = useMatchRoute()
 
 	return (
-		<Center py="sm" style={glass} w="100%">
+		<Center
+			py="sm"
+			style={{
+				...glass,
+
+				...(invisible
+					? { visibility: 'hidden' }
+					: { position: 'fixed', top: 0, zIndex: 9999 }),
+			}}
+			w="100%"
+		>
 			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
@@ -35,14 +45,22 @@ export const Header = () => {
 							const isActive = matchRoute({ to: path })
 							return (
 								<NavLink
-									className={isActive ? '' : classes.header}
+									className={classes.header}
 									component={Link}
-									color="white"
+									bg={isActive ? 'black' : 'transparent'}
 									to={path}
 									key={path}
+									style={{
+										borderRadius: theme.radius.sm,
+									}}
 									active={isActive}
 									label={
-										<Text fz="xl" c="dark" mr="xs">
+										<Text
+											ta="center"
+											fz="xl"
+											mr="xs"
+											c={isActive ? 'white' : 'dark'}
+										>
 											{label}
 										</Text>
 									}

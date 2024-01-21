@@ -31,6 +31,7 @@ export const App = () => {
 				}}
 			/>
 			<Header />
+			<Header invisible />
 			<Center
 				maw={theme.breakpoints.xl}
 				w="100%"
