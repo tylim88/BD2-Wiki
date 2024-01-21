@@ -37,6 +37,7 @@ export const App = () => {
 				w="100%"
 				style={{
 					flex: '1 1 auto',
+					overflow: 'auto',
 				}}
 			>
 				<Outlet />
