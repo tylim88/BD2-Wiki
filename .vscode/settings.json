@@ -9,7 +9,8 @@
 		"vitest.config.ts": "vitest.*",
 		"index.html": "index.*.html",
 		"vite.config.ts": "vite.*.ts",
-		"manifest.json": "manifest.*.json"
+		"manifest.json": "manifest.*.json",
+		"*.tsx": "$(capture).css, $(capture).*.css, $(capture).*.d.ts"
 	},
 	"cssVariables.lookupFiles": [
 		"**/*.css",

@@ -4,7 +4,7 @@ import { MantineProvider } from '@mantine/core'
 import { HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from '@tanstack/react-router'
 import { router } from './routes'
-import './index.css'
+import './main.css'
 import '@mantine/core/styles.css'
 
 // if ('serviceWorker' in navigator) {
