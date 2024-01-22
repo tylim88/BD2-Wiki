@@ -13,17 +13,17 @@
 			"Cook Legendary"
 		],
 		"costs": [1, 2, 5, 7, 10],
-		"descriptions": "You can make {{x}} rank B-chelin dishes.",
+		"description": "You can make {{x}} rank B-chelin dishes.",
 		"variables": { "x": ["1st", "2nd", "3rd", "4th", "5th"] }
 	},
 	"attribute": {
-		"initial_combat_power": "1660",
-		"crit_rate": "10",
-		"crit_dmg": "50",
-		"def": "0",
-		"magic_resist": "0",
-		"dmg": "50%",
-		"resist": "0",
+		"initial_combat_power": 1660,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"dmg": 50,
+		"resist": 0,
 		"hp": {
 			"min": 121,
 			"max": 2121
@@ -36,7 +36,7 @@
 	"costumes": [
 		{
 			"name": "White Reaper",
-			"rarity": "permanent",
+			"rarity": "regular",
 			"release_date": { "year": 2023, "month": 6, "day": 22 },
 			"banners": [],
 			"skill": {
@@ -89,7 +89,7 @@
 		},
 		{
 			"name": "Knight of Blood",
-			"rarity": "permanent",
+			"rarity": "regular",
 			"banners": [],
 			"release_date": { "year": 2023, "month": 6, "day": 22 },
 			"skill": {
@@ -142,7 +142,7 @@
 		},
 		{
 			"name": "Blood Glutton",
-			"rarity": "permanent",
+			"rarity": "regular",
 			"release_date": { "year": 2023, "month": 6, "day": 22 },
 			"banners": [
 				{
@@ -208,7 +208,7 @@
 		},
 		{
 			"name": "Kendo Club",
-			"rarity": "permanent",
+			"rarity": "regular",
 			"release_date": { "year": 2023, "month": 6, "day": 22 },
 			"banners": [
 				{
