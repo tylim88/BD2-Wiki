@@ -16,7 +16,6 @@ dist-ssr
 *.css.d.ts
 
 # vessel
-index.html
 manifest.json
 config.ts
 

@@ -4,6 +4,7 @@ import { MantineProvider } from '@mantine/core'
 import { HelmetProvider } from 'react-helmet-async'
 import { RouterProvider } from '@tanstack/react-router'
 import { router } from './routes'
+import { isProduction } from './config'
 import './main.css'
 import '@mantine/core/styles.css'
 
@@ -12,6 +13,14 @@ import '@mantine/core/styles.css'
 // 		console.error('Service Worker registration failed:', error)
 // 	})
 // }
+
+!isProduction &&
+	import('eruda')
+		// @ts-expect-error ...
+		.then(eruda => eruda.init())
+		.catch(({ e }) => {
+			console.error({ e })
+		})
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
