@@ -20,18 +20,25 @@ const LinkStyle = {
 	textDecoration: 'none',
 }
 
-export const Header = ({ invisible }: { invisible?: boolean }) => {
+export const Header = ({
+	setRef,
+}: {
+	setRef: (r: HTMLDivElement | null) => void
+}) => {
 	const theme = useMantineTheme()
 	const routes = useRoutesStore(state => state.routes)
 
 	return (
 		<Center
 			py="sm"
+			ref={r => {
+				setRef(r)
+			}}
+			pos="fixed"
+			top={0}
 			style={{
 				...glass,
-				...(invisible
-					? { visibility: 'hidden' }
-					: { position: 'fixed', top: 0, zIndex: 9999 }),
+				zIndex: 9999,
 			}}
 			w="100%"
 		>

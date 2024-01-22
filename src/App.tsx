@@ -8,10 +8,11 @@ import {
 import { Outlet } from '@tanstack/react-router'
 import { Header, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 
 export const App = () => {
 	const theme = useMantineTheme()
+	const [ref, setRef] = useState<HTMLDivElement | null>(null)
 
 	return (
 		<Stack
@@ -30,8 +31,13 @@ export const App = () => {
 					filter: 'blur(15px)',
 				}}
 			/>
-			<Header />
-			<Header invisible />
+			<Header setRef={setRef} />
+			<div
+				style={{
+					visibility: 'hidden',
+					height: ref?.offsetHeight || 0,
+				}}
+			/>
 			<Center
 				maw={theme.breakpoints.xl}
 				w="100%"
