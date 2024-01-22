@@ -1,7 +1,7 @@
 import { Grid, Tabs, useMantineTheme, Text, Image } from '@mantine/core'
 import { content } from '@/styles'
 import { useState } from 'react'
-import classes from '@/component/Header.module.css'
+import classes from '@/component/NavLink.module.css'
 import placeholder from '@/assets/placeholder.svg'
 
 const horizontalTabs = [

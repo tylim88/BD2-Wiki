@@ -1,31 +1,34 @@
-import {
-	Center,
-	Grid,
-	Text,
-	Flex,
-	Image,
-	NavLink,
-	TextInput,
-	ActionIcon,
-} from '@mantine/core'
+import { Center, Grid, Flex, Image, TextInput, ActionIcon } from '@mantine/core'
 import { useMantineTheme } from '@mantine/core'
-import { Link, useMatchRoute } from '@tanstack/react-router'
+import { Link } from '@tanstack/react-router'
 import brand from '@/assets/brand.svg'
 import { IconSearch, IconBrandGithubFilled } from '@tabler/icons-react'
-import { routes } from '@/routes'
-import classes from './Header.module.css'
+import { NavLink } from './NavLink'
+import { useRoutesStore } from '@/stores'
 import { glass } from '@/styles'
+import {
+	homeRoute,
+	charRoute,
+	tierRoute,
+	bannersRoute,
+	eventsRoute,
+	packsRoute,
+	itemsRoute,
+} from '@/routes'
+
+const LinkStyle = {
+	textDecoration: 'none',
+}
 
 export const Header = ({ invisible }: { invisible?: boolean }) => {
 	const theme = useMantineTheme()
-	const matchRoute = useMatchRoute()
+	const routes = useRoutesStore(state => state.routes)
 
 	return (
 		<Center
 			py="sm"
 			style={{
 				...glass,
-
 				...(invisible
 					? { visibility: 'hidden' }
 					: { position: 'fixed', top: 0, zIndex: 9999 }),
@@ -40,33 +43,37 @@ export const Header = ({ invisible }: { invisible?: boolean }) => {
 				</Grid.Col>
 				<Grid.Col span="auto">
 					<Flex w="100%" align="center">
-						{routes.map(({ path, label }) => {
-							if (path === '/') return null
-							const isActive = matchRoute({ to: path })
-							return (
-								<NavLink
-									className={classes.header}
-									component={Link}
-									bg={isActive ? 'black' : 'transparent'}
-									to={path}
-									key={path}
-									style={{
-										borderRadius: theme.radius.sm,
-									}}
-									active={isActive}
-									label={
-										<Text
-											ta="center"
-											fz="xl"
-											mr="xs"
-											c={isActive ? 'white' : 'dark'}
-										>
-											{label}
-										</Text>
-									}
-								/>
-							)
-						})}
+						<Link to={homeRoute.fullPath} style={LinkStyle}>
+							<NavLink path={homeRoute.fullPath} label="Home" />
+						</Link>
+						<Link
+							from={charRoute.fullPath}
+							search={prev => {
+								return {
+									...prev,
+									costume: routes[charRoute.fullPath].costume,
+									name: routes[charRoute.fullPath].name,
+								}
+							}}
+							style={LinkStyle}
+						>
+							<NavLink path={charRoute.fullPath} label="Characters" />
+						</Link>
+						<Link to={tierRoute.fullPath} style={LinkStyle}>
+							<NavLink path={tierRoute.fullPath} label="Tier List" />
+						</Link>
+						<Link to={bannersRoute.fullPath} style={LinkStyle}>
+							<NavLink path={bannersRoute.fullPath} label="Banners" />
+						</Link>
+						<Link to={eventsRoute.fullPath} style={LinkStyle}>
+							<NavLink path={eventsRoute.fullPath} label="Events" />
+						</Link>
+						<Link to={packsRoute.fullPath} style={LinkStyle}>
+							<NavLink path={packsRoute.fullPath} label="Packs" />
+						</Link>
+						<Link to={itemsRoute.fullPath} style={LinkStyle}>
+							<NavLink path={itemsRoute.fullPath} label="Packs" />
+						</Link>
 					</Flex>
 				</Grid.Col>
 				<Grid.Col span="content">
