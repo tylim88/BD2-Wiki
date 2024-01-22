@@ -1,8 +1,9 @@
 import { Grid, Tabs, useMantineTheme, Text, Image } from '@mantine/core'
 import { content } from '@/styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classes from '@/component/NavLink.module.css'
 import placeholder from '@/assets/placeholder.svg'
+import { charRoute } from '@/routes'
 
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
@@ -22,6 +23,15 @@ export const Characters = () => {
 	const [activeVertical, setActiveVertical] = useState<null | string>(
 		verticalTabs[0]
 	)
+	const { costume, name } = charRoute.useSearch()
+
+	useEffect(() => {
+		import(`../../characters/${name}.json`)
+			.then(data => {})
+			.catch(e => {
+				console.error({ e }, 'import character')
+			})
+	}, [name])
 
 	return (
 		<Grid
@@ -53,7 +63,7 @@ export const Characters = () => {
 						{verticalTabs.map(value => {
 							return (
 								<Tabs.Tab
-									className={classes.header}
+									className={classes.navlink}
 									value={value}
 									fz="lg"
 									key={value}
@@ -98,7 +108,7 @@ export const Characters = () => {
 						{horizontalTabs.map(({ value, color }) => {
 							return (
 								<Tabs.Tab
-									className={classes.header}
+									className={classes.navlink}
 									value={value}
 									color={color}
 									fz="lg"
