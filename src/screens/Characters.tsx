@@ -2,6 +2,7 @@ import { Grid, Tabs, useMantineTheme, Text, Image } from '@mantine/core'
 import { content } from '@/styles'
 import { useState } from 'react'
 import classes from '@/component/Header.module.css'
+import placeholder from '@/assets/placeholder.svg'
 
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
@@ -33,11 +34,9 @@ export const Characters = () => {
 			<Grid.Col span={6} mb="xl" pos="relative">
 				<Image
 					src="https://source.unsplash.com/user/c_v_r/720x1080"
-					alt="Panda"
 					h="80vh"
-					style={{
-						objectFit: 'contain',
-					}}
+					fit="contain"
+					fallbackSrc={placeholder}
 				/>
 			</Grid.Col>
 			<Grid.Col span={1} mb="xl">
