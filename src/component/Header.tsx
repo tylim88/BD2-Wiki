@@ -1,6 +1,6 @@
 import { Center, Grid, Flex, Image, TextInput, ActionIcon } from '@mantine/core'
 import { useMantineTheme } from '@mantine/core'
-import { Link } from '@tanstack/react-router'
+import { Link } from './Link'
 import brand from '@/assets/brand.svg'
 import { IconSearch, IconBrandGithubFilled } from '@tabler/icons-react'
 import { NavLink } from './NavLink'
@@ -15,10 +15,6 @@ import {
 	packsRoute,
 	itemsRoute,
 } from '@/routes'
-
-const LinkStyle = {
-	textDecoration: 'none',
-}
 
 export const Header = ({
 	setRef,
@@ -45,12 +41,12 @@ export const Header = ({
 			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
-						<Image src={brand} h="2rem" />
+						<Image src={brand} h="2em" />
 					</Link>
 				</Grid.Col>
 				<Grid.Col span="auto">
 					<Flex w="100%" align="center">
-						<Link to={homeRoute.fullPath} style={LinkStyle}>
+						<Link to={homeRoute.fullPath}>
 							<NavLink path={homeRoute.fullPath} label="Home" />
 						</Link>
 						<Link
@@ -62,23 +58,22 @@ export const Header = ({
 									name: routes[charRoute.fullPath].name,
 								}
 							}}
-							style={LinkStyle}
 						>
 							<NavLink path={charRoute.fullPath} label="Characters" />
 						</Link>
-						<Link to={tierRoute.fullPath} style={LinkStyle}>
+						<Link to={tierRoute.fullPath}>
 							<NavLink path={tierRoute.fullPath} label="Tier List" />
 						</Link>
-						<Link to={bannersRoute.fullPath} style={LinkStyle}>
+						<Link to={bannersRoute.fullPath}>
 							<NavLink path={bannersRoute.fullPath} label="Banners" />
 						</Link>
-						<Link to={eventsRoute.fullPath} style={LinkStyle}>
+						<Link to={eventsRoute.fullPath}>
 							<NavLink path={eventsRoute.fullPath} label="Events" />
 						</Link>
-						<Link to={packsRoute.fullPath} style={LinkStyle}>
+						<Link to={packsRoute.fullPath}>
 							<NavLink path={packsRoute.fullPath} label="Packs" />
 						</Link>
-						<Link to={itemsRoute.fullPath} style={LinkStyle}>
+						<Link to={itemsRoute.fullPath}>
 							<NavLink path={itemsRoute.fullPath} label="Packs" />
 						</Link>
 					</Flex>
