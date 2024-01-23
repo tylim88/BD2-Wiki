@@ -7,7 +7,6 @@ import { NavLink } from './NavLink'
 import { useRoutesStore } from '@/stores'
 import { glass } from '@/styles'
 import {
-	homeRoute,
 	charRoute,
 	tierRoute,
 	bannersRoute,
@@ -46,9 +45,6 @@ export const Header = ({
 				</Grid.Col>
 				<Grid.Col span="auto">
 					<Flex w="100%" align="center">
-						<Link to={homeRoute.fullPath}>
-							<NavLink path={homeRoute.fullPath} label="Home" />
-						</Link>
 						<Link
 							from={charRoute.fullPath}
 							search={prev => {
