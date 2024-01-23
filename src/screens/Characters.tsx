@@ -1,9 +1,12 @@
-import { Grid, Tabs, useMantineTheme, Text, Image } from '@mantine/core'
+import { Grid, Tabs, useMantineTheme, Text, Image, Flex } from '@mantine/core'
 import { content } from '@/styles'
 import { useEffect, useState } from 'react'
 import classes from '@/component/NavLink.module.css'
 import placeholder from '@/assets/placeholder.svg'
 import { charRoute } from '@/routes'
+import { type Characters as Characters_ } from '@/validation'
+import book from '%/icons/costumes/book.png'
+import { Star } from '@mui/icons-material'
 
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
@@ -13,25 +16,57 @@ const horizontalTabs = [
 	{ value: 'ability', color: 'cyan' },
 ] as const
 
-const verticalTabs = ['1', '2', '3', '4', '5'] as const
-
 export const Characters = () => {
+	const { costume, name } = charRoute.useSearch()
 	const theme = useMantineTheme()
 	const [activeHorizontal, setActiveHorizontal] = useState<null | string>(
 		horizontalTabs[0]['value']
 	)
-	const [activeVertical, setActiveVertical] = useState<null | string>(
-		verticalTabs[0]
+	const [activeVertical, setActiveVertical] = useState<string | null>(
+		`${costume}`
 	)
-	const { costume, name } = charRoute.useSearch()
+	const [data, setData] = useState<Characters_ | null>(null)
+	const [costumeIcons, setCostumeIcons] = useState<Record<string, string>>({})
 
 	useEffect(() => {
 		import(`../../characters/${name}.json`)
-			.then(data => {})
+			.then(data => {
+				setData(data as Characters_)
+			})
 			.catch(e => {
 				console.error({ e }, 'import character')
 			})
 	}, [name])
+
+	useEffect(() => {
+		if (data) {
+			Promise.allSettled(
+				data.costumes.map(async ({ name }) => {
+					return {
+						url: (
+							await import(
+								`../../icons/costumes/${data.name.toLowerCase()}/${name.replace(/ /g, '_').toLowerCase()}.png`
+							)
+						).default as string,
+						name,
+					}
+				})
+			)
+				.then(result => {
+					setCostumeIcons(
+						result.reduce<Record<string, string>>((acc, res) => {
+							if (res.status === 'fulfilled') {
+								acc[res.value.name] = res.value.url
+							}
+							return acc
+						}, {})
+					)
+				})
+				.catch(e => {
+					console.error({ e })
+				})
+		}
+	}, [data])
 
 	return (
 		<Grid
@@ -60,26 +95,29 @@ export const Characters = () => {
 					}}
 				>
 					<Tabs.List grow>
-						{verticalTabs.map(value => {
+						{(data?.costumes || []).map(({ name }, index) => {
+							const value = `${index}`
 							return (
 								<Tabs.Tab
 									className={classes.navlink}
 									value={value}
 									fz="lg"
+									h="6em"
+									w="6em"
 									key={value}
 									style={{
 										...(activeVertical === value
 											? {
-													backgroundColor: 'rgba(59,91,219, 0.5)',
+													background: 'transparent',
+													backgroundSize: 'cover',
+													backgroundRepeat: 'no-repeat',
+													backgroundPosition: 'center center',
+													backgroundImage: `url(${book})`,
 												}
 											: {}),
 									}}
 								>
-									<Image
-										radius="xl"
-										h="48px"
-										src="https://source.unsplash.com/user/c_v_r/100x100"
-									/>
+									<Image p="xs" src={costumeIcons[name]} pos="static" />
 								</Tabs.Tab>
 							)
 						})}
@@ -90,8 +128,8 @@ export const Characters = () => {
 				span={'auto'}
 				style={{
 					...content,
+					borderRadius: theme.radius.sm,
 					flexDirection: 'column',
-					gap: theme.spacing.lg,
 					position: 'relative',
 				}}
 				h="fit-content"
@@ -100,10 +138,18 @@ export const Characters = () => {
 				p="md"
 				mb="xl"
 			>
-				<Text ta="start" size="2rem">
-					Justia
-				</Text>
-				<Tabs value={activeHorizontal} onChange={setActiveHorizontal}>
+				<Flex>
+					{Array.from({ length: data?.rarity || 0 }).map((_, index) => {
+						return <Star key={index} />
+					})}
+				</Flex>
+				<Flex gap="sm">
+					<Text size="2em">{data?.name}:</Text>
+					<Text size="2em" fs="italic">
+						{data?.costumes[parseInt(activeVertical || '-1')]?.name}
+					</Text>
+				</Flex>
+				<Tabs mt="lg" value={activeHorizontal} onChange={setActiveHorizontal}>
 					<Tabs.List grow>
 						{horizontalTabs.map(({ value, color }) => {
 							return (
