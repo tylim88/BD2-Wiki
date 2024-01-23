@@ -37,7 +37,7 @@
 	"homepage": "https://github.com/tylim88/BD2-Wiki#readme",
 	"lint-staged": {
 		"!(package-lock)*.{js,jsx,ts,tsx,md,json,yml}": [
-			"eslint --fix",
+			"eslint --fix --config .eslintrc.cjs",
 			"prettier --write"
 		]
 	},

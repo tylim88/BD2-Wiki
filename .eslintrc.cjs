@@ -65,7 +65,7 @@ module.exports = {
 				argsIgnorePattern: '^_',
 			},
 		],
-		'json/*': ['error', 'allowComments'],
+		'json/*': ['error', { allowComments: true, 'trailing-comma': false }],
 		'@typescript-eslint/no-misused-promises': [
 			'error',
 			{
