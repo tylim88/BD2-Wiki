@@ -6,6 +6,7 @@ import mkcert from 'vite-plugin-mkcert'
 import removeConsole from 'vite-plugin-remove-console'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import tsconfigPaths from 'vite-tsconfig-paths'
+import dynamicImport from 'vite-plugin-dynamic-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
 		emptyOutDir: false,
 	},
 	plugins: [
+		dynamicImport(),
 		tsconfigPaths(),
 		qrcode(),
 		react(),
