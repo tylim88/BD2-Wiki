@@ -9,7 +9,7 @@
 		"un": "rm -rf node_modules && rm -rf package-lock.json",
 		"setup": " npm run un && npm i && npx husky install",
 		"pretty": "prettier --write .",
-		"lint": "eslint . --ext .ts,.tsx --fix",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx,.md,.json,.yml --fix",
 		"tcm": "tcm src",
 		"building-block-scripts": "=============building-blocks===================",
 		"tsc": "tsc",

@@ -17,10 +17,9 @@
 		"baseUrl": "",
 		"paths": {
 			"@/*": ["src/*"],
-			"%/*": ["functions/src/*"],
-			"use-sound": ["./generated-types/"],
+			"%/*": ["*"],
 		},
 	},
 	"references": [{ "path": "./tsconfig.node.json" }],
-	"include": ["src", "./sw.ts"],
+	"include": ["src", "./sw.ts", "icons", "characters"],
 }
