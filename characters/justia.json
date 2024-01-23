@@ -3,6 +3,7 @@
 	"version": 1,
 	"property": "light",
 	"rarity": 5,
+	"dmg_type": "physical",
 	"ability": {
 		"name": "Chef of the Battlefield",
 		"titles": [
@@ -49,9 +50,8 @@
 				],
 				"description": "Deal <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
 				"variables": { "x": [275, 350, 420, 420, 490, 555] },
-				"cost": 3,
-				"cost_reduction_at": 3,
-				"cool_down": 5
+				"cost": [3, 3, 3, 2, 2, 2],
+				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
 				"description": "My mission is to destroy evil. That is the only reason why I have come here.",
@@ -102,9 +102,8 @@
 				],
 				"description": "Attack 3 times, each attacks deals <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
 				"variables": { "x": [75, 105, 130, 130, 155, 175] },
-				"cost": 4,
-				"cost_reduction_at": 3,
-				"cool_down": 5
+				"cost": [4, 4, 4, 3, 3, 3],
+				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
 				"description": "Until the day that evil is purged from the world, let's castigate the warlock together.",
@@ -168,9 +167,8 @@
 					"y": [2, 2, 2, 2, 4, 4],
 					"z": [50, 50, 68, 68, 68, 85]
 				},
-				"cost": 4,
-				"cost_reduction_at": 3,
-				"cool_down": 5
+				"cost": [4, 4, 4, 3, 3, 3],
+				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
 				"description": "Blood... Fresh Blood... If it were you... Would you able to quench this thirst...?",
@@ -232,9 +230,8 @@
 				"variables": {
 					"x": [90, 120, 150, 150, 175, 200]
 				},
-				"costs": 4,
-				"cost_reduction_at": 3,
-				"cool_down": 5
+				"cost": [4, 4, 4, 3, 3, 3],
+				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
 				"description": "Until I gather all of the recipes in this world, I can't go back... No, forget what I just said.",
@@ -297,9 +294,8 @@
 					"x": [100, 120, 139, 139, 157, 175],
 					"y": [100, 114, 127, 127, 139, 150]
 				},
-				"costs": 2,
-				"cost_reduction_at": 3,
-				"cool_down": 7
+				"costs": [2, 2, 2, 1, 1, 1],
+				"cool_down": [7, 7, 7, 7, 7, 7]
 			},
 			"profile": {
 				"description": "The best dishes for the best party. If I can taste dished like this everytime, then maybe parties are not that bad.",

@@ -1,9 +1,24 @@
 import { array, number, string, object, literal, union, record, z } from 'zod'
 import { date, monthAndDay, positiveInteger } from './utils'
 
+const ability = (num: 4 | 5) =>
+	object({
+		name: string(),
+		description: string(),
+		titles: array(string()).length(num),
+		costs: array(positiveInteger).length(num),
+		variables: record(string(), positiveInteger).keySchema.length(num),
+	})
+
+const range = (num: 3 | 5) =>
+	array(array(union([literal(1), literal(2), literal(0)])).length(num)).length(
+		num
+	)
+
 export const characters = object({
 	name: string(),
 	version: positiveInteger,
+	dmg_type: union([literal('physical'), literal('magic')]),
 	property: union([
 		literal('light'),
 		literal('dark'),
@@ -11,14 +26,8 @@ export const characters = object({
 		literal('wind'),
 		literal('fire'),
 	]),
-	rarity: number().int().min(1).max(0),
-	ability: object({
-		name: string(),
-		titles: array(string()),
-		costs: array(positiveInteger),
-		description: string(),
-		variables: record(string(), positiveInteger),
-	}),
+	rarity: number().int().min(3).max(5),
+	ability: union([ability(4), ability(5)]),
 	attributes: object({
 		initial_combat_power: positiveInteger,
 		crit_rate: positiveInteger,
@@ -49,26 +58,25 @@ export const characters = object({
 			skill: object({
 				name: string(),
 				targets: union([literal('me'), literal('very front'), literal('skip')]),
-				range: array(array(union([literal(1), literal(2), literal(0)]))),
+				range: union([range(3), range(5)]),
 				description: string(),
 				variables: record(string(), positiveInteger),
-				cost: positiveInteger,
-				cost_reduction_at: positiveInteger,
-				cool_down: positiveInteger,
+				cost: array(positiveInteger).length(6),
+				cool_down: array(positiveInteger).length(6),
 			}),
 			profile: object({
 				description: string(),
 				age: union([positiveInteger, string()]),
-				height: positiveInteger,
+				height: positiveInteger.max(200).min(100),
 				birthday: monthAndDay,
 				affiliation: string(),
 				hobby: string(),
 				like: string(),
 				dislike: string(),
 				cherish: string(),
-				rumors: array(string()),
+				rumors: array(string()).length(2),
 			}),
-			lines: array(string()),
+			lines: array(string()).length(10),
 			audio: array(
 				object({
 					voice_actor: string(),
