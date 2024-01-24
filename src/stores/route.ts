@@ -21,7 +21,7 @@ export const useRoutesStore = persistent<{
 		route: T
 		params: (typeof initialRoutes)[T]
 	}) => void
-}>({ name: 'routes', keysToPersist: [] }, set => {
+}>({ name: 'routes', keysToPersist: ['routes'] }, set => {
 	return {
 		...initialState,
 		reset: () => {

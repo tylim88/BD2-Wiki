@@ -7,6 +7,8 @@ import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import book from '%/icons/costumes/book.png'
 import { Star } from '@mui/icons-material'
+import { useRoutesStore } from '@/stores'
+import { Link } from '@/component'
 
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
@@ -27,9 +29,10 @@ export const Characters = () => {
 	)
 	const [data, setData] = useState<Characters_ | null>(null)
 	const [costumeIcons, setCostumeIcons] = useState<Record<string, string>>({})
+	const storeParams = useRoutesStore(state => state.storeParams)
 
 	useEffect(() => {
-		import(`../../characters/${name}.json`)
+		import(`../../characters/${name.toLowerCase()}.json`)
 			.then(data => {
 				setData(data as Characters_)
 			})
@@ -98,27 +101,48 @@ export const Characters = () => {
 						{(data?.costumes || []).map(({ name }, index) => {
 							const value = `${index}`
 							return (
-								<Tabs.Tab
-									className={classes.navlink}
-									value={value}
-									fz="lg"
-									h="6em"
-									w="6em"
+								<Link
+									replace
 									key={value}
-									style={{
-										...(activeVertical === value
-											? {
-													background: 'transparent',
-													backgroundSize: 'cover',
-													backgroundRepeat: 'no-repeat',
-													backgroundPosition: 'center center',
-													backgroundImage: `url(${book})`,
-												}
-											: {}),
+									from={charRoute.fullPath}
+									search={prev => {
+										return {
+											...prev,
+											costume: index,
+										}
+									}}
+									onClick={() => {
+										data &&
+											storeParams({
+												route: '/chars',
+												params: {
+													costume: index,
+													name: data.name.toLowerCase(),
+												},
+											})
 									}}
 								>
-									<Image p="xs" src={costumeIcons[name]} pos="static" />
-								</Tabs.Tab>
+									<Tabs.Tab
+										className={classes.navlink}
+										value={value}
+										fz="lg"
+										h="6em"
+										w="6em"
+										style={{
+											...(activeVertical === value
+												? {
+														background: 'transparent',
+														backgroundSize: 'cover',
+														backgroundRepeat: 'no-repeat',
+														backgroundPosition: 'center center',
+														backgroundImage: `url(${book})`,
+													}
+												: {}),
+										}}
+									>
+										<Image p="xs" src={costumeIcons[name]} pos="static" />
+									</Tabs.Tab>
+								</Link>
 							)
 						})}
 					</Tabs.List>
