@@ -1,7 +1,7 @@
 export default {
 	name: 'Justia',
 	version: 1,
-	property: 'light',
+	element: 'light',
 	rarity: 5,
 	dmg_type: 'physical',
 	ability: {

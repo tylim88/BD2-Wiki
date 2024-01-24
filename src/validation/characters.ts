@@ -4,10 +4,10 @@ import { date, monthAndDay, positiveInteger } from './utils'
 const ability = (num: 4 | 5) =>
 	object({
 		name: string(),
-		description: string(),
 		titles: array(string()).length(num),
+		description: string(),
 		costs: array(positiveInteger).length(num),
-		variables: record(string(), positiveInteger).keySchema.length(num),
+		variables: record(string(), array(positiveInteger)).keySchema.length(num), // TODO write custom validation to match the number of variable keys with description and level
 	})
 
 const range = (num: 3 | 5) =>
@@ -19,7 +19,7 @@ export const characters = object({
 	name: string(),
 	version: positiveInteger,
 	dmg_type: union([literal('physical'), literal('magic')]),
-	property: union([
+	element: union([
 		literal('light'),
 		literal('dark'),
 		literal('water'),
@@ -60,7 +60,7 @@ export const characters = object({
 				targets: union([literal('me'), literal('very front'), literal('skip')]),
 				range: union([range(3), range(5)]),
 				description: string(),
-				variables: record(string(), positiveInteger),
+				variables: record(string(), array(positiveInteger)), // TODO write custom validation to match the number of variable keys with description
 				cost: array(positiveInteger).length(6),
 				cool_down: array(positiveInteger).length(6),
 			}),
