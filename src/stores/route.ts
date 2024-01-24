@@ -1,10 +1,15 @@
 import { persistent } from './utils'
-import { type AllRoutes } from '@/routes'
+import { type AllRoutes, charValidateSearch } from '@/routes'
+import { z } from 'zod'
 
 const initialRoutes = {
 	'/': {},
 	'/banners': {},
-	'/chars': { name: 'justia', costume: 0 },
+	'/chars': {
+		name: 'justia',
+		costume: 0,
+		tab: 'skill',
+	} as z.infer<typeof charValidateSearch>,
 	'/events': {},
 	'/items': {},
 	'/packs': {},

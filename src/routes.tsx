@@ -1,7 +1,7 @@
 import { Router, Route, RootRoute } from '@tanstack/react-router'
 import { App } from './App'
 import { Characters } from './screens'
-import { object, number, string } from 'zod'
+import { object, number, string, union, literal } from 'zod'
 
 const rootRoute = new RootRoute({
 	component: App,
@@ -15,13 +15,22 @@ export const homeRoute = new Route({
 	getParentRoute,
 })
 
+export const charValidateSearch = object({
+	name: string().catch('justia'),
+	costume: number().catch(0),
+	tab: union([
+		literal('skill'),
+		literal('profile'),
+		literal('lines'),
+		literal('attributes'),
+		literal('ability'),
+	]).catch('skill'),
+})
+
 export const charRoute = new Route({
 	path: `/chars`,
 	component: Characters,
-	validateSearch: object({
-		name: string().catch('justia'),
-		costume: number().catch(0),
-	}),
+	validateSearch: charValidateSearch,
 	getParentRoute,
 })
 export const tierRoute = new Route({

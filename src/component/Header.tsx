@@ -52,6 +52,7 @@ export const Header = ({
 									...prev,
 									costume: routes[charRoute.fullPath].costume,
 									name: routes[charRoute.fullPath].name,
+									tab: routes[charRoute.fullPath].tab,
 								}
 							}}
 						>

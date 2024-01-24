@@ -1,4 +1,12 @@
-import { Grid, Tabs, useMantineTheme, Text, Image, Flex } from '@mantine/core'
+import {
+	Grid,
+	Tabs,
+	useMantineTheme,
+	Text,
+	Image,
+	Flex,
+	Stack,
+} from '@mantine/core'
 import { content } from '@/styles'
 import { useEffect, useState } from 'react'
 import classes from '@/component/NavLink.module.css'
@@ -21,9 +29,12 @@ const horizontalTabs = [
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
 	const theme = useMantineTheme()
-	const [activeHorizontal, setActiveHorizontal] = useState<null | string>(
-		horizontalTabs[0]['value']
-	)
+	const [activeHorizontal, setActiveHorizontal] = useState<
+		| null
+		| (typeof horizontalTabs extends readonly [...(infer P)[]]
+				? P
+				: never)['value']
+	>(horizontalTabs[0]['value'])
 	const [activeVertical, setActiveVertical] = useState<string | null>(
 		`${costume}`
 	)
@@ -118,6 +129,7 @@ export const Characters = () => {
 												params: {
 													costume: index,
 													name: data.name.toLowerCase(),
+													tab: activeHorizontal || 'skill',
 												},
 											})
 									}}
@@ -173,7 +185,12 @@ export const Characters = () => {
 						{data?.costumes[parseInt(activeVertical || '-1')]?.name}
 					</Text>
 				</Flex>
-				<Tabs mt="lg" value={activeHorizontal} onChange={setActiveHorizontal}>
+				<Tabs
+					mt="lg"
+					value={activeHorizontal}
+					// @ts-expect-error ...
+					onChange={setActiveHorizontal}
+				>
 					<Tabs.List grow>
 						{horizontalTabs.map(({ value, color }) => {
 							return (
@@ -198,6 +215,13 @@ export const Characters = () => {
 							)
 						})}
 					</Tabs.List>
+					<Stack>
+						{activeHorizontal === 'skill' ? <></> : null}
+						{activeHorizontal === 'profile' ? <></> : null}
+						{activeHorizontal === 'lines' ? <></> : null}
+						{activeHorizontal === 'attributes' ? <></> : null}
+						{activeHorizontal === 'ability' ? <></> : null}
+					</Stack>
 				</Tabs>
 			</Grid.Col>
 		</Grid>
