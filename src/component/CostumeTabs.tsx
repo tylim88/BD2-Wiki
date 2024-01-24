@@ -7,17 +7,16 @@ import { useRoutesStore } from '@/stores'
 import { Link } from './Link'
 
 export const CostumeTabs = ({
-	defaultValue,
 	names,
 	icons,
 	onChange,
 }: {
-	defaultValue: string
 	names: string[]
 	icons: Record<string, string>
 	onChange?: (value: string) => void
 }) => {
-	const [activeTab, setActiveTab] = useState<string>(defaultValue)
+	const { costume } = charRoute.useSearch()
+	const [activeTab, setActiveTab] = useState<string>(costume)
 	const storeParams = useRoutesStore(state => state.storeParams)
 	return (
 		<Tabs
