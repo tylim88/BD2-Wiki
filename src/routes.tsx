@@ -1,7 +1,8 @@
 import { Router, Route, RootRoute } from '@tanstack/react-router'
 import { App } from './App'
 import { Characters } from './screens'
-import { object, number, string, union, literal } from 'zod'
+import { object, string, union, literal } from 'zod'
+import { defaultCharParams } from '@/constants'
 
 const rootRoute = new RootRoute({
 	component: App,
@@ -16,15 +17,15 @@ export const homeRoute = new Route({
 })
 
 export const charValidateSearch = object({
-	name: string().catch('justia'),
-	costume: number().catch(0),
+	name: string().catch(defaultCharParams.name),
+	costume: string().catch(defaultCharParams.costume),
 	tab: union([
-		literal('skill'),
+		literal(defaultCharParams.tab),
 		literal('profile'),
 		literal('lines'),
 		literal('attributes'),
 		literal('ability'),
-	]).catch('skill'),
+	]).catch(defaultCharParams.tab),
 })
 
 export const charRoute = new Route({

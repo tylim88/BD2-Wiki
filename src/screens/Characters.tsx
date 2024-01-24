@@ -17,6 +17,7 @@ import book from '%/icons/costumes/book.png'
 import { Star } from '@mui/icons-material'
 import { useRoutesStore } from '@/stores'
 import { Link } from '@/component'
+import { toLowerCaseAndReplaceSpace } from '@/utils'
 
 const horizontalTabs = [
 	{ value: 'skill', color: 'red' },
@@ -43,9 +44,9 @@ export const Characters = () => {
 	const storeParams = useRoutesStore(state => state.storeParams)
 
 	useEffect(() => {
-		import(`../../characters/${name.toLowerCase()}.json`)
+		import(`../../characters/${name.toLowerCase()}.ts`)
 			.then(data => {
-				setData(data as Characters_)
+				setData(data.default as Characters_)
 			})
 			.catch(e => {
 				console.error({ e }, 'import character')
@@ -59,7 +60,7 @@ export const Characters = () => {
 					return {
 						url: (
 							await import(
-								`../../icons/costumes/${data.name.toLowerCase()}/${name.replace(/ /g, '_').toLowerCase()}.png`
+								`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
 							)
 						).default as string,
 						name,
@@ -70,7 +71,7 @@ export const Characters = () => {
 					setCostumeIcons(
 						result.reduce<Record<string, string>>((acc, res) => {
 							if (res.status === 'fulfilled') {
-								acc[res.value.name] = res.value.url
+								acc[toLowerCaseAndReplaceSpace(res.value.name)] = res.value.url
 							}
 							return acc
 						}, {})
@@ -109,17 +110,17 @@ export const Characters = () => {
 					}}
 				>
 					<Tabs.List grow>
-						{(data?.costumes || []).map(({ name }, index) => {
-							const value = `${index}`
+						{(data?.costumes || []).map(({ name }) => {
+							const costume = toLowerCaseAndReplaceSpace(name)
 							return (
 								<Link
 									replace
-									key={value}
+									key={costume}
 									from={charRoute.fullPath}
 									search={prev => {
 										return {
 											...prev,
-											costume: index,
+											costume,
 										}
 									}}
 									onClick={() => {
@@ -127,8 +128,8 @@ export const Characters = () => {
 											storeParams({
 												route: '/chars',
 												params: {
-													costume: index,
-													name: data.name.toLowerCase(),
+													costume,
+													name: toLowerCaseAndReplaceSpace(data.name),
 													tab: activeHorizontal || 'skill',
 												},
 											})
@@ -136,12 +137,12 @@ export const Characters = () => {
 								>
 									<Tabs.Tab
 										className={classes.navlink}
-										value={value}
+										value={costume}
 										fz="lg"
 										h="6em"
 										w="6em"
 										style={{
-											...(activeVertical === value
+											...(activeVertical === costume
 												? {
 														background: 'transparent',
 														backgroundSize: 'cover',
@@ -152,7 +153,7 @@ export const Characters = () => {
 												: {}),
 										}}
 									>
-										<Image p="xs" src={costumeIcons[name]} pos="static" />
+										<Image p="xs" src={costumeIcons[costume]} pos="static" />
 									</Tabs.Tab>
 								</Link>
 							)
@@ -216,7 +217,7 @@ export const Characters = () => {
 						})}
 					</Tabs.List>
 					<Stack>
-						{activeHorizontal === 'skill' ? <></> : null}
+						{activeHorizontal === 'skill' ? <Text></Text> : null}
 						{activeHorizontal === 'profile' ? <></> : null}
 						{activeHorizontal === 'lines' ? <></> : null}
 						{activeHorizontal === 'attributes' ? <></> : null}
