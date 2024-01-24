@@ -7,6 +7,7 @@ import { router } from './routes'
 import { isProduction } from './config'
 import './main.css'
 import '@mantine/core/styles.css'
+import { theme } from './theme'
 
 // if ('serviceWorker' in navigator) {
 // 	navigator.serviceWorker.register('./sw.js').catch(error => {
@@ -25,13 +26,7 @@ import '@mantine/core/styles.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<HelmetProvider>
-			<MantineProvider
-				theme={{
-					fontFamily: 'Lato, Verdana, sans-serif',
-					fontFamilyMonospace: 'Monaco, Courier, monospace',
-					headings: { fontFamily: 'Lato, Greycliff CF, sans-serif' },
-				}}
-			>
+			<MantineProvider theme={theme}>
 				<RouterProvider router={router} />
 			</MantineProvider>
 		</HelmetProvider>

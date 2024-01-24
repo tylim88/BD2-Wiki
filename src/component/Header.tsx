@@ -1,5 +1,4 @@
 import { Center, Grid, Flex, Image, TextInput, ActionIcon } from '@mantine/core'
-import { useMantineTheme } from '@mantine/core'
 import { Link } from './Link'
 import brand from '@/assets/brand.svg'
 import { IconSearch, IconBrandGithubFilled } from '@tabler/icons-react'
@@ -14,13 +13,13 @@ import {
 	packsRoute,
 	itemsRoute,
 } from '@/routes'
+import { theme } from '@/theme'
 
 export const Header = ({
 	setRef,
 }: {
 	setRef: (r: HTMLDivElement | null) => void
 }) => {
-	const theme = useMantineTheme()
 	const routes = useRoutesStore(state => state.routes)
 
 	return (

@@ -1,17 +1,11 @@
-import {
-	Stack,
-	BackgroundImage,
-	Center,
-	useMantineTheme,
-	Loader,
-} from '@mantine/core'
+import { Stack, BackgroundImage, Center, Loader } from '@mantine/core'
 import { Outlet } from '@tanstack/react-router'
 import { Header, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
 import { Suspense, useState } from 'react'
+import { theme } from './theme'
 
 export const App = () => {
-	const theme = useMantineTheme()
 	const [ref, setRef] = useState<HTMLDivElement | null>(null)
 
 	return (

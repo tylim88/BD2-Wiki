@@ -5,4 +5,4 @@ export const defaultCharParams = {
 	name: toLowerCaseAndReplaceSpace(justia.name),
 	costume: toLowerCaseAndReplaceSpace(justia.costumes[0].name),
 	tab: 'skill',
-}
+} as const

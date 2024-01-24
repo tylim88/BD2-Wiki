@@ -1,10 +1,9 @@
 import { Text, NavLink as NavLink_ } from '@mantine/core'
-import { useMantineTheme } from '@mantine/core'
 import { useMatchRoute } from '@tanstack/react-router'
 import classes from './NavLink.module.css'
+import { theme } from '@/theme'
 
 export const NavLink = ({ path, label }: { path: string; label: string }) => {
-	const theme = useMantineTheme()
 	const matchRoute = useMatchRoute()
 	const isActive = matchRoute({ to: path })
 	return (
