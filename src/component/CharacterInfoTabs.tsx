@@ -14,21 +14,23 @@ const tabs = [
 ] as const
 
 export const CharacterInfoTabs = ({
-	skillNode,
-	profileNode,
-	linesNode,
-	attributesNode,
-	abilityNode,
+	skill,
+	profile,
+	lines,
+	attributes,
+	ability,
 }: {
-	skillNode: React.ReactNode
-	profileNode: React.ReactNode
-	linesNode: React.ReactNode
-	attributesNode: React.ReactNode
-	abilityNode: React.ReactNode
+	skill: React.ReactNode
+	profile: React.ReactNode
+	lines: React.ReactNode
+	attributes: React.ReactNode
+	ability: React.ReactNode
 }) => {
-	const [activeTab, setActiveTab] = useState<
-		(typeof tabs extends readonly [...(infer P)[]] ? P : never)['label']
-	>(tabs[0]['label'])
+	const { tab } = charRoute.useSearch()
+	const [activeTab, setActiveTab] =
+		useState<
+			(typeof tabs extends readonly [...(infer P)[]] ? P : never)['label']
+		>(tab)
 
 	const storeParams = useRoutesStore(state => state.storeParams)
 
@@ -50,6 +52,9 @@ export const CharacterInfoTabs = ({
 									...prev,
 									tab: label,
 								}
+							}}
+							style={{
+								color: 'black',
 							}}
 							onClick={() => {
 								storeParams({
@@ -90,12 +95,12 @@ export const CharacterInfoTabs = ({
 					)
 				})}
 			</Tabs.List>
-			<Stack>
-				{activeTab === 'skill' ? skillNode : null}
-				{activeTab === 'profile' ? profileNode : null}
-				{activeTab === 'lines' ? linesNode : null}
-				{activeTab === 'attributes' ? attributesNode : null}
-				{activeTab === 'ability' ? abilityNode : null}
+			<Stack p="xl" align="center" gap="xl">
+				{activeTab === 'skill' ? skill : null}
+				{activeTab === 'profile' ? profile : null}
+				{activeTab === 'lines' ? lines : null}
+				{activeTab === 'attributes' ? attributes : null}
+				{activeTab === 'ability' ? ability : null}
 			</Stack>
 		</Tabs>
 	)
