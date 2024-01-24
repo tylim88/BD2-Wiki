@@ -12,3 +12,4 @@ techs:
 3. Tan Stack Router
 4. Vite
 5. Zustand
+6. Zod (for CI and typing only)
