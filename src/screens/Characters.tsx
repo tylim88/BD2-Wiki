@@ -1,67 +1,60 @@
-import {
-	Grid,
-	useMantineTheme,
-	Text,
-	Image,
-	Flex,
-	Center,
-	Loader,
-} from '@mantine/core'
+import { Grid, Text, Image, Flex, Center, Loader, Badge } from '@mantine/core'
 import { content } from '@/styles'
 import { useEffect, useState } from 'react'
 import placeholder from '@/assets/placeholder.svg'
 import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
-import { CostumeTabs, CharacterInfoTabs } from '@/component'
+import { CostumeTabs, CharacterInfoTabs, SkillTab } from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
+import { theme } from '@/theme'
 
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
-	const theme = useMantineTheme()
 	const [activeCostume, setActiveCostume] = useState<string>(`${costume}`)
 	const [data, setData] = useState<Characters_ | null>(null)
 	const [costumeIcons, setCostumeIcons] = useState<Record<string, string>>({})
+	const [elementURL, setElementURL] = useState<string | null>(null)
 
 	useEffect(() => {
 		import(`../../characters/${name.toLowerCase()}.ts`)
-			.then(data => {
-				setData(data.default as Characters_)
+			.then(data_ => {
+				const data = data_.default as Characters_
+				setData(data)
+				import(`../../icons/elements/${data.element}.png`)
+					.then(module => {
+						setElementURL(module.default as string)
+					})
+					.catch(e => {
+						console.error({ e }, 'import element')
+					})
+				return Promise.allSettled(
+					data.costumes.map(async ({ name }) => {
+						return {
+							url: (
+								await import(
+									`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
+								)
+							).default as string,
+							name,
+						}
+					})
+				)
+			})
+			.then(result => {
+				setCostumeIcons(
+					result.reduce<Record<string, string>>((acc, res) => {
+						if (res.status === 'fulfilled') {
+							acc[toLowerCaseAndReplaceSpace(res.value.name)] = res.value.url
+						}
+						return acc
+					}, {})
+				)
 			})
 			.catch(e => {
 				console.error({ e }, 'import character')
 			})
 	}, [name])
-
-	useEffect(() => {
-		if (data) {
-			Promise.allSettled(
-				data.costumes.map(async ({ name }) => {
-					return {
-						url: (
-							await import(
-								`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
-							)
-						).default as string,
-						name,
-					}
-				})
-			)
-				.then(result => {
-					setCostumeIcons(
-						result.reduce<Record<string, string>>((acc, res) => {
-							if (res.status === 'fulfilled') {
-								acc[toLowerCaseAndReplaceSpace(res.value.name)] = res.value.url
-							}
-							return acc
-						}, {})
-					)
-				})
-				.catch(e => {
-					console.error({ e })
-				})
-		}
-	}, [data])
 
 	const selectedCostume =
 		data?.costumes.find(
@@ -95,7 +88,6 @@ export const Characters = () => {
 			<Grid.Col span={1} mb="xl">
 				<CostumeTabs
 					onChange={setActiveCostume}
-					defaultValue={costume}
 					names={data.costumes.map(({ name }) =>
 						toLowerCaseAndReplaceSpace(name)
 					)}
@@ -111,28 +103,39 @@ export const Characters = () => {
 					position: 'relative',
 				}}
 				h="fit-content"
-				mih={theme.breakpoints.sm}
 				display="flex"
 				p="md"
 				mb="xl"
 			>
-				<Flex>
+				<Flex align="center">
 					{Array.from({ length: data.rarity }).map((_, index) => {
 						return <Star key={index} />
 					})}
+					<Badge
+						color={data.dmg_type === 'physical' ? 'red' : 'purple'}
+						ml="xs"
+					>
+						{data.dmg_type}
+					</Badge>
 				</Flex>
-				<Flex gap="sm">
+				<Flex align="center">
+					<Image src={elementURL} h={50} w="auto" fit="contain" />
 					<Text size="2em">{data.name}:</Text>
 					<Text size="2em" fs="italic">
 						{selectedCostume.name}
 					</Text>
 				</Flex>
 				<CharacterInfoTabs
-					skillNode={undefined}
-					abilityNode={undefined}
-					profileNode={undefined}
-					attributesNode={undefined}
-					linesNode={undefined}
+					skill={
+						<SkillTab
+							description={selectedCostume.skill.description}
+							variables={selectedCostume.skill.variables}
+						/>
+					}
+					ability={undefined}
+					profile={undefined}
+					attributes={undefined}
+					lines={undefined}
 				/>
 			</Grid.Col>
 		</Grid>
