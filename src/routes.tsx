@@ -3,39 +3,6 @@ import { App } from './App'
 import { Characters } from './screens'
 import { object, number, string } from 'zod'
 
-export const routes = [
-	{ path: '/', label: 'Home', component: () => null, validateSearch: {} },
-	{
-		path: `/chars`,
-		label: 'Characters',
-		component: Characters,
-		validateSearch: object({
-			name: string().catch('justia'),
-			costume: number().catch(0),
-		}),
-	},
-	{
-		path: '/tier',
-		label: 'Tier List',
-		component: () => null,
-		validateSearch: {},
-	},
-	{
-		path: '/banners',
-		label: 'Banners',
-		component: () => null,
-		validateSearch: {},
-	},
-	{
-		path: '/events',
-		label: 'Events',
-		component: () => null,
-		validateSearch: {},
-	},
-	{ path: '/packs', label: 'Packs', component: () => null, validateSearch: {} },
-	{ path: '/items', label: 'Items', component: () => null, validateSearch: {} },
-] as const
-
 const rootRoute = new RootRoute({
 	component: App,
 })
@@ -43,36 +10,46 @@ const rootRoute = new RootRoute({
 const getParentRoute = () => rootRoute
 
 export const homeRoute = new Route({
-	...routes['0'],
+	path: '/',
+	component: () => null,
 	getParentRoute,
 })
 
 export const charRoute = new Route({
-	...routes['1'],
+	path: `/chars`,
+	component: Characters,
+	validateSearch: object({
+		name: string().catch('justia'),
+		costume: number().catch(0),
+	}),
 	getParentRoute,
 })
 export const tierRoute = new Route({
-	...routes['2'],
+	path: '/tier',
+	component: () => null,
 	getParentRoute,
 })
 
 export const bannersRoute = new Route({
-	...routes['3'],
+	path: '/banners',
+	component: () => null,
 	getParentRoute,
 })
 
 export const eventsRoute = new Route({
-	...routes['4'],
+	path: '/events',
+	component: () => null,
 	getParentRoute,
 })
 
 export const packsRoute = new Route({
-	...routes['5'],
+	path: '/packs',
+	component: () => null,
 	getParentRoute,
 })
 
 export const itemsRoute = new Route({
-	...routes['6'],
+	path: '/items',
 	getParentRoute,
 })
 
