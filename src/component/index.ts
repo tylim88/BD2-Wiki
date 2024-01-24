@@ -1,3 +1,5 @@
 export * from './Header'
 export * from './TanStackRouterDevtools'
 export * from './Link'
+export * from './CostumeTabs'
+export * from './CharacterInfoTabs'

@@ -25,7 +25,7 @@ export const useRoutesStore = persistent<{
 	routes: typeof initialRoutes
 	storeParams: <T extends AllRoutes['path']>(props: {
 		route: T
-		params: (typeof initialRoutes)[T]
+		params: Partial<(typeof initialRoutes)[T]>
 	}) => void
 }>({ name: 'routes', keysToPersist: ['routes'] }, set => {
 	return {
@@ -35,7 +35,7 @@ export const useRoutesStore = persistent<{
 		},
 		storeParams: ({ route, params }) => {
 			set(state => {
-				state.routes[route] = params
+				state.routes[route] = { ...state.routes[route], ...params }
 			})
 		},
 	}
