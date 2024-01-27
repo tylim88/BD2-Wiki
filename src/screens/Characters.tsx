@@ -10,10 +10,8 @@ import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
 
 export const Characters = () => {
-	const { costume, name } = charRoute.useSearch()
-	const [activeCostume, setActiveCostume] = useState<string>(`${costume}`)
+	const { costume: activeCostume, name } = charRoute.useSearch()
 	const [data, setData] = useState<Characters_ | null>(null)
-	const [costumeIcons, setCostumeIcons] = useState<Record<string, string>>({})
 	const [elementURL, setElementURL] = useState<string | null>(null)
 
 	useEffect(() => {
@@ -28,28 +26,6 @@ export const Characters = () => {
 					.catch(e => {
 						console.error({ e }, 'import element')
 					})
-				return Promise.allSettled(
-					data.costumes.map(async ({ name }) => {
-						return {
-							url: (
-								await import(
-									`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
-								)
-							).default as string,
-							name,
-						}
-					})
-				)
-			})
-			.then(result => {
-				setCostumeIcons(
-					result.reduce<Record<string, string>>((acc, res) => {
-						if (res.status === 'fulfilled') {
-							acc[toLowerCaseAndReplaceSpace(res.value.name)] = res.value.url
-						}
-						return acc
-					}, {})
-				)
 			})
 			.catch(e => {
 				console.error({ e }, 'import character')
@@ -61,7 +37,7 @@ export const Characters = () => {
 			costume => toLowerCaseAndReplaceSpace(costume.name) === activeCostume
 		) || data?.costumes[0]
 
-	if (!data || !activeCostume || !selectedCostume) {
+	if (!data || !selectedCostume) {
 		return (
 			<Center h="100%" w="100%">
 				<Loader color="red" />
@@ -86,13 +62,7 @@ export const Characters = () => {
 				/>
 			</Grid.Col>
 			<Grid.Col span={1} mb="xl">
-				<CostumeTabs
-					onChange={setActiveCostume}
-					names={data.costumes.map(({ name }) =>
-						toLowerCaseAndReplaceSpace(name)
-					)}
-					icons={costumeIcons}
-				/>
+				<CostumeTabs data={data} />
 			</Grid.Col>
 			<Grid.Col
 				span={'auto'}
@@ -119,22 +89,14 @@ export const Characters = () => {
 					</Badge>
 				</Flex>
 				<Flex align="center">
-					<Image src={elementURL} h={50} w="auto" fit="contain" />
+					<Image src={elementURL} h="3.5em" w="auto" fit="contain" />
 					<Text size="2em">{data.name}:</Text>
 					<Text size="2em" fs="italic">
 						{selectedCostume.name}
 					</Text>
 				</Flex>
 				<CharacterInfoTabs
-					skill={
-						<SkillTab
-							element={data.element}
-							range={selectedCostume.skill.range}
-							target={selectedCostume.skill.target}
-							description={selectedCostume.skill.description}
-							variables={selectedCostume.skill.variables}
-						/>
-					}
+					skill={<SkillTab data={data} selectedCostume={selectedCostume} />}
 					ability={undefined}
 					profile={undefined}
 					attributes={undefined}

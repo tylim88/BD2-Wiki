@@ -95,7 +95,7 @@ export const CharacterInfoTabs = ({
 					)
 				})}
 			</Tabs.List>
-			<Stack p="xl" align="center" gap="xl">
+			<Stack p="xs" pb="xl" align="center" gap="xl">
 				{activeTab === 'skill' ? skill : null}
 				{activeTab === 'profile' ? profile : null}
 				{activeTab === 'lines' ? lines : null}

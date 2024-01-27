@@ -1,5 +1,5 @@
-import { Text, Slider, Flex, Box, Center } from '@mantine/core'
-import { useState } from 'react'
+import { Text, Slider, Flex, Box, Center, Image } from '@mantine/core'
+import { useState, useEffect } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
 
@@ -19,6 +19,13 @@ const replaceComputedPlaceholders = (inputString: string) => {
 	})
 }
 
+const removeSpecialCharAndReplaceSpace = (inputString: string) => {
+	return inputString
+		.replace(/[^\w\s]/gi, '')
+		.replace(/\s+/g, '_')
+		.toLowerCase()
+}
+
 const rangeColors = {
 	light: { 1: '#A69038', 2: '#E0BF4C' },
 	dark: { 1: '#7E4CBB', 2: '#BE7EFF' },
@@ -26,37 +33,49 @@ const rangeColors = {
 	water: { 1: '#007ACC', 2: '#41BFFF' },
 	wind: { 1: '#009966', 2: '#28D58E' },
 } as const
+const boxSize = 6
 
 export const SkillTab = ({
-	description,
-	variables,
-	range,
-	target,
-	element,
+	data,
+	selectedCostume,
 }: {
-	range: (0 | 1 | 2)[][]
-	description: string
-	variables: Record<string, number[]>
-	target: Characters['costumes'][number]['skill']['target']
-	element: Characters['element']
+	data: Characters
+	selectedCostume: Characters['costumes'] extends (infer P)[] ? P : never
 }) => {
 	const [value, setValue] = useState(0)
-	const marks = Object.values(variables)[0] || []
+	const marks = Object.values(selectedCostume.skill.variables)[0] || []
+	const [icon, setIcon] = useState<string | null>(null)
 
-	const boxSize = 6
+	useEffect(() => {
+		import(
+			`../../icons/skills/${data.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(selectedCostume.skill.name)}.png`
+		)
+			.then(module => {
+				setIcon(module.default as string)
+			})
+			.catch(e => {
+				console.error({ e }, 'skill icon')
+			})
+	}, [data.name, selectedCostume.skill.name])
 
 	return (
 		<>
+			<Flex align="center" justify="start" w="100%">
+				<Image src={icon} h="3.5em" />
+				<Text ta="left" size="2em" fs="italic">
+					{selectedCostume.skill.name}
+				</Text>
+			</Flex>
 			<Flex align="center" justify="center" gap="xl">
 				<Flex direction="column" justify="center" align="center" gap={0}>
-					{range.map((item, i) => {
+					{selectedCostume.skill.range.map((item, i) => {
 						return (
 							<Flex justify="center" align="center" key={i} gap={0}>
 								{item.map((num, j) => {
 									const size = `${boxSize / 3}em`
 									return (
 										<Box
-											bg={num ? rangeColors[element][num] : 'transparent'}
+											bg={num ? rangeColors[data.element][num] : 'transparent'}
 											key={j}
 											h={size}
 											w={size}
@@ -71,7 +90,6 @@ export const SkillTab = ({
 						)
 					})}
 				</Flex>
-
 				<Center
 					style={{
 						border: 'solid',
@@ -86,15 +104,19 @@ export const SkillTab = ({
 						tt="capitalize"
 						fw="bold"
 						size="xl"
-						c={rangeColors[element]['2']}
+						c={rangeColors[data.element]['2']}
 					>
-						{target}
+						{selectedCostume.skill.target}
 					</Text>
 				</Center>
 			</Flex>
 			<Text ta="left" size="1.5em" mb="xl">
 				{replaceComputedPlaceholders(
-					replaceVariablePlaceholders(description, variables, value)
+					replaceVariablePlaceholders(
+						selectedCostume.skill.description,
+						selectedCostume.skill.variables,
+						value
+					)
 				)}
 			</Text>
 			<Slider

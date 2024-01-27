@@ -1,30 +1,52 @@
 import { Tabs, Image } from '@mantine/core'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classes from '@/component/NavLink.module.css'
 import { charRoute } from '@/routes'
 import book from '%/icons/costumes/book.png'
 import { useRoutesStore } from '@/stores'
 import { Link } from './Link'
+import { toLowerCaseAndReplaceSpace } from '@/utils'
+import { type Characters } from '@/validation'
 
-export const CostumeTabs = ({
-	names,
-	icons,
-	onChange,
-}: {
-	names: string[]
-	icons: Record<string, string>
-	onChange?: (value: string) => void
-}) => {
+export const CostumeTabs = ({ data }: { data: Characters }) => {
 	const { costume } = charRoute.useSearch()
 	const [activeTab, setActiveTab] = useState<string>(costume)
 	const storeParams = useRoutesStore(state => state.storeParams)
+	const [icons, setIcons] = useState<Record<string, string>>({})
+	useEffect(() => {
+		Promise.allSettled(
+			data.costumes.map(async ({ name }) => {
+				return {
+					url: (
+						await import(
+							`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
+						)
+					).default as string,
+					name,
+				}
+			})
+		)
+			.then(result => {
+				setIcons(
+					result.reduce<Record<string, string>>((acc, res) => {
+						if (res.status === 'fulfilled') {
+							acc[toLowerCaseAndReplaceSpace(res.value.name)] = res.value.url
+						}
+						return acc
+					}, {})
+				)
+			})
+			.catch(e => {
+				console.error({ e }, 'import icons')
+			})
+	}, [data.name, data.costumes])
+
 	return (
 		<Tabs
 			value={activeTab}
 			onChange={value => {
 				if (value) {
 					setActiveTab(value)
-					onChange && onChange(value)
 				}
 			}}
 			orientation="vertical"
@@ -34,7 +56,8 @@ export const CostumeTabs = ({
 			}}
 		>
 			<Tabs.List grow>
-				{names.map(name => {
+				{data.costumes.map(({ name: name_ }) => {
+					const name = toLowerCaseAndReplaceSpace(name_)
 					return (
 						<Link
 							replace
