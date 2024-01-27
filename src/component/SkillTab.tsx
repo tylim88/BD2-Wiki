@@ -60,17 +60,17 @@ export const SkillTab = ({
 
 	return (
 		<>
-			<Flex align="center" justify="start" w="100%">
+			<Flex justify="start" w="100%">
 				<Image src={icon} h="3.5em" />
 				<Text ta="left" size="2em" fs="italic">
 					{selectedCostume.skill.name}
 				</Text>
 			</Flex>
-			<Flex align="center" justify="center" gap="xl">
-				<Flex direction="column" justify="center" align="center" gap={0}>
+			<Flex justify="center" gap="xl">
+				<Flex direction="column" justify="center" gap={0}>
 					{selectedCostume.skill.range.map((item, i) => {
 						return (
-							<Flex justify="center" align="center" key={i} gap={0}>
+							<Flex justify="center" key={i} gap={0}>
 								{item.map((num, j) => {
 									const size = `${boxSize / 3}em`
 									return (

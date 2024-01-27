@@ -77,7 +77,7 @@ export const Characters = () => {
 				p="md"
 				mb="xl"
 			>
-				<Flex align="center">
+				<Flex>
 					{Array.from({ length: data.rarity }).map((_, index) => {
 						return <Star key={index} />
 					})}
@@ -88,7 +88,8 @@ export const Characters = () => {
 						{data.dmg_type}
 					</Badge>
 				</Flex>
-				<Flex align="center">
+				<Flex></Flex>
+				<Flex>
 					<Image src={elementURL} h="3.5em" w="auto" fit="contain" />
 					<Text size="2em">{data.name}:</Text>
 					<Text size="2em" fs="italic">

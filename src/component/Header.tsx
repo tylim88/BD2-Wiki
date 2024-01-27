@@ -36,14 +36,14 @@ export const Header = ({
 			}}
 			w="100%"
 		>
-			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
+			<Grid maw={theme.breakpoints.xl} w="100%">
 				<Grid.Col span="content">
 					<Link to="/">
 						<Image src={brand} h="2em" />
 					</Link>
 				</Grid.Col>
 				<Grid.Col span="auto">
-					<Flex w="100%" align="center">
+					<Flex w="100%">
 						<Link
 							from={charRoute.fullPath}
 							search={prev => {
@@ -75,7 +75,7 @@ export const Header = ({
 					</Flex>
 				</Grid.Col>
 				<Grid.Col span="content">
-					<Flex gap="xs" align="center">
+					<Flex gap="xs">
 						<TextInput leftSection={<IconSearch />} placeholder="Search" />
 						<ActionIcon
 							component="a"
