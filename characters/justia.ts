@@ -2,6 +2,8 @@ export default {
 	name: 'Justia',
 	version: 1,
 	element: 'light',
+	kick: 'up',
+	target: 'very front',
 	rarity: 5,
 	dmg_type: 'physical',
 	ability: {
@@ -42,7 +44,7 @@ export default {
 			banners: [],
 			skill: {
 				name: 'Quarter Moon Jab',
-				targets: 'very front',
+				target: 'very front',
 				range: [
 					[0, 1, 0],
 					[0, 2, 0],
@@ -96,7 +98,7 @@ export default {
 			release_date: { year: 2023, month: 6, day: 22 },
 			skill: {
 				name: 'Lunar Halo Slit',
-				targets: 'very front',
+				target: 'very front',
 				range: [
 					[0, 0, 0],
 					[1, 2, 1],
@@ -159,7 +161,7 @@ export default {
 			],
 			skill: {
 				name: 'The Fang of Gluttony',
-				targets: 'very front',
+				target: 'very front',
 				range: [
 					[0, 1, 0],
 					[1, 2, 1],
@@ -226,7 +228,7 @@ export default {
 			],
 			skill: {
 				name: "Sakura Halo's Stroke",
-				targets: 'very front',
+				target: 'very front',
 				range: [
 					[1, 0, 1],
 					[0, 2, 0],
@@ -291,7 +293,7 @@ export default {
 			],
 			skill: {
 				name: 'Food Fighter',
-				targets: 'me',
+				target: 'me',
 				range: [
 					[0, 0, 0],
 					[0, 2, 0],

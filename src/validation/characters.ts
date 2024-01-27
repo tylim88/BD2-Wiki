@@ -18,6 +18,17 @@ const range = (num: 3 | 5) =>
 export const characters = object({
 	name: string(),
 	version: positiveInteger,
+	kick: union([
+		literal('up'),
+		literal('down'),
+		literal('left'),
+		literal('right'),
+		literal('up left'),
+		literal('up right'),
+		literal('down left'),
+		literal('down right'),
+	]),
+	target: union([literal('skip'), literal('very front')]),
 	dmg_type: union([literal('physical'), literal('magic')]),
 	element: union([
 		literal('light'),
@@ -57,7 +68,7 @@ export const characters = object({
 			banners: array(object({ from: date, to: date })),
 			skill: object({
 				name: string(),
-				targets: union([
+				target: union([
 					literal('me'),
 					literal('very front'),
 					literal('skip'),
