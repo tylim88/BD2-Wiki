@@ -36,7 +36,7 @@ export const Header = ({
 			}}
 			w="100%"
 		>
-			<Grid maw={theme.breakpoints.xl} w="100%">
+			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
 						<Image src={brand} h="2em" />
