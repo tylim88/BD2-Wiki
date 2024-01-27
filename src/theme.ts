@@ -4,7 +4,6 @@ import {
 	mergeMantineTheme,
 	Flex,
 	Stack,
-	Grid,
 } from '@mantine/core'
 
 const themeOverride = createTheme({
@@ -19,9 +18,6 @@ const themeOverride = createTheme({
 		}),
 		Stack: Stack.extend({
 			defaultProps: { justify: 'center' },
-		}),
-		Grid: Grid.extend({
-			defaultProps: { align: 'center' },
 		}),
 	},
 })

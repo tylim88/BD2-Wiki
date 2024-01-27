@@ -8,6 +8,27 @@ import { Star } from '@mui/icons-material'
 import { CostumeTabs, CharacterInfoTabs, SkillTab } from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
+import {
+	IconArrowUp,
+	IconArrowDown,
+	IconArrowLeft,
+	IconArrowRight,
+	IconArrowUpLeft,
+	IconArrowUpRight,
+	IconArrowDownLeft,
+	IconArrowDownRight,
+} from '@tabler/icons-react'
+
+const arrow = {
+	up: IconArrowUp,
+	down: IconArrowDown,
+	left: IconArrowLeft,
+	right: IconArrowRight,
+	'up left': IconArrowUpLeft,
+	'up right': IconArrowUpRight,
+	'down left': IconArrowDownLeft,
+	'down right': IconArrowDownRight,
+}
 
 export const Characters = () => {
 	const { costume: activeCostume, name } = charRoute.useSearch()
@@ -44,6 +65,7 @@ export const Characters = () => {
 			</Center>
 		)
 	}
+	const Arrow = arrow[data.kick]
 
 	return (
 		<Grid
@@ -75,6 +97,7 @@ export const Characters = () => {
 				h="fit-content"
 				display="flex"
 				p="md"
+				pb="xl"
 				mb="xl"
 			>
 				<Flex>
@@ -83,12 +106,22 @@ export const Characters = () => {
 					})}
 					<Badge
 						color={data.dmg_type === 'physical' ? 'red' : 'purple'}
-						ml="xs"
+						mx="xs"
 					>
 						{data.dmg_type}
 					</Badge>
+					<Text
+						size="xl"
+						tt="capitalize"
+						ta="right"
+						style={{
+							flexGrow: 1,
+						}}
+					>
+						{data.target}
+					</Text>
+					<Arrow size="2em" />
 				</Flex>
-				<Flex></Flex>
 				<Flex>
 					<Image src={elementURL} h="3.5em" w="auto" fit="contain" />
 					<Text size="2em">{data.name}:</Text>

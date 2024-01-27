@@ -128,7 +128,6 @@ export const SkillTab = ({
 				step={1}
 				w="auto"
 				miw="20em"
-				mb="xl"
 				marks={Array.from({
 					length: marks.length || 0,
 				}).map((_, index) => ({
