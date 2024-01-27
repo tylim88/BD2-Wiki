@@ -128,6 +128,8 @@ export const Characters = () => {
 				<CharacterInfoTabs
 					skill={
 						<SkillTab
+							range={selectedCostume.skill.range}
+							targets={selectedCostume.skill.targets}
 							description={selectedCostume.skill.description}
 							variables={selectedCostume.skill.variables}
 						/>

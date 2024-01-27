@@ -57,7 +57,12 @@ export const characters = object({
 			banners: array(object({ from: date, to: date })),
 			skill: object({
 				name: string(),
-				targets: union([literal('me'), literal('very front'), literal('skip')]),
+				targets: union([
+					literal('me'),
+					literal('very front'),
+					literal('skip'),
+					literal('all'),
+				]),
 				range: union([range(3), range(5)]),
 				description: string(),
 				variables: record(string(), array(positiveInteger)), // TODO write custom validation to match the number of variable keys with description
