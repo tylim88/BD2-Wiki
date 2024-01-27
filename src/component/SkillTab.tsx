@@ -110,7 +110,7 @@ export const SkillTab = ({
 					</Text>
 				</Center>
 			</Flex>
-			<Text ta="left" size="1.5em" mb="xl">
+			<Text ta="left" size="1.5em" mb="xl" px="xl">
 				{replaceComputedPlaceholders(
 					replaceVariablePlaceholders(
 						selectedCostume.skill.description,
