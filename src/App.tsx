@@ -34,6 +34,7 @@ export const App = () => {
 			/>
 			<Center
 				maw={theme.breakpoints.xl}
+				px="xl"
 				w="100%"
 				style={{
 					flex: '1 1 auto',

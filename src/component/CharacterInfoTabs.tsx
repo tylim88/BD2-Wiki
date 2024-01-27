@@ -38,17 +38,9 @@ export const CharacterInfoTabs = ({
 		<Tabs
 			mt="lg"
 			value={activeTab}
-			// variant="pills"
 			onChange={value => value && setActiveTab(value as typeof activeTab)}
 		>
-			<Tabs.List
-				grow
-				// style={{
-				// 	borderColor: 'red',
-				// 	border: 'solid',
-				// 	borderWidth: '0 0 1px 0',
-				// }}
-			>
+			<Tabs.List grow>
 				{tabs.map(({ label, color }) => {
 					return (
 						<Link
@@ -79,8 +71,8 @@ export const CharacterInfoTabs = ({
 								color={color}
 								fz="lg"
 								key={label}
+								tt="capitalize"
 								style={{
-									textTransform: 'capitalize',
 									...(activeTab === label
 										? {
 												backgroundColor: '#000',

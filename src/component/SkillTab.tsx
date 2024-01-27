@@ -1,4 +1,4 @@
-import { Text, Slider, Flex, Box } from '@mantine/core'
+import { Text, Slider, Flex, Box, Center } from '@mantine/core'
 import { useState } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
@@ -19,33 +19,47 @@ const replaceComputedPlaceholders = (inputString: string) => {
 	})
 }
 
+const rangeColors = {
+	light: { 1: '#A69038', 2: '#E0BF4C' },
+	dark: { 1: '#7E4CBB', 2: '#BE7EFF' },
+	fire: { 1: ' #C62828', 2: '#FF4241' },
+	water: { 1: '#007ACC', 2: '#41BFFF' },
+	wind: { 1: '#009966', 2: '#28D58E' },
+} as const
+
 export const SkillTab = ({
 	description,
 	variables,
 	range,
-	targets,
+	target,
+	element,
 }: {
 	range: (0 | 1 | 2)[][]
 	description: string
 	variables: Record<string, number[]>
-	targets: Characters['costumes'][number]['skill']['targets']
+	target: Characters['costumes'][number]['skill']['target']
+	element: Characters['element']
 }) => {
 	const [value, setValue] = useState(0)
 	const marks = Object.values(variables)[0] || []
 
+	const boxSize = 6
+
 	return (
 		<>
-			<Flex align="center" justify="center">
+			<Flex align="center" justify="center" gap="xl">
 				<Flex direction="column" justify="center" align="center" gap={0}>
 					{range.map((item, i) => {
 						return (
 							<Flex justify="center" align="center" key={i} gap={0}>
 								{item.map((num, j) => {
+									const size = `${boxSize / 3}em`
 									return (
 										<Box
+											bg={num ? rangeColors[element][num] : 'transparent'}
 											key={j}
-											h={'2em'}
-											w={'2em'}
+											h={size}
+											w={size}
 											style={{
 												border: 'solid',
 												borderWidth: '2px',
@@ -57,6 +71,26 @@ export const SkillTab = ({
 						)
 					})}
 				</Flex>
+
+				<Center
+					style={{
+						border: 'solid',
+					}}
+					bg="black"
+					h={`${boxSize}em`}
+					w={`${boxSize}em`}
+				>
+					<Text
+						ta="center"
+						lineClamp={2}
+						tt="capitalize"
+						fw="bold"
+						size="xl"
+						c={rangeColors[element]['2']}
+					>
+						{target}
+					</Text>
+				</Center>
 			</Flex>
 			<Text ta="left" size="1.5em" mb="xl">
 				{replaceComputedPlaceholders(
@@ -70,7 +104,7 @@ export const SkillTab = ({
 				min={0}
 				max={marks.length - 1}
 				step={1}
-				w="80%"
+				w="auto"
 				miw="20em"
 				mb="xl"
 				marks={Array.from({
