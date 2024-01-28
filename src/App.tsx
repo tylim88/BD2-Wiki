@@ -9,14 +9,7 @@ export const App = () => {
 	const [ref, setRef] = useState<HTMLDivElement | null>(null)
 
 	return (
-		<Stack
-			w="100%"
-			maw={9999}
-			h="100%"
-			gap="lg"
-			justify="center"
-			align="center"
-		>
+		<Stack w="100%" maw={9999} h="100%" gap="lg" align="center">
 			<BackgroundImage
 				src={BG1}
 				h="100%"
@@ -35,6 +28,7 @@ export const App = () => {
 			<Center
 				maw={theme.breakpoints.xl}
 				px="xl"
+				h="100%"
 				w="100%"
 				style={{
 					flex: '1 1 auto',
