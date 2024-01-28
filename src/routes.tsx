@@ -25,6 +25,7 @@ export const charValidateSearch = object({
 		literal('lines'),
 		literal('attributes'),
 		literal('ability'),
+		literal('unique_equipment'),
 	]).catch(defaultCharParams.tab),
 })
 

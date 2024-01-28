@@ -6,11 +6,12 @@ import { Link } from './Link'
 import { charRoute } from '@/routes'
 
 const tabs = [
-	{ label: 'skill', color: 'red' },
-	{ label: 'profile', color: 'blue' },
-	{ label: 'lines', color: 'yellow' },
-	{ label: 'attributes', color: 'green' },
-	{ label: 'ability', color: 'cyan' },
+	{ value: 'skill', label: null, color: 'red' },
+	{ value: 'profile', label: null, color: 'blue' },
+	{ value: 'lines', label: null, color: 'yellow' },
+	{ value: 'attributes', label: null, color: 'green' },
+	{ value: 'ability', label: null, color: 'cyan' },
+	{ value: 'unique_equipment', label: 'UE', color: 'pink' },
 ] as const
 
 export const CharacterInfoTabs = ({
@@ -19,17 +20,19 @@ export const CharacterInfoTabs = ({
 	lines,
 	attributes,
 	ability,
+	uniqueEquipment,
 }: {
 	skill: React.ReactNode
 	profile: React.ReactNode
 	lines: React.ReactNode
 	attributes: React.ReactNode
 	ability: React.ReactNode
+	uniqueEquipment: React.ReactNode
 }) => {
 	const { tab } = charRoute.useSearch()
 	const [activeTab, setActiveTab] =
 		useState<
-			(typeof tabs extends readonly [...(infer P)[]] ? P : never)['label']
+			(typeof tabs extends readonly [...(infer P)[]] ? P : never)['value']
 		>(tab)
 
 	const storeParams = useRoutesStore(state => state.storeParams)
@@ -41,16 +44,16 @@ export const CharacterInfoTabs = ({
 			onChange={value => value && setActiveTab(value as typeof activeTab)}
 		>
 			<Tabs.List grow>
-				{tabs.map(({ label, color }) => {
+				{tabs.map(({ value, color, label }) => {
 					return (
 						<Link
 							replace
-							key={label}
+							key={value}
 							from={charRoute.fullPath}
 							search={prev => {
 								return {
 									...prev,
-									tab: label,
+									tab: value,
 								}
 							}}
 							style={{
@@ -60,20 +63,20 @@ export const CharacterInfoTabs = ({
 								storeParams({
 									route: '/chars',
 									params: {
-										tab: label,
+										tab: value,
 									},
 								})
 							}}
 						>
 							<Tabs.Tab
 								className={classes.navlink}
-								value={label}
+								value={value}
 								color={color}
 								fz="lg"
-								key={label}
+								key={value}
 								tt="capitalize"
 								style={{
-									...(activeTab === label
+									...(activeTab === value
 										? {
 												backgroundColor: '#000',
 												color: '#fff',
@@ -84,12 +87,12 @@ export const CharacterInfoTabs = ({
 									storeParams({
 										route: '/chars',
 										params: {
-											tab: label,
+											tab: value,
 										},
 									})
 								}}
 							>
-								{label}
+								{label || value}
 							</Tabs.Tab>
 						</Link>
 					)
@@ -100,6 +103,7 @@ export const CharacterInfoTabs = ({
 			{activeTab === 'lines' ? lines : null}
 			{activeTab === 'attributes' ? attributes : null}
 			{activeTab === 'ability' ? ability : null}
+			{activeTab === 'unique_equipment' ? uniqueEquipment : null}
 		</Tabs>
 	)
 }
