@@ -94,7 +94,7 @@ export const Characters = () => {
 				<CostumeTabs character={character} />
 			</Grid.Col>
 			<Grid.Col
-				span={'auto'}
+				span="auto"
 				style={{
 					...content,
 					borderRadius: theme.radius.sm,
@@ -143,6 +143,7 @@ export const Characters = () => {
 					profile={<Profile costume={selectedCostume} />}
 					attributes={<Attributes character={character} />}
 					lines={<Lines costume={selectedCostume} />}
+					uniqueEquipment={undefined}
 				/>
 			</Grid.Col>
 		</Grid>

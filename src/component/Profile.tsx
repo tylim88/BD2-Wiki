@@ -1,24 +1,22 @@
-import { Grid, Flex, Text, Stack } from '@mantine/core'
+import { Grid, Text, Stack } from '@mantine/core'
 import { Characters } from '@/validation'
 import { format } from 'date-fns'
 
 const Component = ({ value, label }: { value: string; label: string }) => {
 	return (
-		<Grid key={label} w="100%">
-			<Grid.Col span={3}>
-				<Flex w="100%">
-					<Text ta="left" tt="capitalize">
-						{label}
-					</Text>
-					<Text
-						ta="right"
-						style={{
-							flexGrow: 1,
-						}}
-					>
-						:
-					</Text>
-				</Flex>
+		<Grid>
+			<Grid.Col span={3} display="flex">
+				<Text ta="left" tt="capitalize">
+					{label}
+				</Text>
+				<Text
+					ta="right"
+					style={{
+						flexGrow: 1,
+					}}
+				>
+					:
+				</Text>
 			</Grid.Col>
 			<Grid.Col span="auto">
 				<Text ta="left">{value}</Text>
