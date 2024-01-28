@@ -2,6 +2,19 @@ import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
 import { useState, useEffect } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
+import upgrade1 from '%/icons/skills/upgrade_1.png'
+import upgrade2 from '%/icons/skills/upgrade_2.png'
+import upgrade3 from '%/icons/skills/upgrade_3.png'
+import upgrade4 from '%/icons/skills/upgrade_4.png'
+import upgrade5 from '%/icons/skills/upgrade_5.png'
+
+const upgrade: Record<string, string> = {
+	1: upgrade1,
+	2: upgrade2,
+	3: upgrade3,
+	4: upgrade4,
+	5: upgrade5,
+}
 
 const replaceVariablePlaceholders = (
 	inputString: string,
@@ -59,7 +72,7 @@ export const SkillTab = ({
 	}, [data.name, costume.skill.name])
 
 	return (
-		<Stack p="xs" pb="xl" align="center" gap="xl">
+		<Stack p="xs" pt="lg" pb="xl" align="center" gap="xl">
 			<Flex justify="start" w="100%">
 				<Image src={icon} h="3.5em" />
 				<Text ta="left" size="2em" fs="italic">
@@ -110,38 +123,47 @@ export const SkillTab = ({
 					</Text>
 				</Center>
 			</Flex>
-			<Text ta="left" size="1.5em" mb="xl" px="xl">
-				{replaceComputedPlaceholders(
-					replaceVariablePlaceholders(
-						costume.skill.description,
-						costume.skill.variables,
-						value
-					)
-				)}
-			</Text>
-			<Slider
-				value={value}
-				onChange={setValue}
-				color="blue"
-				min={0}
-				max={marks.length - 1}
-				step={1}
-				w="auto"
-				miw="20em"
-				marks={Array.from({
-					length: marks.length || 0,
-				}).map((_, index) => ({
-					value: index,
-					label: `+${index}`,
-				}))}
-				styles={{
-					markLabel: {
-						color: 'black',
-						fontSize: theme.fontSizes.xl,
-						textAlign: 'center',
-					},
-				}}
-			/>
+			<>
+				<Text ta="left" size="1.5em" px="xl">
+					{replaceComputedPlaceholders(
+						replaceVariablePlaceholders(
+							costume.skill.description,
+							costume.skill.variables,
+							value
+						)
+					)}
+				</Text>
+				<Slider
+					value={value}
+					onChange={setValue}
+					color="blue"
+					min={0}
+					max={marks.length - 1}
+					step={1}
+					w="auto"
+					miw="20em"
+					py="xl"
+					marks={Array.from({
+						length: marks.length || 0,
+					}).map((_, index) => {
+						return {
+							value: index,
+							label: upgrade[index] ? (
+								<Image src={upgrade[index]} h="xl" w="xl" />
+							) : (
+								<Text size="xl">{`+${index}`}</Text>
+							),
+						}
+					})}
+					styles={{
+						markLabel: {
+							color: 'black',
+							fontSize: theme.fontSizes.xl,
+							textAlign: 'center',
+						},
+					}}
+				/>
+			</>
 		</Stack>
 	)
 }
