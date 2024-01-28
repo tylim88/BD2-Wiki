@@ -5,7 +5,13 @@ import placeholder from '@/assets/placeholder.svg'
 import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
-import { CostumeTabs, CharacterInfoTabs, SkillTab, Profile } from '@/component'
+import {
+	CostumeTabs,
+	CharacterInfoTabs,
+	SkillTab,
+	Profile,
+	Lines,
+} from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
 import {
@@ -98,6 +104,7 @@ export const Characters = () => {
 				display="flex"
 				p="md"
 				pb="xl"
+				pt="xl"
 				mb="xl"
 			>
 				<Flex>
@@ -134,7 +141,7 @@ export const Characters = () => {
 					ability={undefined}
 					profile={<Profile costume={selectedCostume} />}
 					attributes={undefined}
-					lines={undefined}
+					lines={<Lines costume={selectedCostume} />}
 				/>
 			</Grid.Col>
 		</Grid>

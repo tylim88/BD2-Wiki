@@ -7,6 +7,8 @@ import removeConsole from 'vite-plugin-remove-console'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import dynamicImport from 'vite-plugin-dynamic-import'
+// @ts-expect-error ...
+import vsharp from 'vite-plugin-vsharp'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -20,6 +22,7 @@ export default defineConfig({
 		react(),
 		(svgr as () => PluginOption)(),
 		mkcert(),
+		vsharp(),
 		removeConsole({ includes: ['log'] }),
 		viteStaticCopy({
 			targets: [
