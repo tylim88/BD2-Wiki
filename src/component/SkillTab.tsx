@@ -1,4 +1,4 @@
-import { Text, Slider, Flex, Box, Center, Image } from '@mantine/core'
+import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
 import { useState, useEffect } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
@@ -37,18 +37,18 @@ const boxSize = 6
 
 export const SkillTab = ({
 	data,
-	selectedCostume,
+	costume,
 }: {
 	data: Characters
-	selectedCostume: Characters['costumes'] extends (infer P)[] ? P : never
+	costume: Characters['costumes'] extends (infer P)[] ? P : never
 }) => {
 	const [value, setValue] = useState(0)
-	const marks = Object.values(selectedCostume.skill.variables)[0] || []
+	const marks = Object.values(costume.skill.variables)[0] || []
 	const [icon, setIcon] = useState<string | null>(null)
 
 	useEffect(() => {
 		import(
-			`../../icons/skills/${data.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(selectedCostume.skill.name)}.png`
+			`../../icons/skills/${data.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(costume.skill.name)}.png`
 		)
 			.then(module => {
 				setIcon(module.default as string)
@@ -56,19 +56,19 @@ export const SkillTab = ({
 			.catch(e => {
 				console.error({ e }, 'skill icon')
 			})
-	}, [data.name, selectedCostume.skill.name])
+	}, [data.name, costume.skill.name])
 
 	return (
-		<>
+		<Stack p="xs" pb="xl" align="center" gap="xl">
 			<Flex justify="start" w="100%">
 				<Image src={icon} h="3.5em" />
 				<Text ta="left" size="2em" fs="italic">
-					{selectedCostume.skill.name}
+					{costume.skill.name}
 				</Text>
 			</Flex>
 			<Flex justify="center" gap="xl">
 				<Flex direction="column" justify="center" gap={0}>
-					{selectedCostume.skill.range.map((item, i) => {
+					{costume.skill.range.map((item, i) => {
 						return (
 							<Flex justify="center" key={i} gap={0}>
 								{item.map((num, j) => {
@@ -106,15 +106,15 @@ export const SkillTab = ({
 						size="xl"
 						c={rangeColors[data.element]['2']}
 					>
-						{selectedCostume.skill.target}
+						{costume.skill.target}
 					</Text>
 				</Center>
 			</Flex>
 			<Text ta="left" size="1.5em" mb="xl" px="xl">
 				{replaceComputedPlaceholders(
 					replaceVariablePlaceholders(
-						selectedCostume.skill.description,
-						selectedCostume.skill.variables,
+						costume.skill.description,
+						costume.skill.variables,
 						value
 					)
 				)}
@@ -142,6 +142,6 @@ export const SkillTab = ({
 					},
 				}}
 			/>
-		</>
+		</Stack>
 	)
 }

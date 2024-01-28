@@ -5,7 +5,7 @@ import placeholder from '@/assets/placeholder.svg'
 import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
-import { CostumeTabs, CharacterInfoTabs, SkillTab } from '@/component'
+import { CostumeTabs, CharacterInfoTabs, SkillTab, Profile } from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
 import {
@@ -130,9 +130,9 @@ export const Characters = () => {
 					</Text>
 				</Flex>
 				<CharacterInfoTabs
-					skill={<SkillTab data={data} selectedCostume={selectedCostume} />}
+					skill={<SkillTab data={data} costume={selectedCostume} />}
 					ability={undefined}
-					profile={undefined}
+					profile={<Profile costume={selectedCostume} />}
 					attributes={undefined}
 					lines={undefined}
 				/>

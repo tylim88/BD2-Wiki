@@ -1,4 +1,4 @@
-import { Tabs, Stack } from '@mantine/core'
+import { Tabs } from '@mantine/core'
 import { useState } from 'react'
 import classes from '@/component/NavLink.module.css'
 import { useRoutesStore } from '@/stores'
@@ -95,13 +95,11 @@ export const CharacterInfoTabs = ({
 					)
 				})}
 			</Tabs.List>
-			<Stack p="xs" pb="xl" align="center" gap="xl">
-				{activeTab === 'skill' ? skill : null}
-				{activeTab === 'profile' ? profile : null}
-				{activeTab === 'lines' ? lines : null}
-				{activeTab === 'attributes' ? attributes : null}
-				{activeTab === 'ability' ? ability : null}
-			</Stack>
+			{activeTab === 'skill' ? skill : null}
+			{activeTab === 'profile' ? profile : null}
+			{activeTab === 'lines' ? lines : null}
+			{activeTab === 'attributes' ? attributes : null}
+			{activeTab === 'ability' ? ability : null}
 		</Tabs>
 	)
 }
