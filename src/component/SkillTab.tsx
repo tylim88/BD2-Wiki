@@ -8,7 +8,7 @@ import upgrade3 from '%/icons/skills/upgrade_3.png'
 import upgrade4 from '%/icons/skills/upgrade_4.png'
 import upgrade5 from '%/icons/skills/upgrade_5.png'
 
-const upgrade: Record<string, string> = {
+const upgradeIcons: Record<string, string> = {
 	1: upgrade1,
 	2: upgrade2,
 	3: upgrade3,
@@ -55,7 +55,7 @@ export const SkillTab = ({
 	data: Characters
 	costume: Characters['costumes'] extends (infer P)[] ? P : never
 }) => {
-	const [value, setValue] = useState(0)
+	const [upgrade, setUpgrade] = useState(0)
 	const marks = Object.values(costume.skill.variables)[0] || []
 	const [icon, setIcon] = useState<string | null>(null)
 
@@ -73,11 +73,13 @@ export const SkillTab = ({
 
 	return (
 		<Stack p="xs" pt="lg" pb="xl" align="center" gap="xl">
-			<Flex justify="start" w="100%">
+			<Flex justify="start" w="100%" gap="xs">
 				<Image src={icon} h="3.5em" />
 				<Text ta="left" size="2em" fs="italic">
 					{costume.skill.name}
 				</Text>
+
+				<Image src={upgradeIcons[upgrade]} h="3.5em" w="3.5em" />
 			</Flex>
 			<Flex justify="center" gap="xl">
 				<Flex direction="column" justify="center" gap={0}>
@@ -129,13 +131,13 @@ export const SkillTab = ({
 						replaceVariablePlaceholders(
 							costume.skill.description,
 							costume.skill.variables,
-							value
+							upgrade
 						)
 					)}
 				</Text>
 				<Slider
-					value={value}
-					onChange={setValue}
+					value={upgrade}
+					onChange={setUpgrade}
 					color="blue"
 					min={0}
 					max={marks.length - 1}
@@ -148,11 +150,7 @@ export const SkillTab = ({
 					}).map((_, index) => {
 						return {
 							value: index,
-							label: upgrade[index] ? (
-								<Image src={upgrade[index]} h="xl" w="xl" />
-							) : (
-								<Text size="xl">{`+${index}`}</Text>
-							),
+							label: <Text size="xl">{`+${index}`}</Text>,
 						}
 					})}
 					styles={{
