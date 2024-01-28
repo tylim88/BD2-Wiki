@@ -11,6 +11,7 @@ import {
 	SkillTab,
 	Profile,
 	Lines,
+	Attributes,
 } from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
@@ -38,14 +39,14 @@ const arrow = {
 
 export const Characters = () => {
 	const { costume: activeCostume, name } = charRoute.useSearch()
-	const [data, setData] = useState<Characters_ | null>(null)
+	const [character, setCharacter] = useState<Characters_ | null>(null)
 	const [elementURL, setElementURL] = useState<string | null>(null)
 
 	useEffect(() => {
 		import(`../../characters/${name.toLowerCase()}.ts`)
 			.then(data_ => {
 				const data = data_.default as Characters_
-				setData(data)
+				setCharacter(data)
 				import(`../../icons/elements/${data.element}.png`)
 					.then(module => {
 						setElementURL(module.default as string)
@@ -60,18 +61,18 @@ export const Characters = () => {
 	}, [name])
 
 	const selectedCostume =
-		data?.costumes.find(
+		character?.costumes.find(
 			costume => toLowerCaseAndReplaceSpace(costume.name) === activeCostume
-		) || data?.costumes[0]
+		) || character?.costumes[0]
 
-	if (!data || !selectedCostume) {
+	if (!character || !selectedCostume) {
 		return (
 			<Center h="100%" w="100%">
 				<Loader color="red" />
 			</Center>
 		)
 	}
-	const Arrow = arrow[data.kick]
+	const Arrow = arrow[character.kick]
 
 	return (
 		<Grid
@@ -90,7 +91,7 @@ export const Characters = () => {
 				/>
 			</Grid.Col>
 			<Grid.Col span={1} mb="xl">
-				<CostumeTabs data={data} />
+				<CostumeTabs character={character} />
 			</Grid.Col>
 			<Grid.Col
 				span={'auto'}
@@ -108,14 +109,14 @@ export const Characters = () => {
 				mb="xl"
 			>
 				<Flex>
-					{Array.from({ length: data.rarity }).map((_, index) => {
+					{Array.from({ length: character.rarity }).map((_, index) => {
 						return <Star key={index} />
 					})}
 					<Badge
-						color={data.dmg_type === 'physical' ? 'red' : 'purple'}
+						color={character.dmg_type === 'physical' ? 'red' : 'purple'}
 						mx="xs"
 					>
-						{data.dmg_type}
+						{character.dmg_type}
 					</Badge>
 					<Text
 						size="xl"
@@ -125,22 +126,22 @@ export const Characters = () => {
 							flexGrow: 1,
 						}}
 					>
-						{data.target}
+						{character.target}
 					</Text>
 					<Arrow size="2em" />
 				</Flex>
 				<Flex>
 					<Image src={elementURL} h="3.5em" w="auto" fit="contain" />
-					<Text size="2em">{data.name}:</Text>
+					<Text size="2em">{character.name}:</Text>
 					<Text size="2em" fs="italic">
 						{selectedCostume.name}
 					</Text>
 				</Flex>
 				<CharacterInfoTabs
-					skill={<SkillTab data={data} costume={selectedCostume} />}
+					skill={<SkillTab character={character} costume={selectedCostume} />}
 					ability={undefined}
 					profile={<Profile costume={selectedCostume} />}
-					attributes={undefined}
+					attributes={<Attributes character={character} />}
 					lines={<Lines costume={selectedCostume} />}
 				/>
 			</Grid.Col>

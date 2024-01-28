@@ -2,10 +2,6 @@ import { Grid, Flex, Text, Stack } from '@mantine/core'
 import { Characters } from '@/validation'
 import { format } from 'date-fns'
 
-type Entries<T> = {
-	[K in keyof T]: [K, T[K]]
-}[keyof T][]
-
 const Component = ({
 	value,
 	keyValue,
@@ -44,48 +40,46 @@ export const Profile = ({
 }) => {
 	return (
 		<Stack p="xl" pb="xs">
-			{(Object.entries(costume.profile) as Entries<typeof costume.profile>).map(
-				([key, value]) => {
-					if (key === 'description') {
-						return (
-							<Text ta="center" pb="xl" size="1.5rem" key={key}>
-								{value}
-							</Text>
-						)
-					} else if (key === 'rumors') {
-						return value.map((item, index) => {
-							return (
-								<Component
-									key={item}
-									value={item}
-									keyValue={`rumor ${index + 1}`}
-								/>
-							)
-						})
-					} else {
+			{Object.entries(costume.profile).map(([key, value]) => {
+				if (key === 'description') {
+					return (
+						<Text ta="center" pb="xl" size="1.5rem" key={key}>
+							{value}
+						</Text>
+					)
+				} else if (key === 'rumors') {
+					return value.map((item, index) => {
 						return (
 							<Component
-								keyValue={key}
-								key={key}
-								value={
-									key === 'age' && typeof value === 'number'
-										? `${value} years old`
-										: key === 'height'
-											? `${value}cm`
-											: key === 'birthday'
-												? format(
-														new Date(1996, value.month - 1, value.day),
-														'MMMM do'
-													)
-												: key === 'age'
-													? `${value}` // ? https://github.com/microsoft/TypeScript/issues/57200
-													: value
-								}
+								key={item}
+								value={item}
+								keyValue={`rumor ${index + 1}`}
 							/>
 						)
-					}
+					})
+				} else {
+					return (
+						<Component
+							keyValue={key}
+							key={key}
+							value={
+								key === 'age' && typeof value === 'number'
+									? `${value} years old`
+									: key === 'height'
+										? `${value}cm`
+										: key === 'birthday'
+											? format(
+													new Date(1996, value.month - 1, value.day),
+													'MMMM do'
+												)
+											: key === 'age'
+												? `${value}` // ? https://github.com/microsoft/TypeScript/issues/57200
+												: value
+							}
+						/>
+					)
 				}
-			)}
+			})}
 		</Stack>
 	)
 }

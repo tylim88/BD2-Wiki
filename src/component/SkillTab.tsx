@@ -2,6 +2,7 @@ import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
 import { useState, useEffect } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
+import { useCharactersStore } from '@/stores'
 import upgrade1 from '%/icons/skills/upgrade_1.png'
 import upgrade2 from '%/icons/skills/upgrade_2.png'
 import upgrade3 from '%/icons/skills/upgrade_3.png'
@@ -49,19 +50,21 @@ const rangeColors = {
 const boxSize = 6
 
 export const SkillTab = ({
-	data,
+	character,
 	costume,
 }: {
-	data: Characters
+	character: Characters
 	costume: Characters['costumes'] extends (infer P)[] ? P : never
 }) => {
-	const [upgrade, setUpgrade] = useState(0)
+	const upgrade = useCharactersStore(
+		state => state.slider.skill[costume.name] || 0
+	)
 	const marks = Object.values(costume.skill.variables)[0] || []
 	const [icon, setIcon] = useState<string | null>(null)
 
 	useEffect(() => {
 		import(
-			`../../icons/skills/${data.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(costume.skill.name)}.png`
+			`../../icons/skills/${character.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(costume.skill.name)}.png`
 		)
 			.then(module => {
 				setIcon(module.default as string)
@@ -69,7 +72,7 @@ export const SkillTab = ({
 			.catch(e => {
 				console.error({ e }, 'skill icon')
 			})
-	}, [data.name, costume.skill.name])
+	}, [character.name, costume.skill.name])
 
 	return (
 		<Stack p="xs" pt="lg" pb="xl" align="center" gap="xl">
@@ -90,7 +93,11 @@ export const SkillTab = ({
 									const size = `${boxSize / 3}em`
 									return (
 										<Box
-											bg={num ? rangeColors[data.element][num] : 'transparent'}
+											bg={
+												num
+													? rangeColors[character.element][num]
+													: 'transparent'
+											}
 											key={j}
 											h={size}
 											w={size}
@@ -119,7 +126,7 @@ export const SkillTab = ({
 						tt="capitalize"
 						fw="bold"
 						size="xl"
-						c={rangeColors[data.element]['2']}
+						c={rangeColors[character.element]['2']}
 					>
 						{costume.skill.target}
 					</Text>
@@ -137,7 +144,11 @@ export const SkillTab = ({
 				</Text>
 				<Slider
 					value={upgrade}
-					onChange={setUpgrade}
+					onChange={value => {
+						useCharactersStore.setState(state => {
+							state.slider.skill[costume.name] = value
+						})
+					}}
 					color="blue"
 					min={0}
 					max={marks.length - 1}

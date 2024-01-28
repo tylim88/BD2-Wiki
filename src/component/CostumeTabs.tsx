@@ -8,18 +8,18 @@ import { Link } from './Link'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { type Characters } from '@/validation'
 
-export const CostumeTabs = ({ data }: { data: Characters }) => {
+export const CostumeTabs = ({ character }: { character: Characters }) => {
 	const { costume } = charRoute.useSearch()
 	const [activeTab, setActiveTab] = useState<string>(costume)
 	const storeParams = useRoutesStore(state => state.storeParams)
 	const [icons, setIcons] = useState<Record<string, string>>({})
 	useEffect(() => {
 		Promise.allSettled(
-			data.costumes.map(async ({ name }) => {
+			character.costumes.map(async ({ name }) => {
 				return {
 					url: (
 						await import(
-							`../../icons/costumes/${toLowerCaseAndReplaceSpace(data.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
+							`../../icons/costumes/${toLowerCaseAndReplaceSpace(character.name)}/${toLowerCaseAndReplaceSpace(name)}.png`
 						)
 					).default as string,
 					name,
@@ -39,7 +39,7 @@ export const CostumeTabs = ({ data }: { data: Characters }) => {
 			.catch(e => {
 				console.error({ e }, 'import icons')
 			})
-	}, [data.name, data.costumes])
+	}, [character.name, character.costumes])
 
 	return (
 		<Tabs
@@ -56,7 +56,7 @@ export const CostumeTabs = ({ data }: { data: Characters }) => {
 			}}
 		>
 			<Tabs.List grow>
-				{data.costumes.map(({ name: name_ }) => {
+				{character.costumes.map(({ name: name_ }) => {
 					const name = toLowerCaseAndReplaceSpace(name_)
 					return (
 						<Link

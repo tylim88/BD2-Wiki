@@ -19,7 +19,7 @@ export default {
 		description: 'You can make {{x}} rank B-chelin dishes.',
 		variables: { x: ['1st', '2nd', '3rd', '4th', '5th'] },
 	},
-	attribute: {
+	attributes: {
 		initial_combat_power: 1660,
 		crit_rate: 10,
 		crit_dmg: 50,
