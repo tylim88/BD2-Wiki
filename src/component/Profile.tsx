@@ -2,19 +2,13 @@ import { Grid, Flex, Text, Stack } from '@mantine/core'
 import { Characters } from '@/validation'
 import { format } from 'date-fns'
 
-const Component = ({
-	value,
-	keyValue,
-}: {
-	value: string
-	keyValue: string
-}) => {
+const Component = ({ value, label }: { value: string; label: string }) => {
 	return (
-		<Grid key={keyValue} w="100%">
+		<Grid key={label} w="100%">
 			<Grid.Col span={3}>
 				<Flex w="100%">
 					<Text ta="left" tt="capitalize">
-						{keyValue}
+						{label}
 					</Text>
 					<Text
 						ta="right"
@@ -50,17 +44,13 @@ export const Profile = ({
 				} else if (key === 'rumors') {
 					return value.map((item, index) => {
 						return (
-							<Component
-								key={item}
-								value={item}
-								keyValue={`rumor ${index + 1}`}
-							/>
+							<Component key={item} value={item} label={`rumor ${index + 1}`} />
 						)
 					})
 				} else {
 					return (
 						<Component
-							keyValue={key}
+							label={key}
 							key={key}
 							value={
 								key === 'age' && typeof value === 'number'
