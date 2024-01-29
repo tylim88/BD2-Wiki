@@ -1,6 +1,5 @@
 import { Grid, Text, Stack, Flex, ActionIcon, TextProps } from '@mantine/core'
 import { Characters } from '@/validation'
-import { useState } from 'react'
 import { useCharactersStore } from '@/stores'
 import {
 	ArrowForwardIosOutlined,
@@ -55,19 +54,21 @@ const resistance = {
 
 const maxLevel = 100
 const minLevel = 1
-const totalLevel = maxLevel - minLevel + 1
+const totalLevel = maxLevel - minLevel
 
 export const Attributes = ({ character }: { character: Characters }) => {
 	const level = useCharactersStore(
 		state => state.slider.attributes[character.name] || 1
 	)
-	const hpPerLevel =
-		character.attributes.hp.max - character.attributes.hp.min / totalLevel
-	const atkPerLevel =
-		character.attributes.atk.max - character.attributes.atk.min / totalLevel
-
-	const [hp, setHP] = useState(hpPerLevel * level)
-	const [atk, setATK] = useState(atkPerLevel * level)
+	const totalHP =
+		((character.attributes.hp.max - character.attributes.hp.min) / totalLevel) *
+			level +
+		character.attributes.hp.min
+	const totalATK =
+		((character.attributes.atk.max - character.attributes.atk.min) /
+			totalLevel) *
+			level +
+		character.attributes.atk.min
 
 	return (
 		<Stack align="center" gap={0} pt="xl">
@@ -79,10 +80,9 @@ export const Attributes = ({ character }: { character: Characters }) => {
 						onClick={() => {
 							if (level > 1) {
 								useCharactersStore.setState(state => {
-									state.slider.attributes[character.name]--
+									state.slider.attributes[character.name] =
+										(state.slider.attributes[character.name] || 0) - 1
 								})
-								setHP(hpPerLevel * level)
-								setATK(atkPerLevel * level)
 							}
 						}}
 					>
@@ -97,12 +97,12 @@ export const Attributes = ({ character }: { character: Characters }) => {
 					/>
 					<Component
 						label="HP"
-						value={`${Math.ceil(hp)}`}
+						value={`${Math.ceil(totalHP)}`}
 						textProps={{ fw: 'bold' }}
 					/>
 					<Component
 						label={character.dmg_type === 'magic' ? 'Magic ATK' : 'ATK'}
-						value={`${Math.ceil(atk)}`}
+						value={`${Math.ceil(totalATK)}`}
 						textProps={{ fw: 'bold' }}
 					/>
 					<Component
@@ -133,10 +133,9 @@ export const Attributes = ({ character }: { character: Characters }) => {
 					onClick={() => {
 						if (level < 100) {
 							useCharactersStore.setState(state => {
-								state.slider.attributes[character.name]++
+								state.slider.attributes[character.name] =
+									(state.slider.attributes[character.name] || 0) + 1
 							})
-							setHP(hpPerLevel * level)
-							setATK(atkPerLevel * level)
 						}
 					}}
 				>
