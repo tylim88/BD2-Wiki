@@ -1,21 +1,8 @@
 import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
-import { useState, useEffect } from 'react'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
 import { useCharactersStore } from '@/stores'
-import upgrade1 from '%/icons/skills/upgrade_1.png'
-import upgrade2 from '%/icons/skills/upgrade_2.png'
-import upgrade3 from '%/icons/skills/upgrade_3.png'
-import upgrade4 from '%/icons/skills/upgrade_4.png'
-import upgrade5 from '%/icons/skills/upgrade_5.png'
-
-const upgradeIcons: Record<string, string> = {
-	1: upgrade1,
-	2: upgrade2,
-	3: upgrade3,
-	4: upgrade4,
-	5: upgrade5,
-}
+import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
 
 const replaceVariablePlaceholders = (
 	inputString: string,
@@ -31,13 +18,6 @@ const replaceComputedPlaceholders = (inputString: string) => {
 	return inputString.replace(/<<([^>>]+)>>/g, () => {
 		return ' ? '
 	})
-}
-
-const removeSpecialCharAndReplaceSpace = (inputString: string) => {
-	return inputString
-		.replace(/[^\w\s]/gi, '')
-		.replace(/\s+/g, '_')
-		.toLowerCase()
 }
 
 const rangeColors = {
@@ -60,29 +40,23 @@ export const Skill = ({
 		state => state.slider.skill[costume.name] || 0
 	)
 	const marks = Object.values(costume.skill.variables)[0] || []
-	const [icon, setIcon] = useState<string | null>(null)
-
-	useEffect(() => {
-		import(
-			`../../icons/skills/${character.name.toLowerCase()}/${removeSpecialCharAndReplaceSpace(costume.skill.name)}.png`
-		)
-			.then(module => {
-				setIcon(module.default as string)
-			})
-			.catch(e => {
-				console.error({ e }, 'skill icon')
-			})
-	}, [character.name, costume.skill.name])
 
 	return (
 		<Stack p="xs" pt="lg" pb="xl" align="center" gap="xl">
 			<Flex justify="start" w="100%" gap="xs">
-				<Image src={icon} h="3.5em" />
+				<Image
+					src={`/icons/skills/${character.name.toLowerCase()}/${toLowerCaseReplaceSpaceRemoveSpecialChars(costume.skill.name)}.png`}
+					h="3.5em"
+				/>
 				<Text ta="left" size="2em" fs="italic">
 					{costume.skill.name}
 				</Text>
 
-				<Image src={upgradeIcons[upgrade]} h="3.5em" w="3.5em" />
+				<Image
+					src={`/icons/skills/upgrade_${upgrade}.png`}
+					h="3.5em"
+					w="3.5em"
+				/>
 			</Flex>
 			<Flex justify="center" gap="xl">
 				<Flex direction="column" justify="center" gap={0}>

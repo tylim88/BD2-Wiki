@@ -45,21 +45,20 @@ export const Lines = ({
 								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
 								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
 							].map(url => (
-								<>
-									<audio
-										controls
-										style={{
-											paddingLeft: theme.spacing.xs,
-											paddingRight: theme.spacing.xs,
-											maxWidth: '50%',
-											flexGrow: 1,
-											height: '2em',
-										}}
-										controlsList="nodownload noplaybackrate noremoteplayback"
-										preload="auto"
-										src={url}
-									/>
-								</>
+								<audio
+									key={url}
+									controls
+									style={{
+										paddingLeft: theme.spacing.xs,
+										paddingRight: theme.spacing.xs,
+										maxWidth: '50%',
+										flexGrow: 1,
+										height: '2em',
+									}}
+									controlsList="nodownload noplaybackrate noremoteplayback"
+									preload="auto"
+									src={url}
+								/>
 							))}
 						</Flex>
 					</Stack>

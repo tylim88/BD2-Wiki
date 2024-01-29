@@ -1,8 +1,6 @@
-import justia from '%/characters/justia'
-import { toLowerCaseAndReplaceSpace } from './utils'
-
+// not safe, point of failure
 export const defaultCharParams = {
-	name: toLowerCaseAndReplaceSpace(justia.name),
-	costume: toLowerCaseAndReplaceSpace(justia.costumes[0].name),
+	name: 'justia',
+	costume: 'white_reaper',
 	tab: 'skill',
 } as const

@@ -8,12 +8,14 @@ import { isProduction } from './config'
 import './main.css'
 import '@mantine/core/styles.css'
 import { theme } from './theme'
-
+import { QueryClient, QueryClientProvider } from 'react-query'
 // if ('serviceWorker' in navigator) {
 // 	navigator.serviceWorker.register('./sw.js').catch(error => {
 // 		console.error('Service Worker registration failed:', error)
 // 	})
 // }
+
+const queryClient = new QueryClient()
 
 !isProduction &&
 	import('eruda')
@@ -25,10 +27,12 @@ import { theme } from './theme'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<HelmetProvider>
-			<MantineProvider theme={theme}>
-				<RouterProvider router={router} />
-			</MantineProvider>
-		</HelmetProvider>
+		<QueryClientProvider client={queryClient}>
+			<HelmetProvider>
+				<MantineProvider theme={theme}>
+					<RouterProvider router={router} />
+				</MantineProvider>
+			</HelmetProvider>
+		</QueryClientProvider>
 	</React.StrictMode>
 )

@@ -35,7 +35,11 @@ export default defineConfig({
 					dest: '',
 				},
 				{
-					src: 'images',
+					src: 'icons',
+					dest: '',
+				},
+				{
+					src: 'characters',
 					dest: '',
 				},
 			],

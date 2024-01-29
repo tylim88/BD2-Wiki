@@ -1,6 +1,11 @@
-export const toLowerCaseAndReplaceSpace = (value: string) =>
-	value.toLowerCase().replace(/ /g, '_')
-
+export const toLowerCaseReplaceSpaceRemoveSpecialChars = (
+	inputString: string
+) => {
+	return inputString
+		.replace(/[^\w\s]/gi, '')
+		.replace(/\s+/g, '_')
+		.toLowerCase()
+}
 type Entries<T> = {
 	[K in keyof T]: [K, T[K]]
 }[keyof T][]

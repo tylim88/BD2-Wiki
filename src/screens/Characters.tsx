@@ -1,6 +1,5 @@
 import { Grid, Text, Image, Flex, Center, Loader, Badge } from '@mantine/core'
 import { content } from '@/styles'
-import { useEffect, useState } from 'react'
 import placeholder from '@/assets/placeholder.svg'
 import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
@@ -14,7 +13,7 @@ import {
 	Attributes,
 	Ability,
 } from '@/component'
-import { toLowerCaseAndReplaceSpace } from '@/utils'
+import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
 import { theme } from '@/theme'
 import {
 	IconArrowUp,
@@ -26,6 +25,7 @@ import {
 	IconArrowDownLeft,
 	IconArrowDownRight,
 } from '@tabler/icons-react'
+import { useQuery } from 'react-query'
 
 const arrow = {
 	up: IconArrowUp,
@@ -39,31 +39,16 @@ const arrow = {
 }
 
 export const Characters = () => {
-	const { costume: activeCostume, name } = charRoute.useSearch()
-	const [character, setCharacter] = useState<Characters_ | null>(null)
-	const [elementURL, setElementURL] = useState<string | null>(null)
-
-	useEffect(() => {
-		import(`../../characters/${name.toLowerCase()}.ts`)
-			.then(data_ => {
-				const data = data_.default as Characters_
-				setCharacter(data)
-				import(`../../icons/elements/${data.element}.png`)
-					.then(module => {
-						setElementURL(module.default as string)
-					})
-					.catch(e => {
-						console.error({ e }, 'import element')
-					})
-			})
-			.catch(e => {
-				console.error({ e }, 'import character')
-			})
-	}, [name])
+	const { costume, name } = charRoute.useSearch()
+	const { data: character } = useQuery(['characters', name], () =>
+		fetch(`/characters/${name.toLowerCase()}.json`).then(res => {
+			return res.json() as Promise<Characters_>
+		})
+	)
 
 	const selectedCostume =
 		character?.costumes.find(
-			costume => toLowerCaseAndReplaceSpace(costume.name) === activeCostume
+			item => toLowerCaseReplaceSpaceRemoveSpecialChars(item.name) === costume
 		) || character?.costumes[0]
 
 	if (!character || !selectedCostume) {
@@ -132,7 +117,12 @@ export const Characters = () => {
 					<Arrow size="2em" />
 				</Flex>
 				<Flex>
-					<Image src={elementURL} h="3.5em" w="auto" fit="contain" />
+					<Image
+						src={`/icons/elements/${character.element}.png`}
+						h="3.5em"
+						w="auto"
+						fit="contain"
+					/>
 					<Text size="2em">{character.name}:</Text>
 					<Text size="2em" fs="italic">
 						{selectedCostume.name}
