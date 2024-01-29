@@ -6,12 +6,13 @@ import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
 import {
-	CostumeTabs,
-	CharacterInfoTabs,
-	SkillTab,
+	TabsCostume,
+	TabsCharacterInfo,
+	Skill,
 	Profile,
 	Lines,
 	Attributes,
+	Ability,
 } from '@/component'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { theme } from '@/theme'
@@ -91,7 +92,7 @@ export const Characters = () => {
 				/>
 			</Grid.Col>
 			<Grid.Col span={1} mb="xl">
-				<CostumeTabs character={character} />
+				<TabsCostume character={character} />
 			</Grid.Col>
 			<Grid.Col
 				span="auto"
@@ -137,9 +138,9 @@ export const Characters = () => {
 						{selectedCostume.name}
 					</Text>
 				</Flex>
-				<CharacterInfoTabs
-					skill={<SkillTab character={character} costume={selectedCostume} />}
-					ability={undefined}
+				<TabsCharacterInfo
+					skill={<Skill character={character} costume={selectedCostume} />}
+					ability={<Ability character={character} />}
 					profile={<Profile costume={selectedCostume} />}
 					attributes={<Attributes character={character} />}
 					lines={<Lines costume={selectedCostume} />}

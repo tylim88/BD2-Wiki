@@ -14,7 +14,7 @@ const tabs = [
 	{ value: 'unique_equipment', label: 'UE', color: 'pink' },
 ] as const
 
-export const CharacterInfoTabs = ({
+export const TabsCharacterInfo = ({
 	skill,
 	profile,
 	lines,

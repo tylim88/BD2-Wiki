@@ -8,7 +8,7 @@ import { Link } from './Link'
 import { toLowerCaseAndReplaceSpace } from '@/utils'
 import { type Characters } from '@/validation'
 
-export const CostumeTabs = ({ character }: { character: Characters }) => {
+export const TabsCostume = ({ character }: { character: Characters }) => {
 	const { costume } = charRoute.useSearch()
 	const [activeTab, setActiveTab] = useState<string>(costume)
 	const storeParams = useRoutesStore(state => state.storeParams)

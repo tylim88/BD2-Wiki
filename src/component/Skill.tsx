@@ -49,7 +49,7 @@ const rangeColors = {
 } as const
 const boxSize = 6
 
-export const SkillTab = ({
+export const Skill = ({
 	character,
 	costume,
 }: {
