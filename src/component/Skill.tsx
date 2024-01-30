@@ -2,17 +2,10 @@ import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
 import { theme } from '@/theme'
 import { Characters } from '@/validation'
 import { useCharactersStore } from '@/stores'
-import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
-
-const replaceVariablePlaceholders = (
-	inputString: string,
-	replacements: Record<string, number[]>,
-	index: number
-) => {
-	return inputString.replace(/\{\{([^}]+)\}\}/g, (_, placeholder) => {
-		return `${replacements[placeholder]?.[index]}` || 'error'
-	})
-}
+import {
+	toLowerCaseReplaceSpaceRemoveSpecialChars,
+	replaceVariablePlaceholders,
+} from '@/utils'
 
 const replaceComputedPlaceholders = (inputString: string) => {
 	return inputString.replace(/<<([^>>]+)>>/g, () => {

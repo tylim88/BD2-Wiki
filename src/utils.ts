@@ -15,3 +15,13 @@ declare global {
 		entries<T extends object>(o: T): Entries<T>
 	}
 }
+
+export const replaceVariablePlaceholders = (
+	inputString: string,
+	replacements: Record<string, number[] | string[]>,
+	index: number
+) => {
+	return inputString.replace(/\{\{([^}]+)\}\}/g, (_, placeholder) => {
+		return `${replacements[placeholder]?.[index]}` || 'error'
+	})
+}

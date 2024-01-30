@@ -7,7 +7,7 @@ const ability = (num: 4 | 5) =>
 		titles: array(string()).length(num),
 		description: string(),
 		costs: array(positiveInteger).length(num),
-		variables: record(string(), array(positiveInteger)).keySchema.length(num), // TODO write custom validation to match the number of variable keys with description and level
+		variables: record(string(), array(positiveInteger)), // TODO write custom validation to match the number of variable keys with description and level
 	})
 
 const range = (num: 3 | 5) =>
