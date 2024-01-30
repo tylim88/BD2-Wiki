@@ -49,21 +49,7 @@ export const Ability = ({ character }: { character: Characters }) => {
 					upgrade
 				)}`}
 			</Text>
-			<Flex gap="xs">
-				<Image src="/icons/abilities/ability_pill.png" w="2em" />
-				<Text
-					size="1.5em"
-					c={
-						character.ability.costs[upgrade]! <
-						character.ability.costs[upgrade - 1]!
-							? 'red'
-							: character.ability.costs[upgrade]! >
-								  character.ability.costs[upgrade - 1]!
-								? 'blue'
-								: 'black'
-					}
-				>{`${character.ability.costs[upgrade]}`}</Text>
-			</Flex>
+
 			<Slider
 				value={upgrade}
 				onChange={value => {
@@ -82,7 +68,15 @@ export const Ability = ({ character }: { character: Characters }) => {
 				}).map((_, index) => {
 					return {
 						value: index,
-						label: <Text>{`${character.ability.costs[index]}`}</Text>,
+						label: (
+							<Flex>
+								<Image
+									src="/icons/abilities/ability_pill.png"
+									w={theme.fontSizes.md}
+								/>
+								<Text>{`${character.ability.costs[index]}`}</Text>
+							</Flex>
+						),
 					}
 				})}
 				styles={{

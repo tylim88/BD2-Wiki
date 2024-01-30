@@ -68,7 +68,10 @@ export const Attributes = ({ character }: { character: Characters }) => {
 		character.attributes.atk.min
 
 	return (
-		<Stack align="center" py="xl">
+		<Stack align="center" p="xl">
+			<Text ta="left" w="100%">
+				Collection: 0%
+			</Text>
 			<Component
 				label="Level"
 				value={`${level}`}

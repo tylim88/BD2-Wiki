@@ -11,7 +11,7 @@ const tabs = [
 	{ value: 'lines', label: null, color: 'yellow' },
 	{ value: 'attributes', label: null, color: 'green' },
 	{ value: 'ability', label: null, color: 'cyan' },
-	{ value: 'unique_equipment', label: 'UE', color: 'pink' },
+	{ value: 'potential', label: null, color: 'pink' },
 ] as const
 
 export const TabsCharacterInfo = ({
@@ -103,7 +103,7 @@ export const TabsCharacterInfo = ({
 			{activeTab === 'lines' ? lines : null}
 			{activeTab === 'attributes' ? attributes : null}
 			{activeTab === 'ability' ? ability : null}
-			{activeTab === 'unique_equipment' ? uniqueEquipment : null}
+			{activeTab === 'potential' ? uniqueEquipment : null}
 		</Tabs>
 	)
 }

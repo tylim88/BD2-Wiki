@@ -37,7 +37,7 @@ export const Lines = ({
 						gap={0}
 					>
 						<Text ta="left">{types[index]}:</Text>
-						<Text size="xl" pt="xs" pb="md">
+						<Text size="xl" pt="xs" pb="lg">
 							{line}
 						</Text>
 						<Flex w="100%">

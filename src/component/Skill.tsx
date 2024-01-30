@@ -126,9 +126,17 @@ export const Skill = ({
 					marks={Array.from({
 						length: marks.length || 0,
 					}).map((_, index) => {
+						const costReduction =
+							costume.skill.cost[index]! < costume.skill.cost[index - 1]!
 						return {
 							value: index,
-							label: <Text size="xl">{`+${index}`}</Text>,
+							label: (
+								<Text
+									fw={costReduction ? 'bold' : undefined}
+									c={costReduction ? 'red' : 'black'}
+									size="xl"
+								>{`${costume.skill.cost[index]}`}</Text>
+							),
 						}
 					})}
 					styles={{
