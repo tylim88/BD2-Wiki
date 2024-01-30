@@ -39,6 +39,10 @@ export default defineConfig({
 					dest: '',
 				},
 				{
+					src: 'audios',
+					dest: '',
+				},
+				{
 					src: 'characters',
 					dest: '',
 				},

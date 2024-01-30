@@ -41,25 +41,24 @@ export const Lines = ({
 							{line}
 						</Text>
 						<Flex w="100%">
-							{[
-								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
-								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
-							].map((url, index) => (
-								<audio
-									key={index}
-									controls
-									style={{
-										paddingLeft: theme.spacing.xs,
-										paddingRight: theme.spacing.xs,
-										maxWidth: '50%',
-										flexGrow: 1,
-										height: '2em',
-									}}
-									controlsList="nodownload noplaybackrate noremoteplayback"
-									preload="auto"
-									src={url}
-								/>
-							))}
+							{['/audios/chrono.mp3', '/audios/chrono.mp3'].map(
+								(url, index) => (
+									<audio
+										key={index}
+										controls
+										style={{
+											paddingLeft: theme.spacing.xs,
+											paddingRight: theme.spacing.xs,
+											maxWidth: '50%',
+											flexGrow: 1,
+											height: '2em',
+										}}
+										controlsList="nodownload noplaybackrate noremoteplayback"
+										preload="auto"
+										src={url}
+									/>
+								)
+							)}
 						</Flex>
 					</Stack>
 				)
