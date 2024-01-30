@@ -1,6 +1,7 @@
 import { Grid, Text, Image, Flex, Center, Loader, Badge } from '@mantine/core'
 import { content } from '@/styles'
 import placeholder from '@/assets/placeholder.svg'
+import flower from '@/assets/flower.jpeg'
 import { charRoute } from '@/routes'
 import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
@@ -69,12 +70,7 @@ export const Characters = () => {
 			}}
 		>
 			<Grid.Col span={6} mb="xl" pos="relative">
-				<Image
-					src="https://source.unsplash.com/user/c_v_r/720x1080"
-					h="80vh"
-					fit="contain"
-					fallbackSrc={placeholder}
-				/>
+				<Image src={flower} h="80vh" fit="contain" fallbackSrc={placeholder} />
 			</Grid.Col>
 			<Grid.Col span={1} mb="xl">
 				<TabsCostume character={character} />
