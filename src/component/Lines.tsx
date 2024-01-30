@@ -44,9 +44,9 @@ export const Lines = ({
 							{[
 								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
 								'http://webaudioapi.com/samples/audio-tag/chrono.mp3',
-							].map(url => (
+							].map((url, index) => (
 								<audio
-									key={url}
+									key={index}
 									controls
 									style={{
 										paddingLeft: theme.spacing.xs,

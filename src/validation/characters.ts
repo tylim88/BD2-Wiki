@@ -77,7 +77,7 @@ export const characters = object({
 				range: union([range(3), range(5)]),
 				description: string(),
 				variables: record(string(), array(positiveInteger)), // TODO write custom validation to match the number of variable keys with description
-				cost: array(positiveInteger).length(6),
+				costs: array(positiveInteger).length(6),
 				cool_down: array(positiveInteger).length(6),
 			}),
 			profile: object({

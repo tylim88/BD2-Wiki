@@ -52,7 +52,7 @@
 				],
 				"description": "Deal <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
 				"variables": { "x": [275, 350, 420, 420, 490, 555] },
-				"cost": [3, 3, 3, 2, 2, 2],
+				"costs": [3, 3, 3, 2, 2, 2],
 				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
@@ -104,7 +104,7 @@
 				],
 				"description": "Attack 3 times, each attacks deals <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
 				"variables": { "x": [75, 105, 130, 130, 155, 175] },
-				"cost": [4, 4, 4, 3, 3, 3],
+				"costs": [4, 4, 4, 3, 3, 3],
 				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
@@ -169,7 +169,7 @@
 					"y": [2, 2, 2, 2, 4, 4],
 					"z": [50, 50, 68, 68, 68, 85]
 				},
-				"cost": [4, 4, 4, 3, 3, 3],
+				"costs": [4, 4, 4, 3, 3, 3],
 				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {
@@ -232,7 +232,7 @@
 				"variables": {
 					"x": [90, 120, 150, 150, 175, 200]
 				},
-				"cost": [4, 4, 4, 3, 3, 3],
+				"costs": [4, 4, 4, 3, 3, 3],
 				"cool_down": [5, 5, 5, 5, 5, 5]
 			},
 			"profile": {

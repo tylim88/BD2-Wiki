@@ -26,7 +26,7 @@ type Reset = {
 export const persistent = <T extends { [s: string]: unknown }>(
 	{
 		// change this value to reset indexed db
-		version = 2,
+		version = 1,
 		name,
 		keysToPersist,
 	}: {
