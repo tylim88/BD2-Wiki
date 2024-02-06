@@ -42,7 +42,9 @@ const arrow = {
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
 	const { data: character } = useQuery(['characters', name], () =>
-		fetch(`/characters/${name.toLowerCase()}.json`).then(res => {
+		fetch(
+			`/characters/${toLowerCaseReplaceSpaceRemoveSpecialChars(name)}.json`
+		).then(res => {
 			return res.json() as Promise<Characters_>
 		})
 	)
