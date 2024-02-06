@@ -15,7 +15,7 @@ import {
 } from '@/routes'
 import { theme } from '@/theme'
 
-export const Header = ({
+export const Navbar = ({
 	setRef,
 }: {
 	setRef: (r: HTMLDivElement | null) => void
@@ -70,7 +70,7 @@ export const Header = ({
 							<NavLink path={packsRoute.fullPath} label="Packs" />
 						</Link>
 						<Link to={itemsRoute.fullPath}>
-							<NavLink path={itemsRoute.fullPath} label="Packs" />
+							<NavLink path={itemsRoute.fullPath} label="Items" />
 						</Link>
 					</Flex>
 				</Grid.Col>

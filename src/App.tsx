@@ -1,6 +1,6 @@
 import { Stack, BackgroundImage, Center, Loader } from '@mantine/core'
 import { Outlet } from '@tanstack/react-router'
-import { Header, TanStackRouterDevtools } from './component'
+import { Navbar, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
 import { Suspense, useState } from 'react'
 import { theme } from './theme'
@@ -18,7 +18,7 @@ export const App = () => {
 					filter: 'blur(15px)',
 				}}
 			/>
-			<Header setRef={setRef} />
+			<Navbar setRef={setRef} />
 			<div
 				style={{
 					visibility: 'hidden',

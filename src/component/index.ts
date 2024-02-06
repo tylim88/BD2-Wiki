@@ -1,4 +1,4 @@
-export * from './Header'
+export * from './Navbar'
 export * from './TanStackRouterDevtools'
 export * from './Link'
 export * from './TabsCostume'
