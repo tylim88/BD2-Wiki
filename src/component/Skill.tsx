@@ -44,7 +44,6 @@ export const Skill = ({
 				<Text ta="left" size="2em" fs="italic">
 					{costume.skill.name}
 				</Text>
-
 				<Image
 					src={`/icons/skills/upgrade_${upgrade}.png`}
 					h="3.5em"
@@ -99,55 +98,68 @@ export const Skill = ({
 					</Text>
 				</Center>
 			</Flex>
-			<>
-				<Text ta="left" size="1.5em" px="xl">
-					{replaceComputedPlaceholders(
-						replaceVariablePlaceholders(
-							costume.skill.description,
-							costume.skill.variables,
-							upgrade
-						)
-					)}
+			<Flex justify="center" gap="xl">
+				<Text
+					size="1.5em"
+					c={
+						costume.skill.costs[upgrade]! < costume.skill.costs[upgrade - 1]!
+							? 'red'
+							: 'black'
+					}
+				>
+					Cost: {costume.skill.costs[upgrade]} SP
 				</Text>
-				<Slider
-					value={upgrade}
-					onChange={value => {
-						useCharactersStore.setState(state => {
-							state.slider.skill[costume.name] = value
-						})
-					}}
-					color="blue"
-					min={0}
-					max={marks.length - 1}
-					step={1}
-					w="auto"
-					miw="20em"
-					py="xl"
-					marks={Array.from({
-						length: marks.length || 0,
-					}).map((_, index) => {
-						const costReduction =
-							costume.skill.costs[index]! < costume.skill.costs[index - 1]!
-						return {
-							value: index,
-							label: (
-								<Text
-									fw={costReduction ? 'bold' : undefined}
-									c={costReduction ? 'red' : 'black'}
-									size="xl"
-								>{`${costume.skill.costs[index]}`}</Text>
-							),
-						}
-					})}
-					styles={{
-						markLabel: {
-							color: 'black',
-							fontSize: theme.fontSizes.xl,
-							textAlign: 'center',
-						},
-					}}
-				/>
-			</>
+				<Text
+					size="1.5em"
+					c={
+						costume.skill.cool_down[upgrade]! <
+						costume.skill.cool_down[upgrade - 1]!
+							? 'red'
+							: 'black'
+					}
+				>
+					CD: {costume.skill.cool_down[upgrade]} turns
+				</Text>
+			</Flex>
+			<Text ta="left" size="1.5em" px="xl">
+				{replaceComputedPlaceholders(
+					replaceVariablePlaceholders(
+						costume.skill.description,
+						costume.skill.variables,
+						upgrade
+					)
+				)}
+			</Text>
+			<Slider
+				value={upgrade}
+				onChange={value => {
+					useCharactersStore.setState(state => {
+						state.slider.skill[costume.name] = value
+					})
+				}}
+				color="blue"
+				min={0}
+				max={marks.length - 1}
+				step={1}
+				w="auto"
+				miw="20em"
+				py="xl"
+				marks={Array.from({
+					length: marks.length || 0,
+				}).map((_, index) => {
+					return {
+						value: index,
+						label: <Text size="xl">+{index}</Text>,
+					}
+				})}
+				styles={{
+					markLabel: {
+						color: 'black',
+						fontSize: theme.fontSizes.xl,
+						textAlign: 'center',
+					},
+				}}
+			/>
 		</Stack>
 	)
 }
