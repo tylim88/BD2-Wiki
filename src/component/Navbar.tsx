@@ -13,7 +13,7 @@ import {
 	packsRoute,
 	itemsRoute,
 } from '@/routes'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 
 export const Navbar = ({
 	setRef,
@@ -36,7 +36,7 @@ export const Navbar = ({
 			}}
 			w="100%"
 		>
-			<Grid maw={theme.breakpoints.xl} w="100%" align="center">
+			<Grid maw={THEME.breakpoints.xl} w="100%" align="center">
 				<Grid.Col span="content">
 					<Link to="/">
 						<Image src={brand} h="2em" />

@@ -3,7 +3,7 @@ import { Outlet } from '@tanstack/react-router'
 import { Navbar, TanStackRouterDevtools } from './component'
 import BG1 from './assets/bg1.jpg'
 import { Suspense, useState } from 'react'
-import { theme } from './theme'
+import { THEME } from './theme'
 
 export const App = () => {
 	const [ref, setRef] = useState<HTMLDivElement | null>(null)
@@ -26,7 +26,7 @@ export const App = () => {
 				}}
 			/>
 			<Center
-				maw={theme.breakpoints.xl}
+				maw={THEME.breakpoints.xl}
 				px="xl"
 				h="100%"
 				w="100%"

@@ -1,5 +1,5 @@
 import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 import { Characters } from '@/validation'
 import { useCharactersStore } from '@/stores'
 import {
@@ -155,7 +155,7 @@ export const Skill = ({
 				styles={{
 					markLabel: {
 						color: 'black',
-						fontSize: theme.fontSizes.xl,
+						fontSize: THEME.fontSizes.xl,
 						textAlign: 'center',
 					},
 				}}

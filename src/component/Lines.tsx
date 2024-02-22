@@ -1,6 +1,6 @@
 import { Text, Stack, Flex } from '@mantine/core'
 import { Characters } from '@/validation'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 
 const types = [
 	'Battle Ready 1',
@@ -32,7 +32,7 @@ export const Lines = ({
 						pb="lg"
 						justify="center"
 						style={{
-							borderRadius: theme.radius.md,
+							borderRadius: THEME.radius.md,
 						}}
 						gap={0}
 					>
@@ -47,8 +47,8 @@ export const Lines = ({
 										key={index}
 										controls
 										style={{
-											paddingLeft: theme.spacing.xs,
-											paddingRight: theme.spacing.xs,
+											paddingLeft: THEME.spacing.xs,
+											paddingRight: THEME.spacing.xs,
 											maxWidth: '50%',
 											flexGrow: 1,
 											height: '2em',

@@ -15,7 +15,7 @@ import {
 	Ability,
 } from '@/component'
 import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 import {
 	IconArrowUp,
 	IconArrowDown,
@@ -81,7 +81,7 @@ export const Characters = () => {
 				span="auto"
 				style={{
 					...content,
-					borderRadius: theme.radius.sm,
+					borderRadius: THEME.radius.sm,
 					flexDirection: 'column',
 					position: 'relative',
 				}}

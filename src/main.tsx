@@ -7,7 +7,7 @@ import { router } from './routes'
 import { isProduction } from './config'
 import './main.css'
 import '@mantine/core/styles.css'
-import { theme } from './theme'
+import { THEME } from './theme'
 import { QueryClient, QueryClientProvider } from 'react-query'
 // if ('serviceWorker' in navigator) {
 // 	navigator.serviceWorker.register('./sw.js').catch(error => {
@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<QueryClientProvider client={queryClient}>
 			<HelmetProvider>
-				<MantineProvider theme={theme}>
+				<MantineProvider theme={THEME}>
 					<RouterProvider router={router} />
 				</MantineProvider>
 			</HelmetProvider>

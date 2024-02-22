@@ -6,7 +6,7 @@ import {
 	replaceVariablePlaceholders,
 } from '@/utils'
 import { useCharactersStore } from '@/stores'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 
 // not type safe, point of failure
 const abilities: Record<string, React.FC<{ character: Characters }>> = {
@@ -72,7 +72,7 @@ export const Ability = ({ character }: { character: Characters }) => {
 							<Flex>
 								<Image
 									src="/icons/abilities/ability_pill.png"
-									w={theme.fontSizes.md}
+									w={THEME.fontSizes.md}
 								/>
 								<Text>{`${character.ability.costs[index]}`}</Text>
 							</Flex>
@@ -82,7 +82,7 @@ export const Ability = ({ character }: { character: Characters }) => {
 				styles={{
 					markLabel: {
 						color: 'black',
-						fontSize: theme.fontSizes.xl,
+						fontSize: THEME.fontSizes.xl,
 						textAlign: 'center',
 					},
 				}}

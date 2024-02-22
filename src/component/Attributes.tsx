@@ -1,7 +1,7 @@
 import { Grid, Text, Stack, TextProps, Slider } from '@mantine/core'
 import { Characters } from '@/validation'
 import { useCharactersStore } from '@/stores'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 
 const Component = ({
 	label,
@@ -136,7 +136,7 @@ export const Attributes = ({ character }: { character: Characters }) => {
 				styles={{
 					markLabel: {
 						color: 'black',
-						fontSize: theme.fontSizes.xl,
+						fontSize: THEME.fontSizes.xl,
 						textAlign: 'center',
 					},
 				}}

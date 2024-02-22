@@ -1,7 +1,7 @@
 import { Text, NavLink as NavLink_ } from '@mantine/core'
 import { useMatchRoute } from '@tanstack/react-router'
 import classes from './NavLink.module.css'
-import { theme } from '@/theme'
+import { THEME } from '@/theme'
 
 export const NavLink = ({ path, label }: { path: string; label: string }) => {
 	const matchRoute = useMatchRoute()
@@ -13,7 +13,7 @@ export const NavLink = ({ path, label }: { path: string; label: string }) => {
 			bg={isActive ? 'black' : 'transparent'}
 			key={path}
 			style={{
-				borderRadius: theme.radius.sm,
+				borderRadius: THEME.radius.sm,
 			}}
 			active={isActive}
 			label={

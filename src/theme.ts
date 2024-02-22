@@ -22,4 +22,4 @@ const themeOverride = createTheme({
 	},
 })
 
-export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride)
+export const THEME = mergeMantineTheme(DEFAULT_THEME, themeOverride)
