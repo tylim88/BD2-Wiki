@@ -19,6 +19,7 @@ export const characters = object({
 	name: string(),
 	version: positiveInteger,
 	exclusive_gear: string(),
+	birthday: monthAndDay,
 	kick: union([
 		literal('up'),
 		literal('down'),
@@ -85,7 +86,6 @@ export const characters = object({
 				description: string(),
 				age: string(),
 				height: string(),
-				birthday: monthAndDay,
 				affiliation: string(),
 				hobby: string(),
 				like: string(),
