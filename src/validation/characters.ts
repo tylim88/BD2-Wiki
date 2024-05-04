@@ -47,8 +47,8 @@ export const characters = object({
 		crit_dmg: positiveInteger,
 		def: positiveInteger,
 		magic_resist: positiveInteger,
-		dmg: positiveInteger,
-		resist: positiveInteger,
+		prop_dmg: positiveInteger,
+		prop_resist: positiveInteger,
 		hp: object({
 			min: positiveInteger,
 			max: positiveInteger,

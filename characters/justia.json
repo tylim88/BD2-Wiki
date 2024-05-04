@@ -27,8 +27,8 @@
 		"crit_dmg": 50,
 		"def": 0,
 		"magic_resist": 0,
-		"dmg": 50,
-		"resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
 		"hp": {
 			"min": 121,
 			"max": 2121
