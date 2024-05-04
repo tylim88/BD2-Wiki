@@ -58,8 +58,8 @@
 			},
 			"profile": {
 				"description": "My mission is to destroy evil. That is the only reason why I have come here.",
-				"age": 15,
-				"height": 153,
+				"age": "15 years old",
+				"height": "153cm",
 				"birthday": { "month": 2, "day": 11 },
 				"affiliation": "The Unidentified Traveler",
 				"hobby": "Reciting the Knight's Oath",
@@ -114,8 +114,8 @@
 			},
 			"profile": {
 				"description": "Until the day that evil is purged from the world, let's castigate the warlock together.",
-				"age": 15,
-				"height": 153,
+				"age": "15 years old",
+				"height": "153cm",
 				"birthday": { "month": 2, "day": 11 },
 				"affiliation": "The Senior Knight of Kalian Imperial Security Task Force",
 				"hobby": "Collecting recipes from each region",
@@ -183,8 +183,8 @@
 			},
 			"profile": {
 				"description": "Blood... Fresh Blood... If it were you... Would you able to quench this thirst...?",
-				"age": 15,
-				"height": 153,
+				"age": "15 years old",
+				"height": "153cm",
 				"birthday": { "month": 2, "day": 11 },
 				"affiliation": "I forgot",
 				"hobby": "Mediation... In he hopes that the impulse will subside",
@@ -251,7 +251,7 @@
 			"profile": {
 				"description": "Until I gather all of the recipes in this world, I can't go back... No, forget what I just said.",
 				"age": "17 years old (according to her admissions application)",
-				"height": 153,
+				"height": "153cm",
 				"birthday": { "month": 2, "day": 11 },
 				"affiliation": "Member of the Brown Secondary High School Kendo Club",
 				"hobby": "Watching the Cooking Club's practice sessions",
@@ -318,8 +318,8 @@
 			},
 			"profile": {
 				"description": "The best dishes for the best party. If I can taste dished like this everytime, then maybe parties are not that bad.",
-				"age": 15,
-				"height": 153,
+				"age": "15 years old",
+				"height": "153cm",
 				"birthday": { "month": 2, "day": 11 },
 				"affiliation": "Contestant of the Miss Aniweiss Final",
 				"hobby": "Exploring buffets",

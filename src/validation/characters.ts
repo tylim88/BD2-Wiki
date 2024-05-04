@@ -83,8 +83,8 @@ export const characters = object({
 			}),
 			profile: object({
 				description: string(),
-				age: union([positiveInteger, string()]),
-				height: positiveInteger.max(200).min(100),
+				age: string(),
+				height: string(),
 				birthday: monthAndDay,
 				affiliation: string(),
 				hobby: string(),
