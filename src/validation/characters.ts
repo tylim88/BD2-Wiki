@@ -18,6 +18,7 @@ const range = (num: 3 | 5) =>
 export const characters = object({
 	name: string(),
 	version: positiveInteger,
+	exclusive_gear: string(),
 	kick: union([
 		literal('up'),
 		literal('down'),
