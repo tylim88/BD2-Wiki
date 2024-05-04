@@ -9,9 +9,10 @@ under development
 
 techs:
 
-1. Typescript
-2. Mantine
-3. Tan Stack Router
-4. Vite
-5. Zustand
-6. Zod
+1. React
+2. Typescript
+3. Mantine
+4. Tan Stack Router
+5. Vite
+6. Zustand
+7. Zod
