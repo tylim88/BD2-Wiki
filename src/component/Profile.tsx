@@ -60,21 +60,19 @@ export const Profile = ({
 						/>
 					)
 
-				if (label === 'description') {
+				if (label === 'description')
 					return (
 						<Text ta="center" pb="xl" size="1.5rem" key={label}>
 							{costume.profile[label]}
 						</Text>
 					)
-				} else if (label === 'rumors') {
+
+				if (label === 'rumors')
 					return costume.profile[label].map((item, index) => {
 						return <Item key={item} value={item} label={`rumor ${index + 1}`} />
 					})
-				} else {
-					return (
-						<Item label={label} key={label} value={costume.profile[label]} />
-					)
-				}
+
+				return <Item label={label} key={label} value={costume.profile[label]} />
 			})}
 		</Stack>
 	)
