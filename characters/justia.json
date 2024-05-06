@@ -22,7 +22,7 @@
 	"birthday": { "month": 2, "day": 11 },
 	"exclusive_gear": "Royaldite",
 	"attributes": {
-		"initial_combat_power": 1660,
+		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,
