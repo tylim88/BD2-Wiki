@@ -102,11 +102,11 @@ export const Attributes = ({ character }: { character: Characters }) => {
 			/>
 			<Component
 				label={`${character.element === 'dark' ? 'Darkness' : character.element} DMG`}
-				value={`${character.attributes.dmg}%`}
+				value={`${character.attributes.prop_dmg}%`}
 			/>
 			<Component
 				label={`${character.element === 'dark' || character.element === 'light' ? 'Property' : resistance[character.element]} Resist`}
-				value={`${character.attributes.dmg}%`}
+				value={`${character.attributes.prop_resist}%`}
 			/>
 
 			<Slider
