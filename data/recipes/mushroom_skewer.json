@@ -1,0 +1,9 @@
+{
+	"name": "Fish Mushroom",
+	"description": "Grilled skewers cooked over an open flame that maximizes the flavor of mushrooms. Surprisingly, they say it tastes like meat.",
+	"ingredients": [
+		{ "name": "Mushroom", "count": 2 },
+		{ "name": "Beast Meat", "count": 2 }
+	],
+	"location": [{ "type": "ability level up", "level": "intermediate" }]
+}

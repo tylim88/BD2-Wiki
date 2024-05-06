@@ -1,0 +1,9 @@
+{
+	"name": "Mushroom Soup",
+	"description": "Made with mushrooms that are good for the body and taste good, a healthy dish that eases and filles your stomach",
+	"ingredients": [
+		{ "name": "Mushroom", "count": 1 },
+		{ "name": "Wheat", "count": 1 }
+	],
+	"location": [{ "type": "account creation" }]
+}
