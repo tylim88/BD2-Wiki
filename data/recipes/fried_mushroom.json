@@ -1,9 +1,11 @@
 {
 	"name": "Fired Mushroom",
+	"rarity": 1,
 	"description": "A stir-fry dish with the aroma of various mushrooms and carrots that stimulates the nose. It is perfect as a side dish or eaten alone.",
 	"ingredients": [
 		{ "name": "Mushroom", "count": 1 },
 		{ "name": "Carrot", "count": 1 }
 	],
-	"location": [{ "type": "main quest", "pack": "Knight of Blood" }]
+	"location": [{ "type": "main quest", "pack": "Knight of Blood" }],
+	"pills": 1
 }

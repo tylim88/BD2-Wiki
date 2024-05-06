@@ -1,9 +1,11 @@
 {
 	"name": "Daref Black Beer",
+	"rarity": 2,
 	"description": "A local specialty made with hops and barely from Daref. Sweet, sour, bitter... It is sad that you can feel the joys and sorrows of life through the taste.",
 	"ingredients": [
 		{ "name": "Hop", "count": 2 },
 		{ "name": "Wheat", "count": 2 }
 	],
-	"location": [{ "type": "search", "pack": "Lapis Witch" }]
+	"location": [{ "type": "search", "pack": "Lapis Witch" }],
+	"pills": 2
 }
