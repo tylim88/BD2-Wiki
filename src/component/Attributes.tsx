@@ -61,11 +61,9 @@ export const Attributes = ({ character }: { character: Characters }) => {
 		((character.attributes.hp.max - character.attributes.hp.min) / totalLevel) *
 			level +
 		character.attributes.hp.min
-	const totalATK =
-		((character.attributes.atk.max - character.attributes.atk.min) /
-			totalLevel) *
-			level +
-		character.attributes.atk.min
+	const totalATK = Math.floor(
+		(character.attributes.atk.max / 110) * (level + 9)
+	)
 
 	return (
 		<Stack align="center" p="xl">
