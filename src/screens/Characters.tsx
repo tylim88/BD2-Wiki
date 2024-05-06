@@ -3,7 +3,6 @@ import { content } from '@/styles'
 import placeholder from '@/assets/placeholder.svg'
 import flower from '@/assets/flower.jpeg'
 import { charRoute } from '@/routes'
-import { type Characters as Characters_ } from '@/validation'
 import { Star } from '@mui/icons-material'
 import {
 	TabsCostume,
@@ -26,7 +25,7 @@ import {
 	IconArrowDownLeft,
 	IconArrowDownRight,
 } from '@tabler/icons-react'
-import { useQuery } from 'react-query'
+import { useQueryCharacterData } from '@/api'
 
 const arrow = {
 	up: IconArrowUp,
@@ -41,13 +40,7 @@ const arrow = {
 
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
-	const { data: character } = useQuery(['characters', name], () =>
-		fetch(
-			`/characters/${toLowerCaseReplaceSpaceRemoveSpecialChars(name)}.json`
-		).then(res => {
-			return res.json() as Promise<Characters_>
-		})
-	)
+	const { data: character } = useQueryCharacterData(name)
 
 	const selectedCostume =
 		character?.costumes.find(
