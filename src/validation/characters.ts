@@ -94,9 +94,9 @@ export const characters = object({
 				rumors: array(string()).length(2),
 			}),
 			lines: array(string()).length(10),
-			audio: array(
+			voices: array(
 				object({
-					voice_actor: string(),
+					actor: string(),
 					language: union([literal('jp'), literal('kr')]),
 				})
 			),

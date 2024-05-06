@@ -83,13 +83,13 @@
 				"Yaaaap!",
 				"Smells nice."
 			],
-			"audios": [
+			"voices": [
 				{
-					"voice_actor": "Azumi Waki",
+					"actor": "Azumi Waki",
 					"language": "jp"
 				},
 				{
-					"voice_actor": "Jung Hye-won",
+					"actor": "Jung Hye-won",
 					"language": "kr"
 				}
 			]
@@ -138,13 +138,13 @@
 				"Death to all that is evil",
 				"This is a dish that warms the heart."
 			],
-			"audios": [
+			"voices": [
 				{
-					"voice_actor": "Azumi Waki",
+					"actor": "Azumi Waki",
 					"language": "jp"
 				},
 				{
-					"voice_actor": "Jung Hye-won",
+					"actor": "Jung Hye-won",
 					"language": "kr"
 				}
 			]
@@ -206,13 +206,13 @@
 				"Blood... give me yoiur blood!",
 				"Cooking is merely a way to help me regain my strength..."
 			],
-			"audios": [
+			"voices": [
 				{
-					"voice_actor": "Azumi Waki",
+					"actor": "Azumi Waki",
 					"language": "jp"
 				},
 				{
-					"voice_actor": "Jung Hye-won",
+					"actor": "Jung Hye-won",
 					"language": "kr"
 				}
 			]
@@ -272,13 +272,13 @@
 				"Prepare yourself!",
 				"This is the recipe of this world..."
 			],
-			"audios": [
+			"voices": [
 				{
-					"voice_actor": "Azumi Waki",
+					"actor": "Azumi Waki",
 					"language": "jp"
 				},
 				{
-					"voice_actor": "Jung Hye-won",
+					"actor": "Jung Hye-won",
 					"language": "kr"
 				}
 			]
@@ -339,13 +339,13 @@
 				"Prepare yourself!",
 				"This is the recipe of this world..."
 			],
-			"audios": [
+			"voices": [
 				{
-					"voice_actor": "Azumi Waki",
+					"actor": "Azumi Waki",
 					"language": "jp"
 				},
 				{
-					"voice_actor": "Jung Hye-won",
+					"actor": "Jung Hye-won",
 					"language": "kr"
 				}
 			]
