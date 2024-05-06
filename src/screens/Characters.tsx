@@ -129,7 +129,9 @@ export const Characters = () => {
 				<TabsCharacterInfo
 					skill={<Skill character={character} costume={selectedCostume} />}
 					ability={<Ability character={character} />}
-					profile={<Profile costume={selectedCostume} />}
+					profile={
+						<Profile costume={selectedCostume} birthday={character.birthday} />
+					}
 					attributes={<Attributes character={character} />}
 					lines={<Lines costume={selectedCostume} />}
 					uniqueEquipment={undefined}

@@ -2,7 +2,7 @@ import { Grid, Text, Stack } from '@mantine/core'
 import { Characters } from '@/validation'
 import { format } from 'date-fns'
 
-const Component = ({ value, label }: { value: string; label: string }) => {
+const Item = ({ value, label }: { value: string; label: string }) => {
 	return (
 		<Grid>
 			<Grid.Col span={3} display="flex">
@@ -25,46 +25,54 @@ const Component = ({ value, label }: { value: string; label: string }) => {
 	)
 }
 
+const labels = [
+	'description',
+	'age',
+	'height',
+	'birthday',
+	'affiliation',
+	'hobby',
+	'like',
+	'dislike',
+	'cherish',
+	'rumors',
+] as const
+
 export const Profile = ({
+	birthday,
 	costume,
 }: {
+	birthday: Characters['birthday']
 	costume: Characters['costumes'] extends (infer P)[] ? P : never
 }) => {
 	return (
 		<Stack p="xl" pb="xs">
-			{Object.entries(costume.profile).map(([key, value]) => {
-				if (key === 'description') {
+			{labels.map(label => {
+				if (label === 'birthday')
 					return (
-						<Text ta="center" pb="xl" size="1.5rem" key={key}>
-							{value}
+						<Item
+							label={label}
+							key={label}
+							value={format(
+								new Date(1996, birthday.month - 1, birthday.day),
+								'MMMM do'
+							)}
+						/>
+					)
+
+				if (label === 'description') {
+					return (
+						<Text ta="center" pb="xl" size="1.5rem" key={label}>
+							{costume.profile[label]}
 						</Text>
 					)
-				} else if (key === 'rumors') {
-					return value.map((item, index) => {
-						return (
-							<Component key={item} value={item} label={`rumor ${index + 1}`} />
-						)
+				} else if (label === 'rumors') {
+					return costume.profile[label].map((item, index) => {
+						return <Item key={item} value={item} label={`rumor ${index + 1}`} />
 					})
 				} else {
 					return (
-						<Component
-							label={key}
-							key={key}
-							value={
-								key === 'age' && typeof value === 'number'
-									? `${value} years old`
-									: key === 'height'
-										? `${value}cm`
-										: key === 'birthday'
-											? format(
-													new Date(1996, value.month - 1, value.day),
-													'MMMM do'
-												)
-											: key === 'age'
-												? `${value}` // ? https://github.com/microsoft/TypeScript/issues/57200
-												: value
-							}
-						/>
+						<Item label={label} key={label} value={costume.profile[label]} />
 					)
 				}
 			})}
