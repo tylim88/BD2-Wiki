@@ -43,7 +43,7 @@ export default defineConfig({
 					dest: '',
 				},
 				{
-					src: 'characters',
+					src: 'data',
 					dest: '',
 				},
 			],
