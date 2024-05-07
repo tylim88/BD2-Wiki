@@ -7,5 +7,6 @@
 		{ "name": "Wheat", "count": 2 }
 	],
 	"location": { "type": "search", "pack": "Lapis Witch" },
-	"pills": 2
+	"pills": 2,
+	"restore": 49
 }

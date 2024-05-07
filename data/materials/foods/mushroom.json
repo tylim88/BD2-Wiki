@@ -1,0 +1,6 @@
+{
+	"name": "Mushroom",
+	"description": "Mushrooms full of earthy, natural flavor. Not to be confused with poisonous mushrooms.",
+	"location": { "type": "search", "pack": "Lapis Witch" },
+	"restore": 2
+}
