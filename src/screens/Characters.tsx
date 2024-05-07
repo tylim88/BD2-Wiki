@@ -25,7 +25,7 @@ import {
 	IconArrowDownLeft,
 	IconArrowDownRight,
 } from '@tabler/icons-react'
-import { useQueryCharacterData } from '@/api'
+import { useFetchCharacterData } from '@/api'
 
 const arrow = {
 	up: IconArrowUp,
@@ -40,7 +40,7 @@ const arrow = {
 
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
-	const { data: character } = useQueryCharacterData(name)
+	const { data: character } = useFetchCharacterData(name)
 
 	const selectedCostume =
 		character?.costumes.find(
