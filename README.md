@@ -7,7 +7,7 @@ dev: `npm run dev`
 
 under development
 
-techs:
+## Techs
 
 1. React
 2. Typescript
@@ -16,3 +16,11 @@ techs:
 5. Vite
 6. Zustand
 7. Zod
+
+## Data Files Naming Conventions
+
+Instead of using meta file name, this wiki use in game name to name data files, the conventions are:
+
+1. Replace `-` and `space` with `_`
+2. Remove all special characters except `_`
+3. Transform all alphabet to lower case

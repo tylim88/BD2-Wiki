@@ -1,9 +1,9 @@
-export const toLowerCaseReplaceSpaceRemoveSpecialChars = (
+export const toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars = (
 	inputString: string
 ) => {
 	return inputString
-		.replace(/[^\w\s]/gi, '')
-		.replace(/\s+/g, '_')
+		.replace(/[\s-]/g, '_')
+		.replace(/[^\w]|[^a-zA-Z0-9_]/g, '')
 		.toLowerCase()
 }
 type Entries<T> = {
