@@ -1,6 +1,10 @@
 {
 	"name": "Mushroom",
 	"description": "Mushrooms full of earthy, natural flavor. Not to be confused with poisonous mushrooms.",
-	"location": { "type": "search", "pack": "Lapis Witch" },
+	"location": [
+		{ "type": "search", "pack": "Knight Of Blood" },
+		{ "type": "basic", "pack": "Knight Of Blood" },
+		{ "type": "shop", "pack": "Knight Of Blood" }
+	],
 	"restore": 2
 }
