@@ -8,7 +8,7 @@ import { isProduction } from './config'
 import './main.css'
 import '@mantine/core/styles.css'
 import { THEME } from './theme'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 // if ('serviceWorker' in navigator) {
 // 	navigator.serviceWorker.register('./sw.js').catch(error => {
 // 		console.error('Service Worker registration failed:', error)

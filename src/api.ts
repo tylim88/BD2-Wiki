@@ -5,16 +5,18 @@ import {
 	type FoodRecipes,
 	type Costumes,
 } from '@/validation'
-import { useQuery } from 'react-query'
+import { useQuery, keepPreviousData } from '@tanstack/react-query'
 
 export const useFetchCharacterData = (name: string) =>
-	useQuery(['characters', name], () =>
-		fetch(
-			`data/characters/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
-		).then(res => {
-			return res.json() as Promise<Characters>
-		})
-	)
+	useQuery({
+		queryKey: ['characters', name],
+		queryFn: () =>
+			fetch(
+				`data/characters/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
+			).then(res => {
+				return res.json() as Promise<Characters>
+			}),
+	})
 
 export const useFetchCostumeData = ({
 	name,
@@ -25,7 +27,7 @@ export const useFetchCostumeData = ({
 }) =>
 	useQuery({
 		queryKey: ['costumes', name, costume],
-		keepPreviousData: true,
+		placeholderData: keepPreviousData,
 		queryFn: () =>
 			fetch(
 				`data/costumes/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costume)}.json`
@@ -35,19 +37,23 @@ export const useFetchCostumeData = ({
 	})
 
 export const useFetchFoodRecipesData = (name: string) =>
-	useQuery(['foodRecipes', name], () =>
-		fetch(
-			`data/recipes/foods/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
-		).then(res => {
-			return res.json() as Promise<FoodRecipes>
-		})
-	)
+	useQuery({
+		queryKey: ['foodRecipes', name],
+		queryFn: () =>
+			fetch(
+				`data/recipes/foods/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
+			).then(res => {
+				return res.json() as Promise<FoodRecipes>
+			}),
+	})
 
 export const useFetchFoodMaterialsData = (name: string) =>
-	useQuery(['foodMaterials', name], () =>
-		fetch(
-			`data/materials/foods/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
-		).then(res => {
-			return res.json() as Promise<FoodMaterials>
-		})
-	)
+	useQuery({
+		queryKey: ['foodMaterials', name],
+		queryFn: () =>
+			fetch(
+				`data/materials/foods/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}.json`
+			).then(res => {
+				return res.json() as Promise<FoodMaterials>
+			}),
+	})
