@@ -1,5 +1,9 @@
 import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
-import { type Characters } from '@/validation'
+import {
+	type Characters,
+	type FoodMaterials,
+	type FoodRecipes,
+} from '@/validation'
 import { useQuery } from 'react-query'
 
 export const useFetchCharacterData = (name: string) =>
@@ -16,7 +20,7 @@ export const useFetchFoodRecipesData = (name: string) =>
 		fetch(
 			`data/recipes/foods/${toLowerCaseReplaceSpaceRemoveSpecialChars(name)}.json`
 		).then(res => {
-			return res.json() as Promise<Characters>
+			return res.json() as Promise<FoodRecipes>
 		})
 	)
 
@@ -25,6 +29,6 @@ export const useFetchFoodMaterialsData = (name: string) =>
 		fetch(
 			`data/materials/foods/${toLowerCaseReplaceSpaceRemoveSpecialChars(name)}.json`
 		).then(res => {
-			return res.json() as Promise<Characters>
+			return res.json() as Promise<FoodMaterials>
 		})
 	)
