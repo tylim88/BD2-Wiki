@@ -23,13 +23,16 @@ export const useFetchCostumeData = ({
 	name: string
 	costume: string
 }) =>
-	useQuery(['costumes', name, costume], () =>
-		fetch(
-			`data/costumes/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costume)}.json`
-		).then(res => {
-			return res.json() as Promise<Costumes>
-		})
-	)
+	useQuery({
+		queryKey: ['costumes', name, costume],
+		keepPreviousData: true,
+		queryFn: () =>
+			fetch(
+				`data/costumes/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costume)}.json`
+			).then(res => {
+				return res.json() as Promise<Costumes>
+			}),
+	})
 
 export const useFetchFoodRecipesData = (name: string) =>
 	useQuery(['foodRecipes', name], () =>
