@@ -6,6 +6,6 @@
 		{ "name": "Mushroom", "count": 2 },
 		{ "name": "Beast Meat", "count": 2 }
 	],
-	"location": [{ "type": "ability level up", "level": "intermediate" }],
+	"location": { "type": "ability level up", "level": "intermediate" },
 	"pills": 2
 }

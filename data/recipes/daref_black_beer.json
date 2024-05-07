@@ -6,6 +6,6 @@
 		{ "name": "Hop", "count": 2 },
 		{ "name": "Wheat", "count": 2 }
 	],
-	"location": [{ "type": "search", "pack": "Lapis Witch" }],
+	"location": { "type": "search", "pack": "Lapis Witch" },
 	"pills": 2
 }

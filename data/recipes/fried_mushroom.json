@@ -6,6 +6,6 @@
 		{ "name": "Mushroom", "count": 1 },
 		{ "name": "Carrot", "count": 1 }
 	],
-	"location": [{ "type": "main quest", "pack": "Knight of Blood" }],
+	"location": { "type": "main quest", "pack": "Knight of Blood" },
 	"pills": 1
 }

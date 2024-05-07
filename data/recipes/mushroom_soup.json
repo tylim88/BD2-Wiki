@@ -6,6 +6,6 @@
 		{ "name": "Mushroom", "count": 1 },
 		{ "name": "Wheat", "count": 1 }
 	],
-	"location": [{ "type": "account creation" }],
+	"location": { "type": "account creation" },
 	"pills": 1
 }
