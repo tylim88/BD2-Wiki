@@ -70,10 +70,7 @@ export const Ability = ({ character }: { character: Characters }) => {
 						value: index,
 						label: (
 							<Flex>
-								<Image
-									src="/icons/abilities/ability_pill.png"
-									w={THEME.fontSizes.md}
-								/>
+								<Image src="/icons/abilities/pill.png" w={THEME.fontSizes.md} />
 								<Text>{`${character.ability.costs[index]}`}</Text>
 							</Flex>
 						),
