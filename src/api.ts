@@ -23,7 +23,7 @@ export const useFetchCostumeData = ({
 	name: string
 	costume: string
 }) =>
-	useQuery(['costumes', `${name}/${costume}`], () =>
+	useQuery(['costumes', name, costume], () =>
 		fetch(
 			`data/costumes/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costume)}.json`
 		).then(res => {
