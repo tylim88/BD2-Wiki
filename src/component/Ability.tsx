@@ -2,7 +2,7 @@ import { Loader, Stack, Flex, Image, Text, Slider } from '@mantine/core'
 import { Suspense, lazy } from 'react'
 import { type Characters } from '@/validation'
 import {
-	toLowerCaseReplaceSpaceRemoveSpecialChars,
+	toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars,
 	replaceVariablePlaceholders,
 } from '@/utils'
 import { useCharactersStore } from '@/stores'
@@ -30,7 +30,7 @@ export const Ability = ({ character }: { character: Characters }) => {
 			<Stack w="100%" gap={0}>
 				<Flex justify="start" w="100%" gap="xs">
 					<Image
-						src={`/icons/abilities/${toLowerCaseReplaceSpaceRemoveSpecialChars(character.name)}.png`}
+						src={`/icons/abilities/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(character.name)}.png`}
 						w={iconWidth}
 					/>
 					<Text ta="left" size="2em" fs="italic">

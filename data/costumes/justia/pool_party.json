@@ -1,0 +1,67 @@
+{
+	"name": "Pool Party",
+	"rarity": "limited",
+	"release_date": { "year": 2023, "month": 8, "day": 2 },
+	"banners": [
+		{
+			"from": { "year": 2023, "month": 8, "day": 2 },
+			"to": {
+				"year": 2023,
+				"month": 8,
+				"day": 23
+			}
+		}
+	],
+	"skill": {
+		"name": "Food Fighter",
+		"target": "me",
+		"range": [
+			[0, 0, 0],
+			[0, 2, 0],
+			[0, 0, 0]
+		],
+		"description": "Creates an Energy Guard which is equal to {{x}}% of max HP that takes DMG for 4 turn(s). Increase ATK by {{y}}% for 4 turn(s).",
+		"variables": {
+			"x": [100, 120, 139, 139, 157, 175],
+			"y": [100, 114, 127, 127, 139, 150]
+		},
+		"costs": [2, 2, 2, 1, 1, 1],
+		"cool_down": [7, 7, 7, 7, 7, 7]
+	},
+	"profile": {
+		"description": "The best dishes for the best party. If I can taste dished like this everytime, then maybe parties are not that bad.",
+		"age": "15 years old",
+		"height": "153cm",
+		"affiliation": "Contestant of the Miss Aniweiss Final",
+		"hobby": "Exploring buffets",
+		"like": "Rare bloody steaks",
+		"dislike": "Playing around at the dinner table",
+		"cherish": "A normal, daily life with nothing much to do",
+		"rumors": [
+			"Do you see the mountain of skewers over there? That petite lady finished all of those by herself. She really was like a bottomless pit.",
+			"If I had to choose the one person hiding the most powerful weapon in this party venue..."
+		]
+	},
+	"lines": [
+		"I'll get this done before lunch.",
+		"It's a shame that this sword is not a real sword.",
+		"Such evil... In this world as well!",
+		"We'll be late for the next class.",
+		"This wasn't even a warm up.",
+		"Shall we return to the classroom?",
+		"Yaaap... Moment of opportunity!",
+		"Though it's a bamboo sword, it'll hurt a bit.",
+		"Prepare yourself!",
+		"This is the recipe of this world..."
+	],
+	"voices": [
+		{
+			"actor": "Azumi Waki",
+			"language": "jp"
+		},
+		{
+			"actor": "Jung Hye-won",
+			"language": "kr"
+		}
+	]
+}

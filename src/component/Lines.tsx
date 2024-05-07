@@ -1,5 +1,5 @@
 import { Text, Stack, Flex } from '@mantine/core'
-import { Characters } from '@/validation'
+import { type Costumes } from '@/validation'
 import { THEME } from '@/theme'
 
 const types = [
@@ -15,11 +15,7 @@ const types = [
 	'Talent Skill 1',
 ]
 
-export const Lines = ({
-	costume,
-}: {
-	costume: Characters['costumes'] extends (infer P)[] ? P : never
-}) => {
+export const Lines = ({ costume }: { costume: Costumes }) => {
 	return (
 		<Stack pt="xl">
 			{costume.lines.map((line, index) => {

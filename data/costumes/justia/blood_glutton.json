@@ -1,0 +1,68 @@
+{
+	"name": "Blood Glutton",
+	"rarity": "regular",
+	"release_date": { "year": 2023, "month": 6, "day": 22 },
+	"banners": [
+		{
+			"from": { "year": 2024, "month": 2, "day": 7 },
+			"to": {
+				"year": 2024,
+				"month": 2,
+				"day": 21
+			}
+		}
+	],
+	"skill": {
+		"name": "The Fang of Gluttony",
+		"target": "very front",
+		"range": [
+			[0, 1, 0],
+			[1, 2, 1],
+			[0, 1, 0]
+		],
+		"description": "Decrease incoming DMG by {{x}}% for {{y}} turn(s). Consumes based off of enemy's current HP by {{z}}%. Heal 100% of consumed HP.",
+		"variables": {
+			"x": [50, 75, 75, 75, 75, 75],
+			"y": [2, 2, 2, 2, 4, 4],
+			"z": [50, 50, 68, 68, 68, 85]
+		},
+		"costs": [4, 4, 4, 3, 3, 3],
+		"cool_down": [5, 5, 5, 5, 5, 5]
+	},
+	"profile": {
+		"description": "Blood... Fresh Blood... If it were you... Would you able to quench this thirst...?",
+		"age": "15 years old",
+		"height": "153cm",
+		"affiliation": "I forgot",
+		"hobby": "Mediation... In he hopes that the impulse will subside",
+		"like": "Breezes that cool down the heat",
+		"dislike": "Bloodlust, the unending heat",
+		"cherish": "Past memories, fading away",
+		"rumors": [
+			"The moment our eye met, my entire body froze. The sight of that pretty face, flushed, gasping to breath... I don' think I'll ever forget it.",
+			"She always seems to be feeling hot, It's probably because the bloodlust takes over her body and constantly releases heat..."
+		]
+	},
+	"lines": [
+		"I wonder what your blood tastes like...",
+		"Urgh... I need to satiate this thirst...",
+		"Blood... I want blood...!",
+		"Now, I can drink...",
+		"Hahhh... gulp, Hmmm...",
+		"Ugh... what... have I done...!",
+		"I cant't hold back anymore...",
+		"Umph... Haaaaa...!",
+		"Blood... give me yoiur blood!",
+		"Cooking is merely a way to help me regain my strength..."
+	],
+	"voices": [
+		{
+			"actor": "Azumi Waki",
+			"language": "jp"
+		},
+		{
+			"actor": "Jung Hye-won",
+			"language": "kr"
+		}
+	]
+}

@@ -1,9 +1,9 @@
 import { Text, Slider, Flex, Box, Center, Image, Stack } from '@mantine/core'
 import { THEME } from '@/theme'
-import { Characters } from '@/validation'
+import { type Characters, type Costumes } from '@/validation'
 import { useCharactersStore } from '@/stores'
 import {
-	toLowerCaseReplaceSpaceRemoveSpecialChars,
+	toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars,
 	replaceVariablePlaceholders,
 } from '@/utils'
 
@@ -27,7 +27,7 @@ export const Skill = ({
 	costume,
 }: {
 	character: Characters
-	costume: Characters['costumes'] extends (infer P)[] ? P : never
+	costume: Costumes
 }) => {
 	const upgrade = useCharactersStore(
 		state => state.slider.skill[costume.name] || 0
@@ -38,7 +38,7 @@ export const Skill = ({
 		<Stack p="xs" pt="lg" pb="xl" align="center" gap="xl">
 			<Flex justify="start" w="100%" gap="xs">
 				<Image
-					src={`/icons/skills/${character.name.toLowerCase()}/${toLowerCaseReplaceSpaceRemoveSpecialChars(costume.skill.name)}.png`}
+					src={`/icons/skills/${character.name.toLowerCase()}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costume.skill.name)}.png`}
 					h="3.5em"
 				/>
 				<Text ta="left" size="2em" fs="italic">

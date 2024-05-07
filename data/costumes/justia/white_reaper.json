@@ -1,0 +1,55 @@
+{
+	"name": "White Reaper",
+	"rarity": "regular",
+	"release_date": { "year": 2023, "month": 6, "day": 22 },
+	"banners": [],
+	"skill": {
+		"name": "Quarter Moon Jab",
+		"target": "very front",
+		"range": [
+			[0, 1, 0],
+			[0, 2, 0],
+			[0, 0, 0]
+		],
+		"description": "Deal <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
+		"variables": { "x": [275, 350, 420, 420, 490, 555] },
+		"costs": [3, 3, 3, 2, 2, 2],
+		"cool_down": [5, 5, 5, 5, 5, 5]
+	},
+	"profile": {
+		"description": "My mission is to destroy evil. That is the only reason why I have come here.",
+		"age": "15 years old",
+		"height": "153cm",
+		"affiliation": "The Unidentified Traveler",
+		"hobby": "Reciting the Knight's Oath",
+		"like": "Sparring with the strong",
+		"dislike": "People careless with food ingredients",
+		"cherish": "A sword bestowed by the Duchess",
+		"rumors": [
+			"Umm, it's like no one's allowed to approach her or something. Seeing her hood completely covering her head. It seems as if there's something she want to hide.",
+			"With her armor and sword, I thought of her as a formidable person, but the next moment, she was suddenly ordering a cookbook. Not only that, her voice sounded very young"
+		]
+	},
+	"lines": [
+		"Do not get in my way.",
+		"It can't be helped",
+		"This is also a part of my duties",
+		"Evil must be cut down.",
+		"This was a waste of time.",
+		"We should go back.",
+		"Cold and sharp, just like the moon.",
+		"This is the end!",
+		"Yaaaap!",
+		"Smells nice."
+	],
+	"voices": [
+		{
+			"actor": "Azumi Waki",
+			"language": "jp"
+		},
+		{
+			"actor": "Jung Hye-won",
+			"language": "kr"
+		}
+	]
+}

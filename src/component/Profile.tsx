@@ -1,5 +1,5 @@
 import { Grid, Text, Stack } from '@mantine/core'
-import { Characters } from '@/validation'
+import { type Characters, type Costumes } from '@/validation'
 import { format } from 'date-fns'
 
 const Item = ({ value, label }: { value: string; label: string }) => {
@@ -43,7 +43,7 @@ export const Profile = ({
 	costume,
 }: {
 	birthday: Characters['birthday']
-	costume: Characters['costumes'] extends (infer P)[] ? P : never
+	costume: Costumes
 }) => {
 	return (
 		<Stack p="xl" pb="xs">

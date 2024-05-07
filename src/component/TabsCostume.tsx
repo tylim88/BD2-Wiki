@@ -4,7 +4,7 @@ import classes from '@/component/NavLink.module.css'
 import { charRoute } from '@/routes'
 import { useRoutesStore } from '@/stores'
 import { Link } from './Link'
-import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
+import { toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars } from '@/utils'
 import { type Characters } from '@/validation'
 
 export const TabsCostume = ({ character }: { character: Characters }) => {
@@ -27,8 +27,9 @@ export const TabsCostume = ({ character }: { character: Characters }) => {
 			}}
 		>
 			<Tabs.List grow>
-				{character.costumes.map(({ name }) => {
-					const costumeName = toLowerCaseReplaceSpaceRemoveSpecialChars(name)
+				{character.costumes.map(name => {
+					const costumeName =
+						toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(name)
 					return (
 						<Link
 							replace
@@ -69,7 +70,7 @@ export const TabsCostume = ({ character }: { character: Characters }) => {
 							>
 								<Image
 									p="xs"
-									src={`/icons/costumes/${toLowerCaseReplaceSpaceRemoveSpecialChars(character.name)}/${toLowerCaseReplaceSpaceRemoveSpecialChars(costumeName)}.png`}
+									src={`/icons/costumes/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(character.name)}/${toLowerCaseReplaceSpaceAndHyphenRemoveSpecialChars(costumeName)}.png`}
 									pos="static"
 								/>
 							</Tabs.Tab>

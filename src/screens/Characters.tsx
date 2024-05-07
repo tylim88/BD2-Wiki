@@ -13,7 +13,6 @@ import {
 	Attributes,
 	Ability,
 } from '@/component'
-import { toLowerCaseReplaceSpaceRemoveSpecialChars } from '@/utils'
 import { THEME } from '@/theme'
 import {
 	IconArrowUp,
@@ -25,7 +24,7 @@ import {
 	IconArrowDownLeft,
 	IconArrowDownRight,
 } from '@tabler/icons-react'
-import { useFetchCharacterData } from '@/api'
+import { useFetchCharacterData, useFetchCostumeData } from '@/api'
 
 const arrow = {
 	up: IconArrowUp,
@@ -41,11 +40,7 @@ const arrow = {
 export const Characters = () => {
 	const { costume, name } = charRoute.useSearch()
 	const { data: character } = useFetchCharacterData(name)
-
-	const selectedCostume =
-		character?.costumes.find(
-			item => toLowerCaseReplaceSpaceRemoveSpecialChars(item.name) === costume
-		) || character?.costumes[0]
+	const { data: selectedCostume } = useFetchCostumeData({ name, costume })
 
 	if (!character || !selectedCostume) {
 		return (
@@ -55,7 +50,6 @@ export const Characters = () => {
 		)
 	}
 	const Arrow = arrow[character.kick]
-
 	return (
 		<Grid
 			h="100%"

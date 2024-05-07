@@ -1,0 +1,66 @@
+{
+	"name": "Kendo Club",
+	"rarity": "regular",
+	"release_date": { "year": 2023, "month": 6, "day": 22 },
+	"banners": [
+		{
+			"from": { "year": 2023, "month": 6, "day": 22 },
+			"to": {
+				"year": 2023,
+				"month": 7,
+				"day": 5
+			}
+		}
+	],
+	"skill": {
+		"name": "Sakura Halo's Stroke",
+		"target": "very front",
+		"range": [
+			[1, 0, 1],
+			[0, 2, 0],
+			[0, 0, 0]
+		],
+		"description": "Attack 3 times, each attack deals <<atk*x>> Fixed Physical DMG based off of the the {{x}}% of ATK.",
+		"variables": {
+			"x": [90, 120, 150, 150, 175, 200]
+		},
+		"costs": [4, 4, 4, 3, 3, 3],
+		"cool_down": [5, 5, 5, 5, 5, 5]
+	},
+	"profile": {
+		"description": "Until I gather all of the recipes in this world, I can't go back... No, forget what I just said.",
+		"age": "17 years old (according to her admissions application)",
+		"height": "153cm",
+		"affiliation": "Member of the Brown Secondary High School Kendo Club",
+		"hobby": "Watching the Cooking Club's practice sessions",
+		"like": "The sound of a Bamboo Sword swinging",
+		"dislike": "Someone who questions her age",
+		"cherish": "Companions she left behind in another world",
+		"rumors": [
+			"D-Did you just see that? That transfer student, she just pulled out a baguette from the ears of her rabbit hood! No wonder the ears looked suspiciously big and chubby!",
+			"When I first saw that transfer student, I thought she was a middle school or something... But then I found out that she had knocked out the kendo Club captain and the instructor in one blow."
+		]
+	},
+	"lines": [
+		"I'll get this done before lunch.",
+		"It's a shame that this sword is not a real sword.",
+		"Such evil... In this world as well!",
+		"We'll be late for the next class.",
+		"This wasn't even a warm up.",
+		"Shall we return to the classroom?",
+		"Yaaap... Moment of opportunity!",
+		"Though it's a bamboo sword, it'll hurt a bit.",
+		"Prepare yourself!",
+		"This is the recipe of this world..."
+	],
+	"voices": [
+		{
+			"actor": "Azumi Waki",
+			"language": "jp"
+		},
+		{
+			"actor": "Jung Hye-won",
+			"language": "kr"
+		}
+	]
+}

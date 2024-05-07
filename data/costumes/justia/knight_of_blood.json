@@ -1,0 +1,55 @@
+{
+	"name": "Knight of Blood",
+	"rarity": "regular",
+	"banners": [],
+	"release_date": { "year": 2023, "month": 6, "day": 22 },
+	"skill": {
+		"name": "Lunar Halo Slit",
+		"target": "very front",
+		"range": [
+			[0, 0, 0],
+			[1, 2, 1],
+			[0, 0, 0]
+		],
+		"description": "Attack 3 times, each attacks deals <<atk*x>> Fixed Physical DMG based off of the {{x}}% of ATK.",
+		"variables": { "x": [75, 105, 130, 130, 155, 175] },
+		"costs": [4, 4, 4, 3, 3, 3],
+		"cool_down": [5, 5, 5, 5, 5, 5]
+	},
+	"profile": {
+		"description": "Until the day that evil is purged from the world, let's castigate the warlock together.",
+		"age": "15 years old",
+		"height": "153cm",
+		"affiliation": "The Senior Knight of Kalian Imperial Security Task Force",
+		"hobby": "Collecting recipes from each region",
+		"like": "Someone who enjoys her cooking",
+		"dislike": "Someone who stares at her horns",
+		"cherish": "My mission and... my companions",
+		"rumors": [
+			"You want to know how she was able to be knighted at such a young age? Haha, people who have crossed with her at least once will know.",
+			"Those things on her head... Aren't those horns? Having horns means she is no ordinary person, But... Huh? What? An ornament? Haha, of course it is."
+		]
+	},
+	"lines": [
+		"I will cut you down if you get in my way.",
+		"Everyone, ready yourselves for a fight.",
+		"To vanquish evil, is my duty.",
+		"Injured? Time to cook something...",
+		"It's over.",
+		"This is the fate of the evil.",
+		"Fall asleep under the moonlight.",
+		"I will punish you all!",
+		"Death to all that is evil",
+		"This is a dish that warms the heart."
+	],
+	"voices": [
+		{
+			"actor": "Azumi Waki",
+			"language": "jp"
+		},
+		{
+			"actor": "Jung Hye-won",
+			"language": "kr"
+		}
+	]
+}
