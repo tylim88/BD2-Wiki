@@ -20,7 +20,6 @@
 		"variables": { "x": ["1st", "2nd", "3rd", "4th", "5th"] }
 	},
 	"birthday": { "month": 2, "day": 11 },
-	"exclusive_gear": "Royaldite",
 	"attributes": {
 		"initial_combat_power": 260,
 		"crit_rate": 10,
@@ -37,6 +36,11 @@
 			"min": 35,
 			"max": 352
 		}
+	},
+	"exclusive_gear": {
+		"name": "Royaldite",
+		"ability": "ATK%",
+		"basic_stat": "ATK"
 	},
 	"costumes": [
 		"White Reaper",

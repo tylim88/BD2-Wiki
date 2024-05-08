@@ -1,5 +1,5 @@
 import { array, number, string, object, literal, union, record, z } from 'zod'
-import { monthAndDay, positiveInteger } from './utils'
+import { monthAndDay, positiveInteger, stats } from './utils'
 
 const ability = (num: 4 | 5) =>
 	object({
@@ -13,7 +13,11 @@ const ability = (num: 4 | 5) =>
 export const characters = object({
 	name: string(),
 	version: positiveInteger,
-	exclusive_gear: string(),
+	exclusive_gear: object({
+		name: string(),
+		ability: stats,
+		basic_stat: stats,
+	}),
 	birthday: monthAndDay,
 	kick: union([
 		literal('up'),
