@@ -9,9 +9,9 @@ const types = [
 	'Battle Victory 1',
 	'Battle Victory 2',
 	'Battle Victory 3',
-	'BattleS kill 1',
-	'BattleS kill 2',
-	'BattleS kill 3',
+	'Battle Skill 1',
+	'Battle Skill 2',
+	'Battle Skill 3',
 	'Talent Skill 1',
 ]
 
