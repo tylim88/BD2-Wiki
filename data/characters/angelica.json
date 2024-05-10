@@ -1,0 +1,34 @@
+{
+	"name": "Angelica",
+	"version": 1,
+	"element": "light",
+	"kick": "right",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magical",
+	"ability": null,
+	"birthday": { "month": 2, "day": 21 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 100,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 188,
+			"max": 1297
+		},
+		"atk": {
+			"min": 24,
+			"max": 242
+		}
+	},
+	"exclusive_gear": {
+		"name": "Evil Sword Jormun",
+		"ability": "Crit DMG%",
+		"basic_stat": "Magic ATK"
+	},
+	"costumes": ["The Fallen","Pool Party","Neon Savior"]
+}

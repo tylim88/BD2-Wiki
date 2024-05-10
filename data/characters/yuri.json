@@ -1,0 +1,34 @@
+{
+	"name": "Yuri",
+	"version": 1,
+	"element": "light",
+	"kick": "front",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": null,
+	"birthday": { "month": 4, "day": 24 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 85,
+			"max": 1995
+		},
+		"atk": {
+			"min": 38,
+			"max": 114
+		}
+	},
+	"exclusive_gear": {
+		"name": "Black Snow Tiger Sword",
+		"ability": "Crit DMG%",
+		"basic_stat": "ATK"
+	},
+	"costumes": ["Whitebolt", "Comeback Idol"]
+}

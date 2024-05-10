@@ -1,0 +1,40 @@
+{
+	"name": "Refithea",
+	"version": 1,
+	"element": "light",
+	"kick": "pull",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "magical",
+	"ability": {
+		"name": "Come on, Glutti!",
+		"type": "Assemble",
+		"costs": [2, 1, 1, 1, 1],
+		"description": "Assembles all field fiends located on the current map that gives rewards. Daily limit: 2",
+		"variables": null
+	},
+	"birthday": { "month": 12, "day": 3 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 222,
+			"max": 3885
+		},
+		"atk": {
+			"min": 18,
+			"max": 187
+		}
+	},
+	"exclusive_gear": {
+		"name": "Little Fairy",
+		"ability": "Magic Resist%",
+		"basic_stat": "Magic Resist"
+	},
+	"costumes": ["The Gluttonous", "Pure White Blessing"]
+}

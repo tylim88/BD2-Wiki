@@ -1,0 +1,40 @@
+{
+	"name": "Helena",
+	"version": 1,
+	"element": "light",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magical",
+	"ability": {
+		"name": "The Song of Love!",
+		"type": "Revival",
+		"costs": [25, 22, 20, 17, 12],
+		"description": "Revives the character from fatigued state and restores 50% of their HP.",
+		"variables": null
+	},
+	"birthday": { "month": 7, "day": 21 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 115,
+			"max": 2016
+		},
+		"atk": {
+			"min": 35,
+			"max": 352
+		}
+	},
+	"exclusive_gear": {
+		"name": "Top Idol",
+		"ability": "Magic ATK",
+		"basic_stat": "Magic Resist%"
+	},
+	"costumes": ["Top Idol", "B-Rank Idol"]
+}
