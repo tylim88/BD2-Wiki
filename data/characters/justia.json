@@ -8,13 +8,7 @@
 	"dmg_type": "physical",
 	"ability": {
 		"name": "Chef of the Battlefield",
-		"titles": [
-			"Cook Beginner",
-			"Cook Intermediate",
-			"Cook Advanced",
-			"Cook Expert",
-			"Cook Legendary"
-		],
+		"titles": "Cook",
 		"costs": [1, 2, 5, 7, 10],
 		"description": "You can make {{x}} rank B-chelin dishes.",
 		"variables": { "x": ["1st", "2nd", "3rd", "4th", "5th"] }

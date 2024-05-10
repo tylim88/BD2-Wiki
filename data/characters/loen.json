@@ -6,19 +6,7 @@
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "magic",
-	"ability": {
-		"name": "null",
-		"titles": [
-			"null",
-			"null",
-			"null",
-			"null",
-			"null"
-		],
-		"costs": [30, 25, 20, 15, 10],
-		"description": "null",
-		"variables": { "x": ["10", "12", "14", "16", "20"] }
-	},
+	"ability": null,
 	"birthday": { "month": 4, "day": 22 },
 	"attributes": {
 		"initial_combat_power": 260,
@@ -39,10 +27,8 @@
 	},
 	"exclusive_gear": {
 		"name": "Lost Hope",
-		"ability": "MATK%",
-		"basic_stat": "MATK"
+		"ability": "Magic ATK%",
+		"basic_stat": "Magic ATK"
 	},
-	"costumes": [
-		"Last Hope"	
-    ]
+	"costumes": ["Last Hope"]
 }

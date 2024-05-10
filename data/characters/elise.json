@@ -6,22 +6,10 @@
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "physical",
-	"ability": {
-		"name": "null",
-		"titles": [
-			"null",
-			"null",
-			"null",
-			"null",
-			"null"
-		],
-		"costs": [25, 20, 15, 10, 5],
-		"description": "null ",
-		"variables": { "x": ["15", "18", "22", "25", "30"] }
-	},
+	"ability": null,
 	"birthday": { "month": 10, "day": 4 },
 	"attributes": {
-		"initial_combat_power": 164,
+		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,
@@ -42,8 +30,5 @@
 		"ability": "ATK",
 		"basic_stat": "DEF%"
 	},
-	"costumes": [
-		"Lovely Lady",
-		"Code Name O"
-	]
+	"costumes": ["Lovely Lady", "Code Name O"]
 }

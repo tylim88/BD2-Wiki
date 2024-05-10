@@ -8,13 +8,7 @@
 	"dmg_type": "physical",
 	"ability": {
 		"name": "Herbalist's Sense",
-		"titles": [
-			"Search Beginner",
-			"Search Intermediate",
-			"Search Advanced",
-			"Search Expert",
-			"Search Legendary"
-		],
+		"type": "Search",
 		"costs": [5, 5, 5, 5, 5],
 		"description": "Detects the location of hidden objects for {{x}} seconds. ",
 		"variables": { "x": ["15", "30", "45", "90", "180"] }

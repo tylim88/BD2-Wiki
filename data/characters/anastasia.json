@@ -8,13 +8,7 @@
 	"dmg_type": "physical",
 	"ability": {
 		"name": "This is getting exciting!",
-		"titles": [
-			"Dash Beginner",
-			"Dash Intermediate",
-			"Dash Advanced",
-			"Dash Expert",
-			"Dash Legendary"
-		],
+		"titles": "Dash",
 		"costs": [10, 10, 10, 10, 10],
 		"description": "Boosts the movement speed by 75% for {{x}} seconds. ",
 		"variables": { "x": ["5", "6", "7", "8", "10"] }
@@ -39,11 +33,8 @@
 	},
 	"exclusive_gear": {
 		"name": "M.A.I.D. C",
-		"ability": "CDMG%",
+		"ability": "Crit DMG%",
 		"basic_stat": "ATK"
 	},
-	"costumes": [
-		"Gentle Maid",
-		"Fire Graffiti"
-	]
+	"costumes": ["Gentle Maid", "Fire Graffiti"]
 }

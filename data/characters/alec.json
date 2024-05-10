@@ -8,13 +8,7 @@
 	"dmg_type": "physical",
 	"ability": {
 		"name": "Contempt",
-		"titles": [
-			"Overpower Beginner",
-			"Overpower Intermediate",
-			"Overpower Advanced",
-			"Overpower Expert",
-			"Overpower Legendary"
-		],
+		"type": "Overpower",
 		"costs": [25, 20, 15, 10, 5],
 		"description": "For {{x}} seconds, you can overpower some of the monsters by using the Dash skill. ",
 		"variables": { "x": ["15", "18", "22", "25", "30"] }
@@ -42,8 +36,5 @@
 		"ability": "ATK%",
 		"basic_stat": "ATK"
 	},
-	"costumes": [
-		"The Destruction",
-		"Sword Breaker"
-	]
+	"costumes": ["The Destruction", "Sword Breaker"]
 }
