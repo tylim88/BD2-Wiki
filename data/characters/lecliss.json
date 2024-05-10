@@ -1,0 +1,40 @@
+{
+	"name": "Lecliss",
+	"version": 1,
+	"element": "wind",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Act 2 begins",
+		"type": "Revival",
+		"costs": [10, 9, 8, 7, 5],
+		"description": "Fatigue is recovered to 1 HP.",
+		"variables": null
+	},
+	"birthday": { "month": 11, "day": 22 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 10,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 124,
+			"max": 4515
+		},
+		"atk": {
+			"min": 33,
+			"max": 132
+		}
+	},
+	"exclusive_gear": {
+		"name": "Soul Curtana",
+		"ability": "HP%",
+		"basic_stat": "DEF%"
+	},
+	"costumes": ["Killer Doll", "Android Queen"]
+}

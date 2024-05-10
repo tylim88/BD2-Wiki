@@ -1,0 +1,42 @@
+{
+	"name": "Diana",
+	"version": 1,
+	"element": "wind",
+	"kick": "up",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "Glutti Adventurer",
+		"type": "Dispatch",
+		"costs": [5, 5, 5, 5, 5],
+		"description": "Greedy patty, Troublesome rusty can bring you {{x}}. Dispatch ends at 09 a.m (KST)",
+		"variables": { 
+			"x": ["useful items", "useful items", "useful items", "a bit more useful items", "very useful items"]
+		}
+	},
+	"birthday": { "month": 9, "day": 1 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 229,
+			"max": 4011
+		},
+		"atk": {
+			"min": 17,
+			"max": 176
+		}
+	},
+	"exclusive_gear": {
+		"name": "White Pixie",
+		"ability": "HP%",
+		"basic_stat": "Magic Resist%"
+	},
+	"costumes": ["Adventurer of the Unknown", "Anti-Dystopia"]
+}
