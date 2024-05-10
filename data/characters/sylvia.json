@@ -1,0 +1,43 @@
+{
+	"name": "Sylvia",
+	"version": 1,
+	"element": "water",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "How much is it again?",
+		"type": "Bargain",
+		"costs": [10, 10, 10, 10, 10],
+		"description": "Bargain with the shopkeeper for a potential {{x}} discount on items with a {{y}} chance.",
+		"variables": { 
+			"x": ["35", "40", "45", "50", "60"],
+			"y": ["55", "65", "70", "80","90"]
+		}
+	},
+	"birthday": { "month": 6, "day": 7 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 20,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 109,
+			"max": 1911
+		},
+		"atk": {
+			"min": 35,
+			"max": 352
+		}
+	},
+	"exclusive_gear": {
+		"name": "Primulan",
+		"ability": "ATK%",
+		"basic_stat": "ATK"
+	},
+	"costumes": ["Desert Flower", "Admiral","The Sword Queen"]
+}
