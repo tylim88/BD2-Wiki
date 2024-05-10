@@ -1,0 +1,49 @@
+{
+	"name": "Anastasia",
+	"version": 1,
+	"element": "fire",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "This is getting exciting!",
+		"titles": [
+			"Dash Beginner",
+			"Dash Intermediate",
+			"Dash Advanced",
+			"Dash Expert",
+			"Dash Legendary"
+		],
+		"costs": [10, 10, 10, 10, 10],
+		"description": "Boosts the movement speed by 75% for {{x}} seconds. ",
+		"variables": { "x": ["5", "6", "7", "8", "10"] }
+	},
+	"birthday": { "month": 7, "day": 18 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 105,
+			"max": 1848
+		},
+		"atk": {
+			"min": 37,
+			"max": 374
+		}
+	},
+	"exclusive_gear": {
+		"name": "M.A.I.D. C",
+		"ability": "CDMG%",
+		"basic_stat": "ATK"
+	},
+	"costumes": [
+		"Gentle Maid",
+		"Fire Graffiti"
+	]
+}

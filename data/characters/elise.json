@@ -1,0 +1,49 @@
+{
+	"name": "Elise",
+	"version": 1,
+	"element": "fire",
+	"kick": "up",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "null",
+		"titles": [
+			"null",
+			"null",
+			"null",
+			"null",
+			"null"
+		],
+		"costs": [25, 20, 15, 10, 5],
+		"description": "null ",
+		"variables": { "x": ["15", "18", "22", "25", "30"] }
+	},
+	"birthday": { "month": 10, "day": 4 },
+	"attributes": {
+		"initial_combat_power": 164,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 164,
+			"max": 2877
+		},
+		"atk": {
+			"min": 27,
+			"max": 275
+		}
+	},
+	"exclusive_gear": {
+		"name": "Rose Selection",
+		"ability": "ATK",
+		"basic_stat": "DEF%"
+	},
+	"costumes": [
+		"Lovely Lady",
+		"Code Name O"
+	]
+}

@@ -1,0 +1,53 @@
+{
+	"name": "Lathel",
+	"version": 1,
+	"element": "fire",
+	"kick": "diagonal up left",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Herbalist's Sense",
+		"titles": [
+			"Search Beginner",
+			"Search Intermediate",
+			"Search Advanced",
+			"Search Expert",
+			"Search Legendary"
+		],
+		"costs": [5, 5, 5, 5, 5],
+		"description": "Detects the location of hidden objects for {{x}} seconds. ",
+		"variables": { "x": ["15", "30", "45", "90", "180"] }
+	},
+	"birthday": { "month": 10, "day": 1 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 10,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 164,
+			"max": 2877
+		},
+		"atk": {
+			"min": 27,
+			"max": 275
+		}
+	},
+	"exclusive_gear": {
+		"name": "Artha Lugo",
+		"ability": "ATK%",
+		"basic_stat": "DEF%"
+	},
+	"costumes": [
+		"Medicinal Herb Tracker",
+		"Lonely Survivor",
+		"Dark Knight",
+		"Promise of Vengeance",
+		"Pool Party",
+		"Homunculus"
+	]
+}

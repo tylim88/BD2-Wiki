@@ -1,0 +1,49 @@
+{
+	"name": "Alec",
+	"version": 1,
+	"element": "fire",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Contempt",
+		"titles": [
+			"Overpower Beginner",
+			"Overpower Intermediate",
+			"Overpower Advanced",
+			"Overpower Expert",
+			"Overpower Legendary"
+		],
+		"costs": [25, 20, 15, 10, 5],
+		"description": "For {{x}} seconds, you can overpower some of the monsters by using the Dash skill. ",
+		"variables": { "x": ["15", "18", "22", "25", "30"] }
+	},
+	"birthday": { "month": 1, "day": 1 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 0,
+		"crit_dmg": 0,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 88,
+			"max": 1554
+		},
+		"atk": {
+			"min": 41,
+			"max": 418
+		}
+	},
+	"exclusive_gear": {
+		"name": "Predator",
+		"ability": "ATK%",
+		"basic_stat": "ATK"
+	},
+	"costumes": [
+		"The Destruction",
+		"Sword Breaker"
+	]
+}

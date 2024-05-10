@@ -1,0 +1,50 @@
+{
+	"name": "Liatris",
+	"version": 1,
+	"element": "fire",
+	"kick": "up",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Falling into Hubby's arms♡",
+		"titles": [
+			"Dash Beginner",
+			"Dash Intermediate",
+			"Dash Advanced",
+			"Dash Expert",
+			"Dash Legendary"
+		],
+		"costs": [10, 10, 10, 10, 10],
+		"description": "Boosts the movement speed by 25% for {{x}} seconds. ",
+		"variables": { "x": ["15", "18", "21", "24", "30"] }
+	},
+	"birthday": { "month": 7, "day": 29 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 75,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 115,
+			"max": 2016
+		},
+		"atk": {
+			"min": 35,
+			"max": 352
+		}
+	},
+	"exclusive_gear": {
+		"name": "Lunar Piercer",
+		"ability": "CR%",
+		"basic_stat": "ATK"
+	},
+	"costumes": [
+		"Rodev's Star",
+		"Neon Stalker",
+		"Maid Name R"
+	]
+}

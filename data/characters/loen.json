@@ -1,0 +1,48 @@
+{
+	"name": "Loen",
+	"version": 1,
+	"element": "fire",
+	"kick": "diagonal up right",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "null",
+		"titles": [
+			"null",
+			"null",
+			"null",
+			"null",
+			"null"
+		],
+		"costs": [30, 25, 20, 15, 10],
+		"description": "null",
+		"variables": { "x": ["10", "12", "14", "16", "20"] }
+	},
+	"birthday": { "month": 4, "day": 22 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 5,
+		"crit_dmg": 100,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 144,
+			"max": 2520
+		},
+		"atk": {
+			"min": 35,
+			"max": 319
+		}
+	},
+	"exclusive_gear": {
+		"name": "Lost Hope",
+		"ability": "MATK%",
+		"basic_stat": "MATK"
+	},
+	"costumes": [
+		"Last Hope"	
+    ]
+}
