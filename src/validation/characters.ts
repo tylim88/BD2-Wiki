@@ -4,7 +4,7 @@ import { monthAndDay, positiveInteger, stats } from './utils'
 const ability = (num: 4 | 5) =>
 	object({
 		name: string(),
-		titles: array(string()).length(num),
+		type: string(),
 		description: string(),
 		costs: array(positiveInteger).length(num),
 		variables: record(string(), array(positiveInteger)), // TODO write custom validation to match the number of variable keys with description and level
