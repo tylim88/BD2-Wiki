@@ -1,0 +1,34 @@
+{
+	"name": "Eleaneer",
+	"version": 1,
+	"element": "dark",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": null,
+	"birthday": { "month": 12, "day": 4 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 20,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 109,
+			"max": 1911
+		},
+		"atk": {
+			"min": 35,
+			"max": 352
+		}
+	},
+	"exclusive_gear": {
+		"name": "Freischutz",
+		"ability": "ATK%",
+		"basic_stat": "ATK"
+	},
+	"costumes": ["Piercing Magic Bow", "B-Rank Idol"]
+}
