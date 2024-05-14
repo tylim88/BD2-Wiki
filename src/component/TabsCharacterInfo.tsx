@@ -39,7 +39,7 @@ export const TabsCharacterInfo = ({
 
 	return (
 		<Tabs
-			mt="lg"
+			mt="md"
 			value={activeTab}
 			onChange={value => value && setActiveTab(value as typeof activeTab)}
 		>

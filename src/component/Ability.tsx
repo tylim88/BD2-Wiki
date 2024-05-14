@@ -18,6 +18,14 @@ const abilities: Record<string, React.FC<{ character: Characters }>> = {
 }
 const iconWidth = '3.5em'
 
+const titles = {
+	0: 'Beginner',
+	1: 'Intermediate',
+	2: 'Advanced',
+	3: 'Expert',
+	4: 'Legendary',
+} as Record<string, string>
+
 export const Ability = ({ character }: { character: Characters }) => {
 	const upgrade = useCharactersStore(
 		state => state.slider.ability[character.name] || 0
@@ -39,7 +47,9 @@ export const Ability = ({ character }: { character: Characters }) => {
 				</Flex>
 				<Flex gap="xs" w="100%">
 					<div style={{ width: iconWidth }} />
-					<Text ta="left">{character.ability.titles[upgrade]}</Text>
+					<Text ta="left">
+						{character.ability.type + ' ' + titles[upgrade]}
+					</Text>
 				</Flex>
 			</Stack>
 			<Text ta="left" size="1.5em">
