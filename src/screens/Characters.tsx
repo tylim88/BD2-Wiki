@@ -57,11 +57,12 @@ export const Characters = () => {
 			styles={{
 				inner: { height: '100%' },
 			}}
+			pb="xl"
 		>
-			<Grid.Col span={6} mb="xl" pos="relative">
+			<Grid.Col span={6} pos="relative">
 				<Image src={flower} h="80vh" fit="contain" fallbackSrc={placeholder} />
 			</Grid.Col>
-			<Grid.Col span={1} mb="xl">
+			<Grid.Col span={1}>
 				<TabsCostume character={character} />
 			</Grid.Col>
 			<Grid.Col
@@ -74,10 +75,8 @@ export const Characters = () => {
 				}}
 				h="fit-content"
 				display="flex"
-				p="md"
-				pb="xl"
-				pt="xl"
-				mb="xl"
+				px="md"
+				py="lg"
 			>
 				<Flex>
 					{Array.from({ length: character.rarity }).map((_, index) => {
