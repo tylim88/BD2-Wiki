@@ -1,0 +1,40 @@
+{
+	"name": "Celia",
+	"version": 1,
+	"element": "dark",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "Terra Bacchus",
+		"type": "Absorption",
+		"costs": [50, 40, 30, 20, 10],
+		"description": "Absorbs finds on the map. If search finds are in an acquirable state, they can also be absorbed. Number of daily usage: {{x}}",
+		"variables": { "x": ["2", "2", "3", "4", "5"] }
+	},
+	"birthday": { "month": 2, "day": 29 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 20,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 20,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 146,
+			"max": 2562
+		},
+		"atk": {
+			"min": 27,
+			"max": 275
+		}
+	},
+	"exclusive_gear": {
+		"name": "Terra Concealer",
+		"ability": "Magic ATK",
+		"basic_stat": "Crit Rate%"
+	},
+	"costumes": ["The Curse", "Descendant of the Great Witch","Masquerade Bunny"]
+}

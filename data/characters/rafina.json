@@ -1,0 +1,40 @@
+{
+	"name": "Rafina",
+	"version": 1,
+	"element": "water",
+	"kick": "up",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Danger Detection On!",
+		"type": "Danger Detection",
+		"costs": [5, 5, 5, 5, 5],
+		"description": "For {{x}} seconds, you can locate the traps and fiends nearby. ",
+		"variables": { "x": ["30", "36", "42", "48", "60"] }
+	},
+	"birthday": { "month": 3, "day": 31 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 10,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 200,
+			"max": 3507
+		},
+		"atk": {
+			"min": 22,
+			"max": 220
+		}
+	},
+	"exclusive_gear": {
+		"name": "E.P.G.",
+		"ability": "ATK",
+		"basic_stat": "ATK%"
+	},
+	"costumes": ["Steel Engine", "Code Name A","Game Club"]
+}

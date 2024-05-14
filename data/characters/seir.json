@@ -1,0 +1,40 @@
+{
+	"name": "Seir",
+	"version": 1,
+	"element": "dark",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "I'm scared...!",
+		"type": "Stealth",
+		"costs": [15, 15, 15, 15, 15],
+		"description": "Moves for {{x}} seconds while in Stealth mode.",
+		"variables": { "x": ["30,36,48,54,72"] }
+	},
+	"birthday": { "month": 10, "day": 11 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 249,
+			"max": 4368
+		},
+		"atk": {
+			"min": 16,
+			"max": 165
+		}
+	},
+	"exclusive_gear": {
+		"name": "Arch Demons",
+		"ability": "HP%",
+		"basic_stat": "Crit Rate%"
+	},
+	"costumes": ["Demon's Daughter","B-Rank Idol"]
+}

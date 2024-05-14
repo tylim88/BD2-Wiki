@@ -1,0 +1,42 @@
+{
+	"name": "Gray",
+	"version": 1,
+	"element": "wind",
+	"kick": "up",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "That's Dangerous",
+		"type": "Danger Detection",
+		"costs": [5, 5, 5, 5, 5],
+		"description": "For {{x}} seconds, you can locate the traps and fiends in a wide area around you.",
+		"variables": { 
+			"x": ["10", "12", "14", "16", "18"]
+		}
+	},
+	"birthday": { "month": 11, "day": 27 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 20,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 124,
+			"max": 2184
+		},
+		"atk": {
+			"min": 33,
+			"max": 330
+		}
+	},
+	"exclusive_gear": {
+		"name": "Diathema",
+		"ability": "Crit DMG%",
+		"basic_stat": "ATK%"
+	},
+	"costumes": ["Sharpshooter of the Mist", "Vanguard","B-Rank Manager","Pool Party"]
+}

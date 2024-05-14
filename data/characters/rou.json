@@ -1,0 +1,40 @@
+{
+	"name": "Rou",
+	"version": 1,
+	"element": "dark",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "physical",
+	"ability": {
+		"name": "Tiptoe Tiptoe",
+		"type": "Stealth",
+		"costs": [5, 5, 5, 5, 5],
+		"description": "Moves for {{x}} seconds while in Stealth mode.",
+		"variables": { "x": ["10,12,14,18,24"] }
+	},
+	"birthday": { "month": 4, "day": 3 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 151,
+			"max": 2646
+		},
+		"atk": {
+			"min": 30,
+			"max": 308
+		}
+	},
+	"exclusive_gear": {
+		"name": "Dark Restraint",
+		"ability": "Crit Rate%",
+		"basic_stat": "ATK"
+	},
+	"costumes": ["White Cat","Nature's Claw","Red Riding Hood","Stray Cat"]
+}

@@ -1,0 +1,40 @@
+{
+	"name": "Eclipse",
+	"version": 1,
+	"element": "dark",
+	"kick": "diagonal up left",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "Space Jump",
+		"type": "Magic Cicle",
+		"costs": [20, 15, 10, 5, 5],
+		"description": "You can create a magic circle and travel {{x}}",
+		"variables": { "x": ["only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "to other Magic Circles in every map"] }
+	},
+	"birthday": { "month": 9, "day": 20 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 142,
+			"max": 2023
+		},
+		"atk": {
+			"min": 30,
+			"max": 252
+		}
+	},
+	"exclusive_gear": {
+		"name": "Star Caller Ornament",
+		"ability": "Magic ATK%",
+		"basic_stat": "Crit Rate%"
+	},
+	"costumes": ["Dimension Witch", "Nightmare Bunny"]
+}

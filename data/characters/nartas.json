@@ -1,0 +1,34 @@
+{
+	"name": "Nartas",
+	"version": 1,
+	"element": "dark",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magical",
+	"ability": null,
+	"birthday": { "month": 1, "day": 14 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 75,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 0,
+		"hp": {
+			"min": 84,
+			"max": 1470
+		},
+		"atk": {
+			"min": 39,
+			"max": 396
+		}
+	},
+	"exclusive_gear": {
+		"name": "Seal of Hell",
+		"ability": "Magic ATK%",
+		"basic_stat": "Magic ATK%"
+	},
+	"costumes": ["Anonymous Sage"]
+}

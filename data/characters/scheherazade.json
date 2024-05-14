@@ -1,0 +1,40 @@
+{
+	"name": "Scheherazade",
+	"version": 1,
+	"element": "water",
+	"kick": "up",
+	"target": "very front",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": {
+		"name": "Alchemy",
+		"type": "Alchemy",
+		"costs": [2, 3, 6, 12, 20],
+		"description": "You can use Alchemy.",
+        "variables":  null
+	},
+	"birthday": { "month": 3, "day": 19 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 50,
+		"def": 0,
+		"magic_resist": 10,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 93,
+			"max": 1638
+		},
+		"atk": {
+			"min": 38,
+			"max": 385
+		}
+	},
+	"exclusive_gear": {
+		"name": "Plentithoum",
+		"ability": "Magic ATK%",
+		"basic_stat": "Magic ATK"
+	},
+	"costumes": ["Lapis Witch", "Magic School Professor","Code Name S","Pool Party"]
+}

@@ -1,0 +1,34 @@
+{
+	"name": "Dalvi",
+	"version": 1,
+	"element": "wind",
+	"kick": "pull",
+	"target": "skip",
+	"rarity": 5,
+	"dmg_type": "magic",
+	"ability": null,
+	"birthday": { "month": 8, "day": 31 },
+	"attributes": {
+		"initial_combat_power": 260,
+		"crit_rate": 10,
+		"crit_dmg": 75,
+		"def": 0,
+		"magic_resist": 0,
+		"prop_dmg": 50,
+		"prop_resist": 50,
+		"hp": {
+			"min": 115,
+			"max": 2016
+		},
+		"atk": {
+			"min": 35,
+			"max": 352
+		}
+	},
+	"exclusive_gear": {
+		"name": "Thousand-Year-Old Hairpin",
+		"ability": "Magic Attack%",
+		"basic_stat": "Magic Resist%"
+	},
+	"costumes": ["Bright Moon"]
+}
