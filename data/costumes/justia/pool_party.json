@@ -43,16 +43,23 @@
 		]
 	},
 	"lines": [
-		"I'll get this done before lunch.",
-		"It's a shame that this sword is not a real sword.",
-		"Such evil... In this world as well!",
-		"We'll be late for the next class.",
-		"This wasn't even a warm up.",
-		"Shall we return to the classroom?",
-		"Yaaap... Moment of opportunity!",
-		"Though it's a bamboo sword, it'll hurt a bit.",
-		"Prepare yourself!",
-		"This is the recipe of this world..."
+		{ "type": "general", "line": "What is it? I have a prior engagement..." },
+		{
+			"type": "general",
+			"line": "I'll take you on... It'll help me work up an appetite before dinner."
+		},
+		{
+			"type": "general",
+			"line": "...Who knew I would be fighting in this getup?"
+		},
+		{ "type": "victory", "line": "I'm heading back to the buffet." },
+		{ "type": "victory", "line": "I'm fully digested." },
+		{
+			"type": "victory",
+			"line": "I'm sweating...! *Gasp*... Don't, look...at me.."
+		},
+		{ "type": "cutScene", "line": "Wahh...." },
+		{ "type": "talent", "line": "It's a dish that goes with a party." }
 	],
 	"voices": [
 		{

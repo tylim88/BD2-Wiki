@@ -44,16 +44,19 @@
 		]
 	},
 	"lines": [
-		"I wonder what your blood tastes like...",
-		"Urgh... I need to satiate this thirst...",
-		"Blood... I want blood...!",
-		"Now, I can drink...",
-		"Hahhh... gulp, Hmmm...",
-		"Ugh... what... have I done...!",
-		"I cant't hold back anymore...",
-		"Umph... Haaaaa...!",
-		"Blood... give me yoiur blood!",
-		"Cooking is merely a way to help me regain my strength..."
+		{ "type": "general", "line": "I wonder what your blood tastes like..." },
+		{ "type": "general", "line": "Urgh... I need to satiate this thirst..." },
+		{ "type": "general", "line": "Blood... I want blood...!" },
+		{ "type": "victory", "line": "Now, I can drink..." },
+		{ "type": "victory", "line": "Hahhh... gulp, Hmm...." },
+		{ "type": "victory", "line": "Ugh... what... have I done...!" },
+		{ "type": "skill", "line": "I can't hold back anymore...!" },
+		{ "type": "skill", "line": "Umph... Haaaaa...!" },
+		{ "type": "skill", "line": "Blood... give me your blood!" },
+		{
+			"type": "talent",
+			"line": "Cooking is merely a way to help me regain my strength..."
+		}
 	],
 	"voices": [
 		{

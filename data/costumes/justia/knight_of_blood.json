@@ -31,16 +31,16 @@
 		]
 	},
 	"lines": [
-		"I will cut you down if you get in my way.",
-		"Everyone, ready yourselves for a fight.",
-		"To vanquish evil, is my duty.",
-		"Injured? Time to cook something...",
-		"It's over.",
-		"This is the fate of the evil.",
-		"Fall asleep under the moonlight.",
-		"I will punish you all!",
-		"Death to all that is evil",
-		"This is a dish that warms the heart."
+		{ "type": "general", "line": "I will cut you down if you get in my way." },
+		{ "type": "general", "line": "Everyone, ready yourselves for a fight." },
+		{ "type": "general", "line": "To vanquish evil, is my duty." },
+		{ "type": "victory", "line": "Injured? Time to cook something..." },
+		{ "type": "victory", "line": "It's over." },
+		{ "type": "victory", "line": "This is the fate of the evil." },
+		{ "type": "skill", "line": "Fall asleep under the moonlight." },
+		{ "type": "skill", "line": "I will punish you all!" },
+		{ "type": "skill", "line": "Death to all that is evil!" },
+		{ "type": "talent", "line": "This is a dish that warms the heart." }
 	],
 	"voices": [
 		{

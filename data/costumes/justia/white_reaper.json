@@ -31,16 +31,16 @@
 		]
 	},
 	"lines": [
-		"Do not get in my way.",
-		"It can't be helped",
-		"This is also a part of my duties",
-		"Evil must be cut down.",
-		"This was a waste of time.",
-		"We should go back.",
-		"Cold and sharp, just like the moon.",
-		"This is the end!",
-		"Yaaaap!",
-		"Smells nice."
+		{ "type": "general", "line": "Do not get in my way." },
+		{ "type": "general", "line": "It can't be helped." },
+		{ "type": "general", "line": "This is also a part of my duties." },
+		{ "type": "victory", "line": "Evil must be cut down." },
+		{ "type": "victory", "line": "This was a waste of time." },
+		{ "type": "victory", "line": "We should go back." },
+		{ "type": "skill", "line": "Cold and sharp, just like the moon." },
+		{ "type": "skill", "line": "This is the end!" },
+		{ "type": "skill", "line": "Yaaaap!" },
+		{ "type": "talent", "line": "Smells nice." }
 	],
 	"voices": [
 		{

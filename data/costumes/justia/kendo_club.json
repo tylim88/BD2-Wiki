@@ -42,16 +42,22 @@
 		]
 	},
 	"lines": [
-		"I'll get this done before lunch.",
-		"It's a shame that this sword is not a real sword.",
-		"Such evil... In this world as well!",
-		"We'll be late for the next class.",
-		"This wasn't even a warm up.",
-		"Shall we return to the classroom?",
-		"Yaaap... Moment of opportunity!",
-		"Though it's a bamboo sword, it'll hurt a bit.",
-		"Prepare yourself!",
-		"This is the recipe of this world..."
+		{ "type": "general", "line": "I'll get this done before lunch." },
+		{
+			"type": "general",
+			"line": "It's a shame that this is not a real sword."
+		},
+		{ "type": "general", "line": "Such evil... In this world as well!" },
+		{ "type": "victory", "line": "We'll be late for the next class." },
+		{ "type": "victory", "line": "This wasn't even a warm-up." },
+		{ "type": "victory", "line": "Shall we return to the classroom?" },
+		{ "type": "skill", "line": "Yaaap... Moment of opportunity!" },
+		{
+			"type": "skill",
+			"line": "Though it's a bamboo sword, it'll hurt a bit."
+		},
+		{ "type": "skill", "line": "Prepare yourself!" },
+		{ "type": "talent", "line": "This is the recipe of this world..." }
 	],
 	"voices": [
 		{
