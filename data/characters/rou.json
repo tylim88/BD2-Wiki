@@ -11,7 +11,7 @@
 		"type": "Stealth",
 		"costs": [5, 5, 5, 5, 5],
 		"description": "Moves for {{x}} seconds while in Stealth mode.",
-		"variables": { "x": ["10,12,14,18,24"] }
+		"variables": { "x": ["10", "12", "14", "18", "24"] }
 	},
 	"birthday": { "month": 4, "day": 3 },
 	"attributes": {

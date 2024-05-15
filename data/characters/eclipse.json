@@ -8,7 +8,7 @@
 	"dmg_type": "magic",
 	"ability": {
 		"name": "Space Jump",
-		"type": "Magic Cicle",
+		"type": "Magic Circle",
 		"costs": [20, 15, 10, 5, 5],
 		"description": "You can create a magic circle and travel {{x}}",
 		"variables": {
