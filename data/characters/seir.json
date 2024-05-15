@@ -15,7 +15,6 @@
 	},
 	"birthday": { "month": 10, "day": 11 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,
@@ -36,5 +35,5 @@
 		"ability": "HP%",
 		"basic_stat": "Crit Rate%"
 	},
-	"costumes": ["Demon's Daughter","B-Rank Idol"]
+	"costumes": ["Demon's Daughter", "B-Rank Idol"]
 }

@@ -11,13 +11,18 @@
 		"type": "Dispatch",
 		"costs": [5, 5, 5, 5, 5],
 		"description": "You can dispatch Ratshu, the ruler of rats, Catshu, the Guardian of cheese, and Matshu, the Pursuer of Sparrows to fetch you {{x}}. The Dispatch ends at 09 a.m (KST)",
-		"variables": { 
-			"x": ["useful items", "useful items", "useful items", "a bit more useful items", "very useful items"]
+		"variables": {
+			"x": [
+				"useful items",
+				"useful items",
+				"useful items",
+				"a bit more useful items",
+				"very useful items"
+			]
 		}
 	},
 	"birthday": { "month": 5, "day": 15 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,

@@ -11,13 +11,12 @@
 		"type": "Overpower",
 		"costs": [50, 45, 35, 25, 15],
 		"description": "For {{x}} seconds, you can overpower some of the monsters by using the Dash skill.",
-		"variables": { 
+		"variables": {
 			"x": ["30", "36", "44", "50", "60"]
 		}
 	},
 	"birthday": { "month": 4, "day": 17 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 10,

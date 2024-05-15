@@ -11,11 +11,18 @@
 		"type": "Magic Cicle",
 		"costs": [20, 15, 10, 5, 5],
 		"description": "You can create a magic circle and travel {{x}}",
-		"variables": { "x": ["only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "only to other Magic Circles in a Safe Zone", "to other Magic Circles in every map"] }
+		"variables": {
+			"x": [
+				"only to other Magic Circles in a Safe Zone",
+				"only to other Magic Circles in a Safe Zone",
+				"only to other Magic Circles in a Safe Zone",
+				"only to other Magic Circles in a Safe Zone",
+				"to other Magic Circles in every map"
+			]
+		}
 	},
 	"birthday": { "month": 9, "day": 20 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,

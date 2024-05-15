@@ -15,7 +15,6 @@
 	},
 	"birthday": { "month": 1, "day": 1 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 0,
 		"crit_dmg": 0,
 		"def": 0,

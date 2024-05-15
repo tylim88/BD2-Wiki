@@ -9,7 +9,6 @@
 	"ability": null,
 	"birthday": { "month": 10, "day": 4 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 10,
 		"crit_dmg": 50,
 		"def": 0,

@@ -15,7 +15,6 @@
 	},
 	"birthday": { "month": 2, "day": 29 },
 	"attributes": {
-		"initial_combat_power": 260,
 		"crit_rate": 20,
 		"crit_dmg": 50,
 		"def": 0,
@@ -36,5 +35,5 @@
 		"ability": "Magic ATK",
 		"basic_stat": "Crit Rate%"
 	},
-	"costumes": ["The Curse", "Descendant of the Great Witch","Masquerade Bunny"]
+	"costumes": ["The Curse", "Descendant of the Great Witch", "Masquerade Bunny"]
 }
