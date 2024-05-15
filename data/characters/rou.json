@@ -2,7 +2,7 @@
 	"name": "Rou",
 	"version": 1,
 	"element": "dark",
-	"kick": "up",
+	"kick": "top",
 	"target": "very front",
 	"rarity": 5,
 	"dmg_type": "physical",

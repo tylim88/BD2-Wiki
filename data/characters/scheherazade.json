@@ -2,7 +2,7 @@
 	"name": "Scheherazade",
 	"version": 1,
 	"element": "water",
-	"kick": "up",
+	"kick": "top",
 	"target": "very front",
 	"rarity": 5,
 	"dmg_type": "magic",

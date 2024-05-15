@@ -2,7 +2,7 @@
 	"name": "Rafina",
 	"version": 1,
 	"element": "water",
-	"kick": "up",
+	"kick": "top",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "physical",

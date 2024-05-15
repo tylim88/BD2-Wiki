@@ -2,7 +2,7 @@
 	"name": "Alec",
 	"version": 1,
 	"element": "fire",
-	"kick": "up",
+	"kick": "top",
 	"target": "very front",
 	"rarity": 5,
 	"dmg_type": "physical",

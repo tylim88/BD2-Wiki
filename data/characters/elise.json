@@ -2,7 +2,7 @@
 	"name": "Elise",
 	"version": 1,
 	"element": "fire",
-	"kick": "up",
+	"kick": "top",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "physical",

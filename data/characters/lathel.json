@@ -2,7 +2,7 @@
 	"name": "Lathel",
 	"version": 1,
 	"element": "fire",
-	"kick": "diagonal up left",
+	"kick": "top left",
 	"target": "very front",
 	"rarity": 5,
 	"dmg_type": "physical",

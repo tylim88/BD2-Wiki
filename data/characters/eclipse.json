@@ -2,7 +2,7 @@
 	"name": "Eclipse",
 	"version": 1,
 	"element": "dark",
-	"kick": "diagonal up left",
+	"kick": "top left",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "magic",

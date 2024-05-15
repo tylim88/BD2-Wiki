@@ -2,7 +2,7 @@
 	"name": "Dalvi",
 	"version": 1,
 	"element": "wind",
-	"kick": "pull",
+	"kick": "pull bottom",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "magic",

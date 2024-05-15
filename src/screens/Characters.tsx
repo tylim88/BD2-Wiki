@@ -27,14 +27,14 @@ import {
 import { useFetchCharacterData, useFetchCostumeData } from '@/api'
 
 const arrow = {
-	up: IconArrowUp,
-	down: IconArrowDown,
+	top: IconArrowUp,
+	bottom: IconArrowDown,
 	left: IconArrowLeft,
 	right: IconArrowRight,
-	'up left': IconArrowUpLeft,
-	'up right': IconArrowUpRight,
-	'down left': IconArrowDownLeft,
-	'down right': IconArrowDownRight,
+	'top left': IconArrowUpLeft,
+	'top right': IconArrowUpRight,
+	'bottom left': IconArrowDownLeft,
+	'bottom right': IconArrowDownRight,
 }
 
 export const Characters = () => {

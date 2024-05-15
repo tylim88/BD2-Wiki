@@ -31,7 +31,10 @@
 		]
 	},
 	"lines": [
-		{ "type": "general", "line": "I will cut you down if you get in my way." },
+		{
+			"type": "general",
+			"line": "I will cut you bottom if you get in my way."
+		},
 		{ "type": "general", "line": "Everyone, ready yourselves for a fight." },
 		{ "type": "general", "line": "To vanquish evil, is my duty." },
 		{ "type": "victory", "line": "Injured? Time to cook something..." },

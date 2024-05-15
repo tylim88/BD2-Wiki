@@ -2,7 +2,7 @@
 	"name": "Refithea",
 	"version": 1,
 	"element": "light",
-	"kick": "pull",
+	"kick": "pull bottom",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "magical",

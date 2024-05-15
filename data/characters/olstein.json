@@ -2,7 +2,7 @@
 	"name": "Olstein",
 	"version": 1,
 	"element": "wind",
-	"kick": "up",
+	"kick": "top",
 	"target": "skip",
 	"rarity": 5,
 	"dmg_type": "magic",

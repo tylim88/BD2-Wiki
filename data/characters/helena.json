@@ -2,7 +2,7 @@
 	"name": "Helena",
 	"version": 1,
 	"element": "light",
-	"kick": "up",
+	"kick": "top",
 	"target": "very front",
 	"rarity": 5,
 	"dmg_type": "magical",
