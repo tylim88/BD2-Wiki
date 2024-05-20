@@ -1,5 +1,5 @@
 {
-	"name": "Immortal Golden Armor",
-	"rarity": "UR",
-	"basic_stat": ["DEF%", "HP%"]
+    "name": "Immortal Golden Armor",
+    "rarity": "UR",
+    "basic_stat": ["DEF","HP%"]
 }
