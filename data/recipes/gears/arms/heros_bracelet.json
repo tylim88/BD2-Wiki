@@ -1,0 +1,5 @@
+{
+    "name": "Hero's Bracelet",
+    "rarity": "SR",
+    "basic_stat": ["MATK%","Crit Rate%"]
+}

@@ -1,0 +1,5 @@
+{
+    "name": "Ring of Fury",
+    "rarity": "UR",
+    "basic_stat": ["MATK%","Crit Rate%"]
+}
