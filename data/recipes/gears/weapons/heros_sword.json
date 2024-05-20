@@ -1,0 +1,5 @@
+{
+    "name": "Hero's Sword",
+    "rarity": "SR",
+    "basic_stat": ["ATK","Crit DMG%"]
+}
