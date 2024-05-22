@@ -36,7 +36,17 @@ export const costumes = object({
 		cherish: string(),
 		rumors: array(string()).length(2),
 	}),
-	lines: array(string()).length(10),
+	lines: array(
+		object({
+			type: union([
+				literal('general'),
+				literal('victory'),
+				literal('skill'),
+				literal('talent'),
+			]),
+			script: string(),
+		})
+	).length(10),
 	voices: array(
 		object({
 			actor: string(),
