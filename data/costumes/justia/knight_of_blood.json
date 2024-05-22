@@ -33,17 +33,17 @@
 	"lines": [
 		{
 			"type": "general",
-			"line": "I will cut you bottom if you get in my way."
+			"script": "I will cut you bottom if you get in my way."
 		},
-		{ "type": "general", "line": "Everyone, ready yourselves for a fight." },
-		{ "type": "general", "line": "To vanquish evil, is my duty." },
-		{ "type": "victory", "line": "Injured? Time to cook something..." },
-		{ "type": "victory", "line": "It's over." },
-		{ "type": "victory", "line": "This is the fate of the evil." },
-		{ "type": "skill", "line": "Fall asleep under the moonlight." },
-		{ "type": "skill", "line": "I will punish you all!" },
-		{ "type": "skill", "line": "Death to all that is evil!" },
-		{ "type": "talent", "line": "This is a dish that warms the heart." }
+		{ "type": "general", "script": "Everyone, ready yourselves for a fight." },
+		{ "type": "general", "script": "To vanquish evil, is my duty." },
+		{ "type": "victory", "script": "Injured? Time to cook something..." },
+		{ "type": "victory", "script": "It's over." },
+		{ "type": "victory", "script": "This is the fate of the evil." },
+		{ "type": "skill", "script": "Fall asleep under the moonlight." },
+		{ "type": "skill", "script": "I will punish you all!" },
+		{ "type": "skill", "script": "Death to all that is evil!" },
+		{ "type": "talent", "script": "This is a dish that warms the heart." }
 	],
 	"voices": [
 		{

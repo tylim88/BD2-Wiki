@@ -43,23 +43,23 @@
 		]
 	},
 	"lines": [
-		{ "type": "general", "line": "What is it? I have a prior engagement..." },
+		{ "type": "general", "script": "What is it? I have a prior engagement..." },
 		{
 			"type": "general",
-			"line": "I'll take you on... It'll help me work top an appetite before dinner."
+			"script": "I'll take you on... It'll help me work top an appetite before dinner."
 		},
 		{
 			"type": "general",
-			"line": "...Who knew I would be fighting in this getup?"
+			"script": "...Who knew I would be fighting in this getup?"
 		},
-		{ "type": "victory", "line": "I'm heading back to the buffet." },
-		{ "type": "victory", "line": "I'm fully digested." },
+		{ "type": "victory", "script": "I'm heading back to the buffet." },
+		{ "type": "victory", "script": "I'm fully digested." },
 		{
 			"type": "victory",
-			"line": "I'm sweating...! *Gasp*... Don't, look...at me.."
+			"script": "I'm sweating...! *Gasp*... Don't, look...at me.."
 		},
-		{ "type": "cutScene", "line": "Wahh...." },
-		{ "type": "talent", "line": "It's a dish that goes with a party." }
+		{ "type": "cutScene", "script": "Wahh...." },
+		{ "type": "talent", "script": "It's a dish that goes with a party." }
 	],
 	"voices": [
 		{

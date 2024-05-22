@@ -42,22 +42,22 @@
 		]
 	},
 	"lines": [
-		{ "type": "general", "line": "I'll get this done before lunch." },
+		{ "type": "general", "script": "I'll get this done before lunch." },
 		{
 			"type": "general",
-			"line": "It's a shame that this is not a real sword."
+			"script": "It's a shame that this is not a real sword."
 		},
-		{ "type": "general", "line": "Such evil... In this world as well!" },
-		{ "type": "victory", "line": "We'll be late for the next class." },
-		{ "type": "victory", "line": "This wasn't even a warm-top." },
-		{ "type": "victory", "line": "Shall we return to the classroom?" },
-		{ "type": "skill", "line": "Yaaap... Moment of opportunity!" },
+		{ "type": "general", "script": "Such evil... In this world as well!" },
+		{ "type": "victory", "script": "We'll be late for the next class." },
+		{ "type": "victory", "script": "This wasn't even a warm-top." },
+		{ "type": "victory", "script": "Shall we return to the classroom?" },
+		{ "type": "skill", "script": "Yaaap... Moment of opportunity!" },
 		{
 			"type": "skill",
-			"line": "Though it's a bamboo sword, it'll hurt a bit."
+			"script": "Though it's a bamboo sword, it'll hurt a bit."
 		},
-		{ "type": "skill", "line": "Prepare yourself!" },
-		{ "type": "talent", "line": "This is the recipe of this world..." }
+		{ "type": "skill", "script": "Prepare yourself!" },
+		{ "type": "talent", "script": "This is the recipe of this world..." }
 	],
 	"voices": [
 		{

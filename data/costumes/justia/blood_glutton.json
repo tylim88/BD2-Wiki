@@ -44,18 +44,18 @@
 		]
 	},
 	"lines": [
-		{ "type": "general", "line": "I wonder what your blood tastes like..." },
-		{ "type": "general", "line": "Urgh... I need to satiate this thirst..." },
-		{ "type": "general", "line": "Blood... I want blood...!" },
-		{ "type": "victory", "line": "Now, I can drink..." },
-		{ "type": "victory", "line": "Hahhh... gulp, Hmm...." },
-		{ "type": "victory", "line": "Ugh... what... have I done...!" },
-		{ "type": "skill", "line": "I can't hold back anymore...!" },
-		{ "type": "skill", "line": "Umph... Haaaaa...!" },
-		{ "type": "skill", "line": "Blood... give me your blood!" },
+		{ "type": "general", "script": "I wonder what your blood tastes like..." },
+		{ "type": "general", "script": "Urgh... I need to satiate this thirst..." },
+		{ "type": "general", "script": "Blood... I want blood...!" },
+		{ "type": "victory", "script": "Now, I can drink..." },
+		{ "type": "victory", "script": "Hahhh... gulp, Hmm...." },
+		{ "type": "victory", "script": "Ugh... what... have I done...!" },
+		{ "type": "skill", "script": "I can't hold back anymore...!" },
+		{ "type": "skill", "script": "Umph... Haaaaa...!" },
+		{ "type": "skill", "script": "Blood... give me your blood!" },
 		{
 			"type": "talent",
-			"line": "Cooking is merely a way to help me regain my strength..."
+			"script": "Cooking is merely a way to help me regain my strength..."
 		}
 	],
 	"voices": [
