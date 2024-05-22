@@ -7,7 +7,6 @@ import { useRoutesStore } from '@/stores'
 import { glass } from '@/styles'
 import {
 	charRoute,
-	tierRoute,
 	bannersRoute,
 	eventsRoute,
 	packsRoute,
@@ -56,9 +55,6 @@ export const Navbar = ({
 							}}
 						>
 							<NavLink path={charRoute.fullPath} label="Characters" />
-						</Link>
-						<Link to={tierRoute.fullPath}>
-							<NavLink path={tierRoute.fullPath} label="Tier List" />
 						</Link>
 						<Link to={bannersRoute.fullPath}>
 							<NavLink path={bannersRoute.fullPath} label="Banners" />

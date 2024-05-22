@@ -35,11 +35,6 @@ export const charRoute = new Route({
 	validateSearch: charValidateSearch,
 	getParentRoute,
 })
-export const tierRoute = new Route({
-	path: '/tier',
-	component: () => null,
-	getParentRoute,
-})
 
 export const bannersRoute = new Route({
 	path: '/banners',
@@ -67,7 +62,6 @@ export const itemsRoute = new Route({
 const allRoutes = [
 	homeRoute,
 	charRoute,
-	tierRoute,
 	bannersRoute,
 	eventsRoute,
 	packsRoute,
