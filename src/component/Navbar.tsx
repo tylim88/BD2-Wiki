@@ -36,7 +36,7 @@ export const Navbar = ({
 			w="100%"
 		>
 			<Grid maw={THEME.breakpoints.xl} w="100%" align="center">
-				<Grid.Col span="content">
+				<Grid.Col span="content" pl="xl">
 					<Link to="/">
 						<Image src={brand} h="2em" />
 					</Link>
