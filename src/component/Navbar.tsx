@@ -44,7 +44,7 @@ export const Navbar = ({
 				<Grid.Col span="auto">
 					<Flex w="100%">
 						<Link
-							from={charRoute.fullPath}
+							to={charRoute.fullPath}
 							search={prev => {
 								return {
 									...prev,
