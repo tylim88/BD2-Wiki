@@ -7,6 +7,8 @@ dev: `npm run dev`
 
 under development
 
+update: I quit the game because of time constraint
+
 ## Techs
 
 1. React
